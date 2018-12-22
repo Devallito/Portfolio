@@ -1316,7 +1316,13 @@ nav ul a:hover {
   background-repeat: no-repeat;
   background-position: center;
 }
-
+.fa-trophy{
+  color: #f7c631;
+  font-size: 3.5rem;
+}
+.linkbattle{
+  color: blue;
+}
 /* Testimonial Section
 ********************************************************************* */
 #testimonial {
