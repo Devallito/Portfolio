@@ -261,7 +261,6 @@ a:hover {
 ********************************************************************* */
 
 .chatbot {
-      z-index: 10;
   position: fixed;
   bottom: 0;
 	opacity:0;
@@ -630,7 +629,7 @@ header {
   justify-content: center;
   width: 100%;
   height: 100vh;
-  background-image: url(./background.jpg);
+  background-image: url(./background.webp);
   background-attachment: fixed;
   background-size: cover;
   -moz-background-size: cover;
@@ -885,11 +884,10 @@ nav ul a:hover {
   }
 }
 
-
 /* About Section
 ********************************************************************* */
 #about {
-  padding: 100px 0 10px 0;
+  padding: 100px 0 50px 0;
 }
 
 .icon {
@@ -922,7 +920,7 @@ nav ul a:hover {
   position: absolute;
   left: 0;
   top: 0;
-  background-image: url(./portrait.jpg);
+  background-image: url(./portrait.webp);
   background-size: cover;
   background-position: center;
   mix-blend-mode: screen;
@@ -1191,180 +1189,6 @@ nav ul a:hover {
 #skills {
   padding: 100px 0 100px 0;
 }
-
-
-#skills a {
-  text-decoration: none;
-}
-
-#skills aside.context {
-  text-align: center;
-  color: #fff;
-  line-height: 1.7;
-}
-#skills aside.context a {
-  text-decoration: none;
-  color: #fff;
-  padding: 3px 0;
-  border-bottom: 1px dashed;
-}
-#skills aside.context .explanation {
-  max-width: 700px;
-  margin: 4em auto 0;
-}
-
-#skills .periodic-table {
-  display: grid;
-  grid-template-columns: repeat(9, 100px);
-  grid-template-rows: repeat(4, 100px);
-  grid-gap: 10px;
-  margin: auto;
-  max-width: 1200px;
-  justify-content: center;
-}
-
-#skills .periodic-element {
-  padding: 4px;
-  position: relative;
-  z-index: 0;
-  cursor: default;
-  transition: all 0.3s ease;
-}
-#skills .periodic-element .periodic-element-inner {
-  background: #202e38;
-  padding: 10px 15px;
-  width: calc(100%);
-  height: calc(100%);
-  transition: inherit;
-}
-#skills .periodic-element .titleC {
-  font: 700 34px/1.3 "Poppins", sans-serif;
-  margin: 0.3em 0 0;
-  transition: 0.8s ease 600ms;
-}
-#skills .periodic-element .description {
-  font: 500 12px "Poppins", sans-serif;
-  margin-top: -0.2em;
-}
-#skills .periodic-element:after {
-  z-index: 0;
-  content: attr(data-description);
-  background: #f9f8f7;
-  color: #333;
-  width: 180px;
-  position: absolute;
-  top: 80%;
-  opacity: 0;
-  transition: opacity 0.3s ease 0.3s, top 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s;
-  height: auto;
-  font-size: 12px;
-  line-height: 1.4;
-  padding: 10px;
-  margin: 0 0 0 -50px;
-  border-radius: 6px;
-  text-align: center;
-}
-#skills .periodic-element:hover {
-  transform: scale(1.12);
-  z-index: 1;
-}
-#skills .periodic-element:hover .periodic-element-inner {
-  background: transparent;
-}
-#skills .periodic-element:hover .titleC,
-#skills .periodic-element:hover .description {
-    z-index: 10;
-  -webkit-text-fill-color: #222;
-}
-#skills .periodic-element:hover:after {
-  top: 105%;
-  opacity: 1;
-}
-
-#skills a.periodic-element {
-  cursor: pointer;
-}
-
-#skills .social-media {
-  background: linear-gradient(to bottom right, #f3f9a6 0%, #cbc634 100%);
-}
-#skills .social-media .titleC,
-#skills .social-media .description {
-  background: -webkit-linear-gradient(#f3f9a6, #cbc634);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-}
-
-#skills .fun-stuff {
-  background: linear-gradient(to bottom right, #ff616d 0%, #ffc171 100%);
-}
-#skills .fun-stuff .titleC,
-#skills .fun-stuff .description {
-  background: -webkit-linear-gradient(#ff616d, #ffc171);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-#skills .just-trying {
-  background: linear-gradient(to bottom right, #37cfdc 0%, #5a88e5 100%);
-}
-#skills .just-trying .titleC,
-#skills .just-trying .description {
-  background: -webkit-linear-gradient(#37cfdc, #5a88e5);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-#skills .intense-work {
-  background: linear-gradient(to bottom right, #58ac30 0%, #a7df62 100%);
-}
-#skills .intense-work .titleC,
-#skills .intense-work .description {
-  background: -webkit-linear-gradient(#58ac30, #a7df62);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-#skills .legend-table {
-  padding: 15px;
-  text-align: center;
-  font-size: 15px;
-  margin: 2em auto 0;
-}
-#skills .legend-table__marker {
-  width: 25px;
-  height: 25px;
-  margin: 5px 5px 10px;
-  display: inline-block;
-  vertical-align: middle;
-  box-shadow: 0.5px 1px rgba(0, 0, 0, 0.15);
-}
-#skills .legend-table__text {
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0 25px 5px 5px;
-  background: -webkit-linear-gradient(#ccc, #eee);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-#skills .legend-table__direction {
-  display: inline-block;
-  margin: 10px 15px 10px 10px;
-  background: -webkit-linear-gradient(#ccc, #eee);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-#skills .empty-spacer-1 {
-  grid-column: 3 / span 4;
-  grid-row: 1;
-}
-#skills .empty-spacer-2 {
-  grid-column: 1;
-  grid-row: 4;
-}
-
 .icons-competence{
   background: #1a2a6c;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #fdbb2d, #b21f1f, #1a2a6c,#0f9b0f,#fdbb2d);  /* Chrome 10-25, Safari 5.1-6 */
@@ -1486,14 +1310,6 @@ nav ul a:hover {
 }
 
 
-
-
-/* Portfolio Section
-********************************************************************* */
-#portfolio {
-  padding: 100px 0 100px 0;
-  background-color: #F5F5F5;
-}
 .skill-card {
   margin-top: 2vh;
   margin-bottom: 2vh;
@@ -1592,6 +1408,13 @@ nav ul a:hover {
   transition-delay: 0.5s;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
+}
+
+/* Portfolio Section
+********************************************************************* */
+#portfolio {
+  padding: 100px 0 100px 0;
+  background-color: #F5F5F5;
 }
 .text{
 	font-size: 1em;
