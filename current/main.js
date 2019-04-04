@@ -44,3 +44,141 @@ function resetPosition(nowX) {
   cont2.style.width = dx + "px";
   last_x = nowX;
 }
+
+var passiveSupported = false;
+
+try {
+  var options = Object.defineProperty({}, "passive", {
+    get: function() {
+      passiveSupported = true;
+    }
+  });
+
+  window.addEventListener("test", options, options);
+  window.removeEventListener("test", options, options);
+} catch (err) {
+  passiveSupported = false;
+}
+
+function recursiveTree(array) {
+  function getChildren(parents, input) {
+    return parents.map(parent => {
+      const children = input.filter(x => x.PId === parent.Id);
+      parent.children = children;
+      if (children.length === 0) {
+        return parent;
+      } else {
+        parent.children = getChildren(children, input);
+        return parent;
+      }
+    })
+  }
+  const roots = array.filter(x => x.PId === -1);
+  return getChildren(roots, array);
+}
+
+function writeInDOM(anElement) {
+  let element = document.createElement("div");
+  element.setAttribute("id", anElement.caption);
+  element.setAttribute("tabindex", 0)
+  element.setAttribute("class", anElement.type + " lvl" + (anElement.lvl));
+  element.innerHTML = "<img title='"+anElement.caption+"' src='./atom-icons/'>"+anElement.caption;
+  document.getElementById("treeview").appendChild(element);
+}
+
+function getCorresponding(aCaption) {
+  for (let i = 0; i < treeview_list.length; i++) {
+    if (treeview_list[i].caption === aCaption) {
+      return treeview_list[i];
+    }
+  }
+  return;
+}
+
+function toggleFolder(anId) {
+  console.log("toDo");
+  let elemCorresponding = getCorresponding(anId);
+  console.log(elemCorresponding);
+  let arrToToggle = [];
+  for (let i = 0; i < treeview_list.length; i++) {
+    console.log(treeview_list);
+
+    console.log("ar:", arrToToggle);
+    if (treeview_list[i].PId === elemCorresponding.Id || arrToToggle.indexOf(treeview_list[i].PId) != -1) {
+      arrToToggle.push(treeview_list[i].Id);
+      console.log(treeview_list.caption);
+      document.getElementById(treeview_list[i].caption).classList.toggle("hide");
+    }
+  }
+}
+
+function click_treeviewElement(event) {
+  var elements2 = document.getElementById("treeview").getElementsByClassName("current_open");
+  if (elements2.length > 0) {
+    console.log(elements2);
+    elements2[0].classList.remove("current_open");
+  }
+  event.target.classList.add("current_open");
+  event.target.focus();
+  if (event.target.classList.contains("folder")) {
+    toggleFolder(event.target.id);
+
+  }
+}
+
+function focus_treeviewElement(event) {
+  event.target.classList.add("current_focus");
+}
+
+function focusout_treeviewElement(event) {
+  console.log("focusOut", event.target);
+  event.target.classList.remove("current_focus");
+}
+
+function charge_treeview(aList) {
+  //const listOrdered = recursiveTree(aList);
+  for (let i = 0; i < aList.length; i++) {
+    writeInDOM(aList[i]);
+  }
+  let elements = document.getElementById("treeview").querySelectorAll("div.folder,div.file");
+
+  for (let j = 0; j < elements.length; j++) {
+    elements[j].addEventListener("mousedown", click_treeviewElement, passiveSupported ? {
+      passive: true
+    } : false);
+    elements[j].addEventListener("focus", focus_treeviewElement, passiveSupported ? {
+      passive: true
+    } : false);
+    elements[j].addEventListener("focusout", focusout_treeviewElement, passiveSupported ? {
+      passive: true
+    } : false);
+  }
+}
+
+treeview_list = [{
+  PId: -1,
+  Id: 1,
+  lvl: 0,
+  caption: "root",
+  type: "folder"
+}, {
+  PId: 1,
+  Id: 2,
+  lvl: 1,
+  caption: "index.html",
+  type: "file"
+}, {
+  PId: 1,
+  Id: 3,
+  lvl: 1,
+  caption: "css",
+  type: "folder"
+}, {
+  PId: 3,
+  Id: 4,
+  lvl: 2,
+  caption: "style.css",
+  type: "file"
+}];
+
+charge_treeview(treeview_list);
