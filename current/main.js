@@ -82,7 +82,13 @@ function writeInDOM(anElement) {
   element.setAttribute("id", anElement.caption);
   element.setAttribute("tabindex", 0)
   element.setAttribute("class", anElement.type + " lvl" + (anElement.lvl));
-  element.innerHTML = "<img title='"+anElement.caption+"' src='./atom-icons/'>"+anElement.caption;
+  if(anElement.type === 'folder'){
+
+  element.innerHTML = "<img title='" + anElement.caption + "' class='atom_icons' src='./atom-icons/file-directory.svg'> " + anElement.caption;
+}else if(anElement.type === 'file'){
+  element.innerHTML = "<img title='" + anElement.caption + "' class='atom_icons' src='./atom-icons/file.svg'> " + anElement.caption;
+
+}
   document.getElementById("treeview").appendChild(element);
 }
 
@@ -96,18 +102,23 @@ function getCorresponding(aCaption) {
 }
 
 function toggleFolder(anId) {
-  console.log("toDo");
   let elemCorresponding = getCorresponding(anId);
-  console.log(elemCorresponding);
   let arrToToggle = [];
   for (let i = 0; i < treeview_list.length; i++) {
-    console.log(treeview_list);
-
-    console.log("ar:", arrToToggle);
+    var toCollapse;
     if (treeview_list[i].PId === elemCorresponding.Id || arrToToggle.indexOf(treeview_list[i].PId) != -1) {
+      if (treeview_list[i].PId === elemCorresponding.Id && document.getElementById(treeview_list[i].caption).classList.contains("hide")) {
+        toCollapse = true;
+      } else if (treeview_list[i].PId === elemCorresponding.Id && (!document.getElementById(treeview_list[i].caption).classList.contains("hide"))) {
+        toCollapse = false;
+      }
       arrToToggle.push(treeview_list[i].Id);
-      console.log(treeview_list.caption);
-      document.getElementById(treeview_list[i].caption).classList.toggle("hide");
+      if (!toCollapse) {
+        document.getElementById(treeview_list[i].caption).classList.add("hide");
+      } else {
+        document.getElementById(treeview_list[i].caption).classList.remove("hide");
+      }
+
     }
   }
 }
