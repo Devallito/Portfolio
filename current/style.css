@@ -30,9 +30,15 @@ body {
   -o-user-select: none;
   user-select: none;
 }
-.atom_icons{
-  fill: gray;
+
+svg #svg_atom_icons {
+  fill: #6B727D;
 }
+
+svg #svg_atom_icons:hover {
+  fill: #757C8A;
+}
+
 #panel_left {
   top: 25px;
   width: 15%;
@@ -125,6 +131,15 @@ body {
   user-select: none;
 }
 
+#treeview div svg {
+  vertical-align: middle;
+}
+
+#treeview div {
+  padding-top: 2px;
+  padding-bottom: 3px;
+}
+
 .lvl0 {
   margin-top: 20px;
   padding-left: 15px;
@@ -148,9 +163,21 @@ body {
   color: #D7DAE0;
 }
 
+.current_open svg path {
+  fill: #D7DAE0;
+}
+
 .current_focus {
   background-color: #4D78CC;
   color: #FFFFFF;
+}
+
+.current_focus svg path {
+  fill: #FFFFFF;
+}
+
+.treeview_span_elemName {
+  margin-left: 10px;
 }
 
 .hide {

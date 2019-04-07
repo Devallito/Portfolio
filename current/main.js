@@ -77,19 +77,35 @@ function recursiveTree(array) {
   return getChildren(roots, array);
 }
 
-function writeInDOM(anElement) {
+/*function writeInDOM(anElement) {
   let element = document.createElement("div");
   element.setAttribute("id", anElement.caption);
   element.setAttribute("tabindex", 0)
   element.setAttribute("class", anElement.type + " lvl" + (anElement.lvl));
   if(anElement.type === 'folder'){
-
-  element.innerHTML = "<img title='" + anElement.caption + "' class='atom_icons' src='./atom-icons/file-directory.svg'> " + anElement.caption;
+  element.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><path fill="#9DA5B4" fill-rule="evenodd" d="M13 4H7V3c0-.66-.31-1-1-1H1c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V5c0-.55-.45-1-1-1zM6 4H1V3h5v1z"/></svg>' + anElement.caption;
 }else if(anElement.type === 'file'){
   element.innerHTML = "<img title='" + anElement.caption + "' class='atom_icons' src='./atom-icons/file.svg'> " + anElement.caption;
-
 }
   document.getElementById("treeview").appendChild(element);
+}*/
+
+function writeInDOMRecursively(aList) {
+  let element = document.createElement("div");
+  element.setAttribute("id", aList.caption);
+  element.setAttribute("tabindex", 0)
+  element.setAttribute("class", aList.type + " lvl" + (aList.lvl));
+  if (aList.type === 'folder') {
+    element.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="16" viewBox="0 0 14 16"><title>' + aList.caption + '</title><path fill="#9DA5B4" fill-rule="evenodd" d="M13 4H7V3c0-.66-.31-1-1-1H1c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V5c0-.55-.45-1-1-1zM6 4H1V3h5v1z"/></svg><span class="treeview_span_elemName" title="' + aList.caption + '">' + aList.caption + '</span>';
+  } else if (aList.type === 'file') {
+    element.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16"><title>' + aList.caption + '</title><path fill="#9DA5B4" fill-rule="evenodd" d="M6 5H2V4h4v1zM2 8h7V7H2v1zm0 2h7V9H2v1zm0 2h7v-1H2v1zm10-7.5V14c0 .55-.45 1-1 1H1c-.55 0-1-.45-1-1V2c0-.55.45-1 1-1h7.5L12 4.5zM11 5L8 2H1v12h10V5z"/></svg><span class="treeview_span_elemName" title="' + aList.caption + '">' + aList.caption + '</span>';
+  }
+  document.getElementById("treeview").appendChild(element);
+  if (typeof aList.children !== "undefined") {
+    for (var i = 0; i < aList.children.length; i++) {
+      writeInDOMRecursively(aList.children[i]);
+    }
+  }
 }
 
 function getCorresponding(aCaption) {
@@ -146,11 +162,12 @@ function focusout_treeviewElement(event) {
   event.target.classList.remove("current_focus");
 }
 
-function charge_treeview(aList) {
-  //const listOrdered = recursiveTree(aList);
-  for (let i = 0; i < aList.length; i++) {
+function charge_treeview(aListToOrder) {
+  const listOrdered = recursiveTree(aListToOrder);
+  writeInDOMRecursively(listOrdered[0]);
+  /*for (let i = 0; i < aList.length; i++) {
     writeInDOM(aList[i]);
-  }
+  }*/
   let elements = document.getElementById("treeview").querySelectorAll("div.folder,div.file");
 
   for (let j = 0; j < elements.length; j++) {
