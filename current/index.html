@@ -5,30 +5,82 @@
   <meta charset="utf-8">
   <title>index.html - C:\Users\Alexandre\Documents\Portfolio - Atom</title>
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./codemirror-5.45.0/theme/dracula.css">
+  <link rel="stylesheet" href="./codemirror-5.45.0/theme/twilight.css">
+  <link rel="stylesheet" href="./codemirror-5.45.0/lib/codemirror.css">
 </head>
 
 <body onload="init();">
   <div id="barre_outil">
     <div class="title_barre_outil">
       File
+      <div tabindex="0" class="title_barre_outil_menu">
+        <div onclick="alert('te');">test</div>
+        <div onclick="alert('te');">test</div>
+        <div class="title_barre_outil_menu_separator"></div>
+        <div onclick="alert('te');">test</div>
+        <div onclick="alert('te');">test</div>
+      </div>
     </div>
     <div class="title_barre_outil">
       Edit
+      <div tabindex="0" class="title_barre_outil_menu">
+        <div>test</div>
+        <div>test</div>
+        <div class="title_barre_outil_menu_separator"></div>
+        <div>test</div>
+        <div>test</div>
+      </div>
     </div>
     <div class="title_barre_outil">
       View
+      <div tabindex="0" class="title_barre_outil_menu">
+        <div>test</div>
+        <div>test</div>
+        <div class="title_barre_outil_menu_separator"></div>
+        <div>test</div>
+        <div>test</div>
+      </div>
     </div>
     <div class="title_barre_outil">
       Selection
+      <div tabindex="0" class="title_barre_outil_menu">
+        <div>test</div>
+        <div>test</div>
+        <div class="title_barre_outil_menu_separator"></div>
+        <div>test</div>
+        <div>test</div>
+      </div>
     </div>
     <div class="title_barre_outil">
       Find
+      <div tabindex="0" class="title_barre_outil_menu">
+        <div>test</div>
+        <div>test</div>
+        <div class="title_barre_outil_menu_separator"></div>
+        <div>test</div>
+        <div>test</div>
+      </div>
     </div>
     <div class="title_barre_outil">
       Packages
+      <div tabindex="0" class="title_barre_outil_menu">
+        <div>test</div>
+        <div>test</div>
+        <div class="title_barre_outil_menu_separator"></div>
+        <div>test</div>
+        <div>test</div>
+      </div>
     </div>
     <div class="title_barre_outil">
       Help
+      <div tabindex="0" class="title_barre_outil_menu">
+        <div>test</div>
+        <div>test</div>
+        <div class="title_barre_outil_menu_separator"></div>
+        <div>test</div>
+        <div>test</div>
+      </div>
     </div>
   </div>
   <div class="">
@@ -60,6 +112,15 @@
     </div>
   </div>
 </body>
+<script src="./codemirror-5.45.0/lib/codemirror.js"></script>
+<script src="./codemirror-5.45.0/mode/javascript/javascript.js"></script>
+<script type="text/javascript">
+  var myCodeMirror = CodeMirror(document.getElementById("panel_right"), {
+  value: "function myScript(){return 100;}\n",
+  mode:  "javascript",
+  theme: "dracula twilight"
+});
+</script>
 <script type="text/javascript" src="./main.js"></script>
 
 </html>

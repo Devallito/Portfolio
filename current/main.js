@@ -210,3 +210,23 @@ treeview_list = [{
 }];
 
 charge_treeview(treeview_list);
+
+document.querySelectorAll(".title_barre_outil_menu").forEach(function(element) {
+  element.classList.add("hide");
+});
+
+document.querySelectorAll(".title_barre_outil").forEach(function(element) {
+  element.addEventListener("click", function() {
+    /*document.querySelectorAll(".title_barre_outil").forEach(function(element2) {
+    element2.querySelector(".title_barre_outil_menu").classList.add("hide");
+    });*/
+    element.querySelector(".title_barre_outil_menu").classList.remove("hide");
+    element.querySelector(".title_barre_outil_menu").focus();
+  });
+
+  element.addEventListener("focusout", function() {
+
+    element.querySelector(".title_barre_outil_menu").classList.add("hide");
+  });
+
+});

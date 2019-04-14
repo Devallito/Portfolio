@@ -89,9 +89,36 @@ svg #svg_atom_icons:hover {
 }
 
 .title_barre_outil {
-  margin: 2.5px 5px;
+  padding: 2.5px 5px;
   font-family: 'arcon regular';
 }
+
+.title_barre_outil:active {
+  background-color: #E0E0E0
+}
+
+.title_barre_outil_IsActive {
+  background-color: #E0E0E0
+}
+
+.title_barre_outil_menu {
+  position: absolute;
+  background-color: #FFFFFF;
+  margin-left: -5px;
+  margin-top: 3px;
+  padding-left: 4px;
+  border: 1px solid #E9E9E9;
+}
+
+.title_barre_outil_menu_separator {
+  margin-top: 3px;
+  border-top: 1px solid #E9E9E9;
+}
+
+.title_barre_outil_menu div {
+  padding: 1px 90px 1px 0;
+}
+
 
 #barre_footer {
   font-family: 'Consolas';
