@@ -66,6 +66,31 @@ svg #svg_atom_icons:hover {
   height: 97%;
   position: absolute;
 }
+#barre_nav {
+  background-color: #21252B;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  margin-left:-3px;
+}
+
+.barre_nav_tabs {
+  padding: 6px 0px;
+  background-color: #21252B;
+  border-right: 1px solid black;
+  border-collapse: collapse;
+  color: #9DA5B4;
+  width:20%;
+  max-width:220px;
+  min-width:120px;
+  text-align: center;
+}
+
+.barre_nav_tabs_currOpen {
+  background-color: #282C34;
+  border-bottom: none;
+  color: #FFFFFF;
+}
 
 #splitter {
   top: 25px;
