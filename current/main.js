@@ -146,21 +146,21 @@ function click_treeviewElement(event) {
     console.log(elements2);
     elements2[0].classList.remove("current_open");
   }
-  event.target.classList.add("current_open");
-  event.target.focus();
-  if (event.target.classList.contains("folder")) {
-    toggleFolder(event.target.id);
-
+  //event.target.classList.add("current_open");
+  //event.target.focus();
+  if (event.currentTarget.classList.contains("folder")) {
+    toggleFolder(event.currentTarget.id);
   }
 }
 
 function focus_treeviewElement(event) {
-  event.target.classList.add("current_focus");
+  event.currentTarget.classList.add("current_open","current_focus");
+
 }
 
 function focusout_treeviewElement(event) {
-  console.log("focusOut", event.target);
-  event.target.classList.remove("current_focus");
+  console.log("focusOut", event.currentTarget);
+  event.currentTarget.classList.remove("current_focus");
 }
 
 function charge_treeview(aListToOrder) {
@@ -191,7 +191,7 @@ treeview_list = [{
   caption: "Welcome",
   type: "noshow",
   path: "Welcome",
-  html: '<div class="Welcome_page_left">\r\n<h1>Développeur Full-Stack</h1>\r\n<h3><a href="">A hackable portfolio for the 21<sup>st</sup> Century</a></h3>\r\n<p>naviguer comme ide</p>\r\n</div>\r\n\r\n<div class="Welcome_page_right">\r\n<div class="Welcome_page_box"><span class="Welcome_page_box_icon">Lire </span>README.md</div>\r\n<div class="Welcome_page_box"><span class="Welcome_page_box_icon">Ouvrir </span>les fichiers</div>\r\n<div class="Welcome_page_box"><span class="Welcome_page_box_icon">Open </span>c</div>\r\n<div class="Welcome_page_box"><span class="Welcome_page_box_icon">Open </span>d</div>\r\n</div>'
+  html: '<div class="Welcome_page_left">\r\n<h1>Développeur Full-Stack</h1>\r\n<h3><a href="">A hackable portfolio for the 21<sup>st</sup> Century</a></h3>\r\n<p>Naviguez comme dans un IDE classique pour accéder<br> aux différentes informations de mon portfolio.</p><ul><li><a>ContactForm</a> pour me contacter rapidement</li><li><a>Mentions légales</a> pour s\'assurer que je respecte le RGPD</li></ul>\r\n</div>\r\n\r\n<div class="Welcome_page_right">\r\n<div class="Welcome_page_box"><span class="Welcome_page_box_icon">Lire </span>README.md</div>\r\n<div class="Welcome_page_box"><span class="Welcome_page_box_icon">Modifier </span>les fichiers</div>\r\n<div class="Welcome_page_box"><span class="Welcome_page_box_icon">Lancer </span>le serveur web</div>\r\n<div class="Welcome_page_box"><span class="Welcome_page_box_icon">Contempler </span>le résultat</div>\r\n</div>'
 }, {
   PId: -1,
   Id: 1,
@@ -230,7 +230,7 @@ treeview_list = [{
   lvl: 2,
   caption: "style.css",
   type: "file",
-  path: "css\style.css",
+  path: "css\\style.css",
   html: ""
 }];
 

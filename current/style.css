@@ -1,6 +1,7 @@
-*{
-  outline:0;
+* {
+  outline: 0;
 }
+
 @font-face {
   font-family: 'Menlo Regular';
   font-style: normal;
@@ -242,13 +243,13 @@ svg #svg_atom_icons:hover {
 }
 
 /*CSS PAGES*/
-
 #Welcome_page {
   background-color: #282C34;
   width: 80%;
   height: 80%;
   padding: 10%;
   color: #9DA5B4;
+  display: flex;
 }
 
 #Welcome_page h1 {
@@ -256,39 +257,43 @@ svg #svg_atom_icons:hover {
   color: white;
 }
 
-#Welcome_page h3 a {
+#Welcome_page p {
+  margin-top: 50px;
+  font-size: 14px;
+}
+#Welcome_page ul{
+  font-size: 14px;
+}
+#Welcome_page a {
   color: #6494ED;
   text-decoration: none;
 }
 
-#Welcome_page h3 a:hover {
+#Welcome_page a:hover {
   text-decoration: underline;
 }
-
 #Welcome_page_title {
   font-weight: 900;
   font-size: 18px;
 }
 
-.Welcome_page_left {
-  float: left;
-}
+.Welcome_page_left {}
 
 .Welcome_page_right {
-  float: right;
+  margin-left: 80px;
 }
 
 .Welcome_page_box {
   background-color: #2F333D;
   border: 1px solid black;
   border-radius: 5px;
-  margin-top: 10px;
+  margin-top: 20px;
   text-align: left;
   padding-top: 5px;
   padding-left: 15px;
   vertical-align: middle;
   height: 30px;
-  width: 170px;
+  width: 220px;
   cursor: pointer;
   color: #D7DAE0;
 }
