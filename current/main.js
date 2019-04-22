@@ -49,7 +49,7 @@ var passiveSupported = false;
 
 try {
   var options = Object.defineProperty({}, "passive", {
-    get: function() {
+    get: function () {
       passiveSupported = true;
     }
   });
@@ -154,7 +154,7 @@ function click_treeviewElement(event) {
 }
 
 function focus_treeviewElement(event) {
-  event.currentTarget.classList.add("current_open","current_focus");
+  event.currentTarget.classList.add("current_open", "current_focus");
 
 }
 
@@ -191,7 +191,7 @@ treeview_list = [{
   caption: "Welcome",
   type: "noshow",
   path: "Welcome",
-  html: '<div class="Welcome_page_left">\r\n<h1>Développeur Full-Stack</h1>\r\n<h3><a href="">A hackable portfolio for the 21<sup>st</sup> Century</a></h3>\r\n<p>Naviguez comme dans un IDE classique pour accéder<br> aux différentes informations de mon portfolio.</p><ul><li><a>ContactForm</a> pour me contacter rapidement</li><li><a>Mentions légales</a> pour s\'assurer que je respecte le RGPD</li></ul>\r\n</div>\r\n\r\n<div class="Welcome_page_right">\r\n<div class="Welcome_page_box"><span class="Welcome_page_box_icon">Lire </span>README.md</div>\r\n<div class="Welcome_page_box"><span class="Welcome_page_box_icon">Modifier </span>les fichiers</div>\r\n<div class="Welcome_page_box"><span class="Welcome_page_box_icon">Lancer </span>le serveur web</div>\r\n<div class="Welcome_page_box"><span class="Welcome_page_box_icon">Contempler </span>le résultat</div>\r\n</div>'
+  html: '<div class="Welcome_page_left">\r\n<h1>Développeur Full-Stack</h1>\r\n<h3><a href="">A hackable portfolio for the 21<sup>st</sup> Century</a></h3>\r\n<p>Naviguez comme dans un IDE classique pour accéder<br> aux différentes informations de mon portfolio.</p><ul><li><a>ContactForm</a> pour me contacter rapidement</li><li><a>Mentions légales</a> pour s\'assurer que je respecte le RGPD</li></ul>\r\n</div>\r\n\r\n<div class="Welcome_page_right">\r\n<div class="Welcome_page_box" onclick="this.classList.toggle(\'showInsidePanel\');"><span class="Welcome_page_box_icon">Lire </span>README.md</div>\r\n<div class="insidePanel">z5</div>\r\n<div class="Welcome_page_box" onclick="this.classList.toggle(\'showInsidePanel\');"><span class="Welcome_page_box_icon">Modifier </span>les fichiers</div>\r\n<div class="insidePanel">z5</div>\r\n<div class="Welcome_page_box" onclick="this.classList.toggle(\'showInsidePanel\');"><span class="Welcome_page_box_icon">Lancer </span>le serveur web</div>\r\n<div class="insidePanel">z5</div>\r\n<div class="Welcome_page_box" onclick="this.classList.toggle(\'showInsidePanel\');"><span class="Welcome_page_box_icon">Contempler </span>le résultat</div>\r\n<div class="insidePanel">z5</div>\r\n</div>'
 }, {
   PId: -1,
   Id: 1,
@@ -236,12 +236,12 @@ treeview_list = [{
 
 charge_treeview(treeview_list);
 
-document.querySelectorAll(".title_barre_outil_menu").forEach(function(element) {
+document.querySelectorAll(".title_barre_outil_menu").forEach(function (element) {
   element.classList.add("hide");
 });
 
-document.querySelectorAll(".title_barre_outil").forEach(function(element) {
-  element.addEventListener("click", function() {
+document.querySelectorAll(".title_barre_outil").forEach(function (element) {
+  element.addEventListener("click", function () {
     /*document.querySelectorAll(".title_barre_outil").forEach(function(element2) {
     element2.querySelector(".title_barre_outil_menu").classList.add("hide");
     });*/
@@ -249,7 +249,7 @@ document.querySelectorAll(".title_barre_outil").forEach(function(element) {
     element.querySelector(".title_barre_outil_menu").focus();
   });
 
-  element.addEventListener("focusout", function() {
+  element.addEventListener("focusout", function () {
 
     element.querySelector(".title_barre_outil_menu").classList.add("hide");
   });
@@ -257,15 +257,36 @@ document.querySelectorAll(".title_barre_outil").forEach(function(element) {
 });
 
 function getPath(aCaption) {
-  return treeview_list.find(function(anElement) {
+  return treeview_list.find(function (anElement) {
     return aCaption === anElement.caption;
   }).path;
 }
 
+function getExtension(aCaption) {
+  let result = treeview_list.find(function (anElement) {
+    return aCaption === anElement.caption;
+  }).caption.split("").reverse().join("");
+
+  if (result.indexOf(".") !== -1) {
+    document.getElementById("encPage_footer").innerText = "UTF-8";
+    document.getElementById("wcrPage_footer").innerText = "CRLF";
+    if (result.slice(0, 3) === "dm.") {
+      return "GitHub Markdown";
+    } else {
+      return result.slice(0, result.indexOf(".")).split("").reverse().join("");
+    }
+  } else {
+    document.getElementById("encPage_footer").innerText = "";
+    document.getElementById("wcrPage_footer").innerText = "";
+    return "";
+  }
+}
+
 function openInTab(idNodeToOpen) {
   let nameFile = idNodeToOpen;
-  document.getElementById("namePage_footer").innerText = getPath(nameFile); //set path
-  document.getElementsByName("navtabs").forEach(function(aTab) {
+  document.getElementById("namePage_footer").innerText = getPath(nameFile);
+  document.getElementById("extPage_footer").innerText = getExtension(nameFile);
+  document.getElementsByName("navtabs").forEach(function (aTab) {
     aTab.classList.remove("barre_nav_tabs_currOpen");
   });
   let currTab = document.getElementById(nameFile + "_tab");
@@ -285,7 +306,7 @@ function openInTab(idNodeToOpen) {
 }
 
 function createTab(anId) {
-  let result = treeview_list.find(function(anItem) {
+  let result = treeview_list.find(function (anItem) {
     return anItem.caption === anId;
   });
 
@@ -299,17 +320,88 @@ function createTab(anId) {
 }
 
 function showTab(anId) {
-  document.getElementsByName("pageTab").forEach(function(aPage) {
+  document.getElementsByName("pageTab").forEach(function (aPage) {
     if (aPage.id === anId + "_page") {
-      aPage.classList.remove("hide");
+      aPage.style.display = "";
     } else {
-      aPage.classList.add("hide");
+      aPage.style.display = "none";
     }
   });
 }
 
 openInTab("Welcome"); //init with welcome page
 
-document.getElementById("panel_left").addEventListener("hover", function() {
-  //show hidingpanelbutton
-})
+let show_reducer = function (elem) {
+  elem.style.display = "block";
+  window.setTimeout(function () {
+    elem.classList.add('is-visible'); // Make the element visible
+  }, 0.50);
+};
+
+let hide_reducer = function (elem) {
+  elem.classList.remove('is-visible');
+  window.setTimeout(function () {
+    elem.style.display = "none";
+  }, 50);
+};
+
+document.getElementById("panel_left").addEventListener("mouseover", function () {
+  show_reducer(document.querySelector(".reducer_btn"));
+});
+document.getElementById("panel_left").addEventListener("mouseleave", function () {
+  hide_reducer(document.querySelector(".reducer_btn"));
+});
+let callback_show_augmenter = function (event) {
+  let show_reducer = function (elem) {
+    elem.style.display = "block";
+    window.setTimeout(function () {
+      elem.classList.add('is-visible2'); // Make the element visible
+    }, 0.50);
+  };
+
+  let hide_reducer = function (elem) {
+    elem.classList.remove('is-visible2');
+    window.setTimeout(function () {
+      elem.style.display = "none";
+    }, 50);
+  };
+  if (event.clientX < 50) {
+    if (document.getElementById("augmenter_btn").style.display !== "block") {
+      show_reducer(document.getElementById("augmenter_btn"));
+    }
+  } else {
+    if (document.getElementById("augmenter_btn").style.display !== "none") {
+      hide_reducer(document.getElementById("augmenter_btn"));
+    }
+  }
+}
+
+function reduce_panel() {
+  document.getElementById("panel_left").style.display = "none";
+  document.getElementById("splitter").style.display = "none";
+  document.getElementById("panel_right").style["margin-left"] = "";
+  document.getElementById("panel_right").style.width = "100%";
+  //create div here
+  let augmenter = document.createElement("div");
+  augmenter.setAttribute("id", "augmenter_btn");
+  augmenter.setAttribute("class", "augmenter_btn");
+  augmenter.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="8" height="16" viewBox="0 0 8 16"><path fill="#9da5b4" fill-rule="evenodd" d="M7.5 8l-5 5L1 11.5 4.75 8 1 4.5 2.5 3l5 5z"/></svg>';
+  augmenter.setAttribute("onclick", "augment_panel()");
+  document.body.appendChild(augmenter);
+
+  document.addEventListener("mousemove", callback_show_augmenter, passiveSupported ? {
+    passive: true
+  } : false);
+}
+
+function augment_panel() {
+  document.removeEventListener("mousemove", callback_show_augmenter, passiveSupported ? {
+    passive: true
+  } : false);
+  document.getElementById("panel_left").style.display = "";
+  document.getElementById("splitter").style.display = "";
+  document.getElementById("panel_right").style["margin-left"] = "";
+  document.getElementById("panel_right").style.width = "";
+  init();
+  document.body.removeChild(document.getElementById("augmenter_btn"));
+}

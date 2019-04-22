@@ -83,14 +83,29 @@ svg #svg_atom_icons:hover {
 .barre_nav_tabs {
   padding: 6px 0px;
   background-color: #21252B;
-  border-right: 1px solid black;
-  border-bottom: 1px solid black;
+  border-right: 1px solid #181A1F;
+  border-bottom: 1px solid #181A1F;
   border-collapse: collapse;
   color: #9DA5B4;
   width: 20%;
   max-width: 220px;
   min-width: 120px;
   text-align: center;
+}
+
+.barre_nav_tabs:hover:after {
+  float: right;
+  right: 0;
+  position: absolute;
+  content: "X";
+  color: #9DA5B4;
+}
+
+.barre_nav_tabs_currOpen:hover:after {
+  float: right;
+  position: absolute;
+  content: "X";
+  color: white;
 }
 
 .barre_nav_tabs_currOpen {
@@ -178,6 +193,15 @@ svg #svg_atom_icons:hover {
   margin-right: 15px;
 }
 
+.barre_footer_insideRightElem a {
+  text-decoration: none;
+  color: #9DA5B4;
+}
+
+.barre_footer_insideRightElem svg {
+  vertical-align: text-bottom;
+}
+
 #treeview {
   width: 100%;
   cursor: default;
@@ -243,6 +267,7 @@ svg #svg_atom_icons:hover {
 }
 
 /*CSS PAGES*/
+
 #Welcome_page {
   background-color: #282C34;
   width: 80%;
@@ -261,17 +286,21 @@ svg #svg_atom_icons:hover {
   margin-top: 50px;
   font-size: 14px;
 }
-#Welcome_page ul{
+
+#Welcome_page ul {
   font-size: 14px;
 }
+
 #Welcome_page a {
   color: #6494ED;
   text-decoration: none;
 }
 
 #Welcome_page a:hover {
+  cursor: pointer;
   text-decoration: underline;
 }
+
 #Welcome_page_title {
   font-weight: 900;
   font-size: 18px;
@@ -300,4 +329,83 @@ svg #svg_atom_icons:hover {
 
 .Welcome_page_box_icon {
   color: #717784;
+}
+
+.reducer_btn {
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  z-index: 2;
+  color: gray;
+  background-color: #21252B;
+  border-radius: 0 25px 25px 0;
+  height: 15px;
+  width: 5px;
+  border: 1px solid;
+  border-color: #21252B;
+  border-left: none;
+  display: none;
+  -webkit-transition: height 0.2s, width 0.2s, border-color 0.2s, right 0.2s;
+  -o-transition: height 0.2s, width 0.2s, border-color 0.2s, right 0.2s;
+  transition: height 0.2s, width 0.2s, border-color 0.2s, right 0.2s;
+}
+
+.reducer_btn svg,
+.augmenter_btn svg {
+  position: absolute;
+  left: 8px;
+  top: 15px;
+}
+
+.augmenter_btn {
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  z-index: 2;
+  color: gray;
+  background-color: #21252B;
+  border-radius: 0 25px 25px 0;
+  height: 15px;
+  width: 5px;
+  border: 1px solid black;
+  border-left: none;
+  display: none;
+  -webkit-transition: height 0.2s, width 0.2s, left 0.2s;
+  -o-transition: height 0.2s, width 0.2s, left 0.2s;
+  transition: height 0.2s, width 0.2s, left 0.2s;
+}
+
+.is-visible {
+  width: 25px;
+  display: block;
+  right: -25px;
+  height: 48px;
+  border-color: #181A1F;
+  border-left: none;
+}
+
+.is-visible2 {
+  width: 25px;
+  display: block;
+  left: 0px;
+  height: 48px;
+}
+.showInsidePanel+.insidePanel {
+  display: block;
+}
+
+.insidePanel {
+  display: none;
+  background-color: #2F333D;
+  border: 1px solid black;
+  border-radius: 5px;
+  border-top: none;
+  text-align: left;
+  padding-top: 5px;
+  padding-left: 15px;
+  vertical-align: middle;
+  height: 30px;
+  width: 220px;
+  cursor: default;
+  color: #D7DAE0;
 }
