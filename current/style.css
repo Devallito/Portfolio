@@ -93,7 +93,7 @@ svg #svg_atom_icons:hover {
   text-align: center;
 }
 
-.barre_nav_tabs:hover:after {
+/*.barre_nav_tabs:hover:after {
   float: right;
   right: 0;
   position: absolute;
@@ -106,7 +106,7 @@ svg #svg_atom_icons:hover {
   position: absolute;
   content: "X";
   color: white;
-}
+}*/
 
 .barre_nav_tabs_currOpen {
   background-color: #282C34;
@@ -153,19 +153,28 @@ svg #svg_atom_icons:hover {
   background-color: #FFFFFF;
   margin-left: -5px;
   margin-top: 3px;
-  padding-left: 4px;
+
   border: 1px solid #E9E9E9;
 }
 
 .title_barre_outil_menu_separator {
-  margin-top: 3px;
+
   border-top: 1px solid #E9E9E9;
 }
+.barre_content {
+  padding: 3px 90px 3px 10px;
 
-.title_barre_outil_menu div {
-  padding: 1px 90px 1px 0;
+
 }
-
+.barre_content span{
+  padding: 8px 90px 8px 10px;
+}
+.barre_content:hover {
+  background-color: #E0E0E0;
+}
+.barre_content_disabled{
+  color : gray;
+}
 #barre_footer {
   font-family: 'Consolas';
   font-size: 12px;
@@ -403,9 +412,14 @@ svg #svg_atom_icons:hover {
   text-align: left;
   padding-top: 5px;
   padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
   vertical-align: middle;
-  height: 30px;
-  width: 220px;
+  width: 205px;
   cursor: default;
   color: #D7DAE0;
+  font-size: 12px;
+}
+#README{
+  background-color:#e6E6E6;
 }

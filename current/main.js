@@ -92,7 +92,11 @@ function recursiveTree(array) {
 
 function writeInDOMRecursively(aList) {
   let element = document.createElement("div");
-  element.setAttribute("id", aList.caption);
+  let idToSet = aList.caption;
+  if(idToSet.indexOf(".")!== -1){
+  idToSet=  idToSet.substring(0,idToSet.indexOf("."))
+  }
+  element.setAttribute("id",idToSet );
   element.setAttribute("tabindex", 0)
   element.setAttribute("class", aList.type + " lvl" + (aList.lvl));
   if (aList.type === 'folder') {
@@ -110,11 +114,18 @@ function writeInDOMRecursively(aList) {
 }
 
 function getCorresponding(aCaption) {
+  let captionToCheck;
   for (let i = 0; i < treeview_list.length; i++) {
-    if (treeview_list[i].caption === aCaption) {
-      return treeview_list[i];
+     captionToCheck =treeview_list[i].caption;
+    if(captionToCheck.indexOf(".")!== -1){
+      captionToCheck=captionToCheck.substring(0,captionToCheck.indexOf("."));
     }
-  }
+      console.log(captionToCheck);
+      if (captionToCheck === aCaption) {
+        return treeview_list[i];
+      }
+    }
+  
   return;
 }
 
@@ -191,7 +202,7 @@ treeview_list = [{
   caption: "Welcome",
   type: "noshow",
   path: "Welcome",
-  html: '<div class="Welcome_page_left">\r\n<h1>Développeur Full-Stack</h1>\r\n<h3><a href="">A hackable portfolio for the 21<sup>st</sup> Century</a></h3>\r\n<p>Naviguez comme dans un IDE classique pour accéder<br> aux différentes informations de mon portfolio.</p><ul><li><a>ContactForm</a> pour me contacter rapidement</li><li><a>Mentions légales</a> pour s\'assurer que je respecte le RGPD</li></ul>\r\n</div>\r\n\r\n<div class="Welcome_page_right">\r\n<div class="Welcome_page_box" onclick="this.classList.toggle(\'showInsidePanel\');"><span class="Welcome_page_box_icon">Lire </span>README.md</div>\r\n<div class="insidePanel">z5</div>\r\n<div class="Welcome_page_box" onclick="this.classList.toggle(\'showInsidePanel\');"><span class="Welcome_page_box_icon">Modifier </span>les fichiers</div>\r\n<div class="insidePanel">z5</div>\r\n<div class="Welcome_page_box" onclick="this.classList.toggle(\'showInsidePanel\');"><span class="Welcome_page_box_icon">Lancer </span>le serveur web</div>\r\n<div class="insidePanel">z5</div>\r\n<div class="Welcome_page_box" onclick="this.classList.toggle(\'showInsidePanel\');"><span class="Welcome_page_box_icon">Contempler </span>le résultat</div>\r\n<div class="insidePanel">z5</div>\r\n</div>'
+  html: '<div class="Welcome_page_left">\r\n<h1>Développeur Full-Stack</h1>\r\n<h3><a href="">A hackable portfolio for the 21<sup>st</sup> Century</a></h3>\r\n<p>Le portfolio n\'est pas terminé à 100%, il manque encore quelques fonctionnalités.<br>Naviguez comme dans un IDE classique pour accéder<br> aux différentes informations de mon portfolio.</p><ul><!--<li><a>ContactForm</a> pour me contacter rapidement</li>--><li><a>Mentions légales</a> pour s\'assurer que je respecte le RGPD</li></ul>\r\n</div>\r\n\r\n<div class="Welcome_page_right">\r\n<div class="Welcome_page_box" onclick="this.classList.toggle(\'showInsidePanel\');"><span class="Welcome_page_box_icon">Lire </span>README.md</div>\r\n<div class="insidePanel">Pour comprendre ce portfolio et être sûr de ne rien rater.</div>\r\n<div class="Welcome_page_box" onclick="this.classList.toggle(\'showInsidePanel\');"><span class="Welcome_page_box_icon">Modifier </span>les fichiers</div>\r\n<div class="insidePanel">Comme dans un IDE classique.</div>\r\n<div class="Welcome_page_box" onclick="this.classList.toggle(\'showInsidePanel\');"><span class="Welcome_page_box_icon">Lancer </span>le serveur web</div>\r\n<div class="insidePanel">Packages -> Lancer le serveur web</div>\r\n<div class="Welcome_page_box" onclick="this.classList.toggle(\'showInsidePanel\');"><span class="Welcome_page_box_icon">Contempler </span>le résultat</div>\r\n<div class="insidePanel">Rien de plus à ajouter.</div>\r\n</div>'
 }, {
   PId: -1,
   Id: 1,
@@ -207,7 +218,7 @@ treeview_list = [{
   caption: "README.md",
   type: "file",
   path: "README.md",
-  html: ""
+  html: "<textarea style='README_page'></textarea>"
 }, {
   PId: 1,
   Id: 3,
@@ -404,4 +415,8 @@ function augment_panel() {
   document.getElementById("panel_right").style.width = "";
   init();
   document.body.removeChild(document.getElementById("augmenter_btn"));
+}
+
+function Packages_launchServer(){
+  window.location.href="https://alexandrebonvalle.fr/server/";
 }
