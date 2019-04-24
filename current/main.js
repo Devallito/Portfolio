@@ -125,7 +125,7 @@ function getCorresponding(aCaption) {
         return treeview_list[i];
       }
     }
-  
+
   return;
 }
 
@@ -202,7 +202,7 @@ treeview_list = [{
   caption: "Welcome",
   type: "noshow",
   path: "Welcome",
-  html: '<div class="Welcome_page_left">\r\n<h1>Développeur Full-Stack</h1>\r\n<h3><a href="">A hackable portfolio for the 21<sup>st</sup> Century</a></h3>\r\n<p>Le portfolio n\'est pas terminé à 100%, il manque encore quelques fonctionnalités.<br>Naviguez comme dans un IDE classique pour accéder<br> aux différentes informations de mon portfolio.</p><ul><!--<li><a>ContactForm</a> pour me contacter rapidement</li>--><li><a>Mentions légales</a> pour s\'assurer que je respecte le RGPD</li></ul>\r\n</div>\r\n\r\n<div class="Welcome_page_right">\r\n<div class="Welcome_page_box" onclick="this.classList.toggle(\'showInsidePanel\');"><span class="Welcome_page_box_icon">Lire </span>README.md</div>\r\n<div class="insidePanel">Pour comprendre ce portfolio et être sûr de ne rien rater.</div>\r\n<div class="Welcome_page_box" onclick="this.classList.toggle(\'showInsidePanel\');"><span class="Welcome_page_box_icon">Modifier </span>les fichiers</div>\r\n<div class="insidePanel">Comme dans un IDE classique.</div>\r\n<div class="Welcome_page_box" onclick="this.classList.toggle(\'showInsidePanel\');"><span class="Welcome_page_box_icon">Lancer </span>le serveur web</div>\r\n<div class="insidePanel">Packages -> Lancer le serveur web</div>\r\n<div class="Welcome_page_box" onclick="this.classList.toggle(\'showInsidePanel\');"><span class="Welcome_page_box_icon">Contempler </span>le résultat</div>\r\n<div class="insidePanel">Rien de plus à ajouter.</div>\r\n</div>'
+  html: '<div class="Welcome_page_left">\r\n<h1>Développeur Full-Stack</h1>\r\n<h3><a href="">A hackable portfolio for the 21<sup>st</sup> Century</a></h3>\r\n<p>Le portfolio n\'est pas terminé à 100%, il manque encore quelques fonctionnalités.<br>Naviguez comme dans un IDE classique pour accéder<br> aux différentes informations de mon portfolio.</p><ul><li><a href="./contact.html">ContactForm</a> pour me contacter rapidement</li><li><a href="./mentions.html">Mentions légales</a> pour s\'assurer que je respecte le RGPD</li></ul>\r\n</div>\r\n\r\n<div class="Welcome_page_right">\r\n<div class="Welcome_page_box" onclick="this.classList.toggle(\'showInsidePanel\');"><span class="Welcome_page_box_icon">Lire </span>README.md</div>\r\n<div class="insidePanel">Pour comprendre ce portfolio et être sûr de ne rien rater.</div>\r\n<div class="Welcome_page_box" onclick="this.classList.toggle(\'showInsidePanel\');"><span class="Welcome_page_box_icon">Modifier </span>les fichiers</div>\r\n<div class="insidePanel">Comme dans un IDE classique.</div>\r\n<div class="Welcome_page_box" onclick="this.classList.toggle(\'showInsidePanel\');"><span class="Welcome_page_box_icon">Lancer </span>le serveur web</div>\r\n<div class="insidePanel">Packages -> Lancer le serveur web</div>\r\n<div class="Welcome_page_box" onclick="this.classList.toggle(\'showInsidePanel\');"><span class="Welcome_page_box_icon">Contempler </span>le résultat</div>\r\n<div class="insidePanel">Rien de plus à ajouter.</div>\r\n</div>'
 }, {
   PId: -1,
   Id: 1,
