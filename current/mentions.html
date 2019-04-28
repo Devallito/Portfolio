@@ -1,233 +1,425 @@
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Contact Form - alexandrebonvalle.fr</title>
-    <style media="screen">
-    *{
+
+<head>
+  <meta charset="utf-8">
+  <title>Contact Form - alexandrebonvalle.fr</title>
+  <style media="screen">
+    * {
       cursor: none;
     }
+
     html {
-    height: 98%;
-  }
-
-  body {
-    background: url(https://i.ytimg.com/vi/JquobII5VjA/maxresdefault.jpg);
-    background-size: cover;
-    position: relative;
-    height: 100%;
-    font-family: 'Open Sans', sans serif;
-  }
-
-  #starwars {
-    position: relative;
-    height: 100%;
-    width: 100%;
-  }
-
-  .animate .intro {
-    font-size: 250%;
-    color: #19A3C8;
-    width: 578px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: intro 5s linear 0s;
-    opacity: 0;
-  }
-  .animate .logo {
-    position: absolute;
-    width: 0;
-    height: auto;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: logo  10s linear 5s;
-    opacity: 0;
-  }
-  .animate #reel {
-    width: 580px;
-    margin-left: -290px;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    height: 100em;
-    overflow: hidden;
-    transform: perspective(255px) rotateX(30deg);
-    transform-origin: 50% 100%;
-    color: #FFEC01;
-    font-weight: bold;
-    font-size: 250%;
-    text-align: justify;
-  }
-  .animate #reel div {
-    position: absolute;
-    top: 100%;
-    animation: reel 53s linear 12s;
-  }
-  .animate #reel div p {
-    line-height: 1.5em;
-    margin-top: 50px;
-  }
-  .animate #reel div p:first-child {
-    margin-top: 0;
-  }
-  .animate #reel div h1, .animate #reel div h2 {
-    text-align: center;
-    margin-bottom: 25px;
-  }
-  .animate #reel div h1{
-    font-size: 180%;
-  }
-  .animate button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 999;
-    font-size: 50px;
-    background: none;
-    border: 0;
-    font-weight: bold;
-    color: #FFEC01;
-    opacity: 1;
-    animation: reset  66s linear;
-  }
-
-  @keyframes reel {
-    0% {
-      top: 100%;
-      opacity: 1;
+      height: 98%;
     }
-    95% {
-      opacity: 1;
+
+    body {
+      background: url(https://i.ytimg.com/vi/JquobII5VjA/maxresdefault.jpg);
+      background-size: cover;
+      position: relative;
+      height: 100%;
+      font-family: 'Open Sans', sans serif;
     }
-    100% {
+
+    #starwars {
+      position: relative;
+      height: 100%;
+      width: 100%;
+    }
+
+    .animate .intro {
+      font-size: 250%;
+      color: #19A3C8;
+      width: 578px;
+      position: absolute;
       top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: intro 5s linear 0s;
       opacity: 0;
     }
-  }
-  @keyframes intro {
-    0% {
-      opacity: 0;
-    }
-    20% {
-      opacity: 1;
-    }
-    80% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-  @keyframes logo {
-    0% {
-      width: 300px;
-      opacity: 1;
-    }
-    10% {
-      width: 300px;
-      opacity: 1;
-    }
-    15% {
-      width: 300px;
-    }
-    90% {
-      width: 10px;
-      opacity: 1;
-    }
-    100% {
+
+    .animate .logo {
+      position: absolute;
       width: 0;
+      height: auto;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: logo 10s linear 5s;
       opacity: 0;
     }
-  }
-  @keyframes reset {
-    0% {
-      opacity: 0;
+
+    .animate #reel {
+      width: 580px;
+      margin-left: -290px;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      height: 100em;
+      overflow: hidden;
+      transform: perspective(255px) rotateX(30deg);
+      transform-origin: 50% 100%;
+      color: #FFEC01;
+      font-weight: bold;
+      font-size: 250%;
+      text-align: justify;
     }
-    99% {
-      opacity: 0;
+
+    .animate #reel div {
+      position: absolute;
+      top: 100%;
+      animation: reel 53s linear 12s;
     }
-    100% {
+
+    .animate #reel div p {
+      line-height: 1.5em;
+      margin-top: 50px;
+    }
+
+    .animate #reel div p:first-child {
+      margin-top: 0;
+    }
+
+    .animate #reel div h1,
+    .animate #reel div h2 {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .animate #reel div h1 {
+      font-size: 180%;
+    }
+
+    .animate button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 999;
+      font-size: 50px;
+      background: none;
+      border: 0;
+      font-weight: bold;
+      color: #FFEC01;
       opacity: 1;
-      display: block;
+      animation: reset 66s linear;
     }
-  }
-.btnRetour{
-  position: absolute;
-  z-index: 999;
-  left:15px;
-  top:15px;
-  font-size: 38px;
-  color:rgba(255,255,255,0.2);
-}
-.btnRetour:hover{
-  color:rgba(255,255,255,0.8);
-}
-.btnSeeList{
-  position: absolute;
-  z-index: 999;
-  right:15px;
-  bottom:15px;
-  font-size: 38px;
-  color:rgba(255,255,255,0.2);
-}
-.btnSeeList:hover{
-  color:rgba(255,255,255,0.8);
-}
-#cursor{
-  position: absolute;
-  z-index: 99;
-  height:16px;
-  width:16px;
-}
-    </style>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  </head>
-  <body>
-<div class="btnRetour">
-<i title="Je comprends..." class="far fa-arrow-alt-circle-left"></i>
-</div>
-<div class="btnSeeList">
-<i title="Voir les mentions légales version moche et chiante" class="fas fa-eye"></i>
-</div>
-<div id="cursor">
-  <img height="48px" width="48px" src="./images/millenium_falcon.png" alt="cursor">
-</div>
-    <div id="starwars" class="animate">
-      <p class="intro">
-        A long time ago, in a galaxy far, far away...
-      </p>
-      <img src="./images/mentions-logo.png" class="logo" />
-      <div id="reel">
-        <div class="content">
-          <h1>Episode MMXVI/DCLXXIX</h1>
-          <h2>THE STRIKE OF THE RGPD</h2>
-          <p>It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.</p>
 
-          <p>During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet.</p>
+    @keyframes reel {
+      0% {
+        top: 100%;
+        opacity: 1;
+      }
 
-          <p>Pursued by the Empire's sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy....</p>
-        </div>
+      95% {
+        opacity: 1;
+      }
+
+      100% {
+        top: 50%;
+        opacity: 0;
+      }
+    }
+
+    @keyframes intro {
+      0% {
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 1;
+      }
+
+      80% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes logo {
+      0% {
+        width: 300px;
+        opacity: 1;
+      }
+
+      10% {
+        width: 300px;
+        opacity: 1;
+      }
+
+      15% {
+        width: 300px;
+      }
+
+      90% {
+        width: 10px;
+        opacity: 1;
+      }
+
+      100% {
+        width: 0;
+        opacity: 0;
+      }
+    }
+
+    @keyframes reset {
+      0% {
+        opacity: 0;
+      }
+
+      99% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+        display: block;
+      }
+    }
+
+    .btnRetour {
+      position: absolute;
+      z-index: 999;
+      left: 15px;
+      top: 15px;
+      font-size: 38px;
+      color: rgba(255, 255, 255, 0.2);
+    }
+
+    .btnRetour:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .btnSeeList {
+      position: absolute;
+      z-index: 999;
+      right: 15px;
+      bottom: 15px;
+      font-size: 38px;
+      color: rgba(255, 255, 255, 0.2);
+    }
+
+    .btnSeeList:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    #cursor {
+      position: absolute;
+      z-index: 99;
+      height: 16px;
+      width: 16px;
+    }
+
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+  <canvas id=c></canvas>
+  <div class="btnRetour" onclick="window.location.href='https://alexandrebonvalle.fr';">
+    <i title="Je comprends..." class="far fa-arrow-alt-circle-left"></i>
+  </div>
+  <div class="btnSeeList">
+    <i title="Voir les mentions légales version moche et chiante" class="fas fa-eye"></i>
+  </div>
+  <div id="cursor">
+    <img height="48px" width="48px" src="./images/millenium_falcon.png" alt="cursor">
+  </div>
+  <div id="starwars" class="animate">
+    <p class="intro">
+      A long time ago, in a galaxy far, far away...
+    </p>
+    <img src="./images/mentions-logo.png" class="logo" />
+    <div id="reel">
+      <div class="content">
+        <h1>Episode MMXVI/DCLXXIX</h1>
+        <h2>THE STRIKE OF THE RGPD</h2>
+        <p>It is a period of civil war. Rebel spaceships, striking from a hidden base, have won their first victory against the evil Galactic Empire.</p>
+
+        <p>During the battle, Rebel spies managed to steal secret plans to the Empire's ultimate weapon, the DEATH STAR, an armored space station with enough power to destroy an entire planet.</p>
+
+        <p>Pursued by the Empire's sinister agents, Princess Leia races home aboard her starship, custodian of the stolen plans that can save her people and restore freedom to the galaxy....</p>
       </div>
-
-      <audio src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/244725/MainTitle.ogg" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4500)">
-      </audio>
-
-      <button onclick="var elm = document.getElementById('starwars');var newone = elm.cloneNode(true);elm.parentNode.replaceChild(newone, elm);">Restart</button>
     </div>
-    <script type="text/javascript">
-      document.addEventListener("mousemove",function(event){
-        console.log(event);
-        document.getElementById("cursor").style.top=event.clientY-24+"px";
-        document.getElementById("cursor").style.left=event.clientX-24+"px";
-      })
-      document.addEventListener("click",function(event){
-        // VOIR CODEPEN :https://codepen.io/towc/pen/raYJzx
-      })
-    </script>
-  </body>
+
+    <audio src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/244725/MainTitle.ogg" onloadeddata="var audioPlayer = this; setTimeout(function() { audioPlayer.play(); }, 4500)">
+    </audio>
+
+    <button onclick="var elm = document.getElementById('starwars');var newone = elm.cloneNode(true);elm.parentNode.replaceChild(newone, elm);">Restart</button>
+  </div>
+  <script type="text/javascript">
+    document.addEventListener("mousemove", function(event) {
+      console.log(event);
+      document.getElementById("cursor").style.top = event.clientY - 24 + "px";
+      document.getElementById("cursor").style.left = event.clientX - 24 + "px";
+    })
+    var w = c.width = window.innerWidth,
+      h = c.height = window.innerHeight,
+      ctx = c.getContext('2d'),
+
+      radians = 4.1,
+      cen = {
+        x: w / 2,
+        y: h / 2
+      },
+      pos = Object.create(cen),
+      vel = {
+        x: .0,
+        y: .0
+      },
+      radVel = 0,
+      size = {
+        x: 10,
+        y: 10
+      },
+      bullets = [],
+      lastBullet = 0,
+      bulletTime = 1,
+      keys = {
+        l: false,
+        r: false,
+        f: false,
+        s: false
+      };
+
+    ctx.strokeStyle = 'rgb(0, 200, 200)';
+    ctx.fillStyle = 'rgba(0, 0, 0, 0)';
+
+
+    function anim() {
+      window.requestAnimationFrame(anim);
+      ctx.clearRect(0, 0, w, h);
+
+      // ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+      ctx.fillRect(0, 0, w, h);
+
+      drawThing();
+
+      if (keys.l) radVel -= .005;
+      if (keys.r) radVel += .005;
+
+      radians += radVel *= .95;
+
+      if (keys.f) {
+        vel.x += Math.cos(radians) / 7;
+        vel.y += Math.sin(radians) / 7;
+      }
+
+      pos.x += vel.x *= .995;
+      pos.y += vel.y *= .995;
+
+      if (pos.x > w + 2 * size.x) pos.x = -2 * size.x;
+      if (pos.y > h + 2 * size.x) pos.y = -2 * size.x;
+      if (pos.x < -2 * size.x) pos.x = w + 2 * size.x;
+      if (pos.y < -2 * size.x) pos.y = h + 2 * size.x;
+
+      ++lastBullet;
+      if (keys.s && lastBullet > bulletTime) {
+        bullets.push(new Bullet);
+        lastBullet = 0;
+      }
+      for (var i = 0; i < bullets.length; ++i) {
+        var bull = bullets[i];
+        bull.update();
+
+        if (bull.pos2.x > w || bull.pos2.x < 0 ||
+          bull.pos2.y > h || bull.pos2.y < 0) {
+          bullets.splice(i, 1);
+          --i;
+        }
+      }
+    }
+    anim();
+
+    function drawThing() {
+
+      ctx.strokeStyle = 'rgb(245, 19, 20)';
+      ctx.beginPath();
+      ctx.moveTo(
+        pos.x + Math.cos(radians) * size.y,
+        pos.y + Math.sin(radians) * size.y);
+      ctx.lineTo(
+        pos.x + Math.cos(radians + (2 * Math.PI) / 3) * size.x,
+        pos.y + Math.sin(radians + (2 * Math.PI) / 3) * size.x);
+      ctx.lineTo(
+        pos.x + Math.cos(radians - (2 * Math.PI) / 3) * size.x,
+        pos.y + Math.sin(radians - (2 * Math.PI) / 3) * size.x);
+      ctx.closePath();
+      ctx.stroke();
+      ctx.fill();
+    }
+
+    function Bullet() {
+      this.pos = Object.create(pos);
+      this.vel = {
+        x: Math.cos(radians),
+        y: Math.sin(radians)
+      };
+      this.pos2 = Object.create(pos);
+      this.pos.x += this.vel.x * 45; //beginning of shoot
+      this.pos.y += this.vel.y * 45; //beginning of shoot
+
+      this.pos2.x += this.vel.x * 35; //end of shoot
+      this.pos2.y += this.vel.y * 35; //end of shoot
+      //modifier taille du shoot et emplacement ici
+    }
+    Bullet.prototype.update = function() {
+      this.pos.x += this.vel.x * 6;
+      this.pos.y += this.vel.y * 6;
+
+      this.pos2.x += this.vel.x * 6;
+      this.pos2.y += this.vel.y * 6;
+      //changer vitesse shoot ici
+      ctx.beginPath();
+      ctx.moveTo(this.pos.x, this.pos.y);
+      ctx.lineTo(this.pos2.x, this.pos2.y);
+      ctx.stroke();
+      ctx.closePath();
+    }
+
+    document.addEventListener('mousemove', function(e) {
+      pos.x = e.clientX;
+      pos.y = e.clientY;
+    });
+    document.addEventListener('mousedown', function(e) {
+      e.preventDefault();
+      keys.s = true;
+      setTimeout(function() {
+        keys.s = false;
+      }, 100);
+    });
+    document.addEventListener('mouseup', function(e) {
+      keys.s = false;
+    });
+    /*document.addEventListener('keydown', function(e){
+    var is = true;
+    switch(e.keyCode){
+    case 37:keys.l = true; break;
+    case 39:keys.r = true; break;
+    default: is = false;
+  }
+  if(is) e.preventDefault();
+});*/
+    /*document.addEventListener('keyup', function(e){
+      var is = true;
+      switch(e.keyCode){
+        case 37:keys.l = false; break;
+        case 39:keys.r = false; break;
+        default: is = false;
+      }
+      if(is) e.preventDefault();
+    });*/
+  </script>
+</body>
+
 </html>
