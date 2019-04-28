@@ -107,7 +107,6 @@ svg #svg_atom_icons:hover {
   content: "X";
   color: white;
 }*/
-
 .barre_nav_tabs_currOpen {
   background-color: #282C34;
   border-bottom: none;
@@ -153,28 +152,29 @@ svg #svg_atom_icons:hover {
   background-color: #FFFFFF;
   margin-left: -5px;
   margin-top: 3px;
-
   border: 1px solid #E9E9E9;
 }
 
 .title_barre_outil_menu_separator {
-
   border-top: 1px solid #E9E9E9;
 }
+
 .barre_content {
   padding: 3px 90px 3px 10px;
-
-
 }
-.barre_content span{
+
+.barre_content span {
   padding: 8px 90px 8px 10px;
 }
+
 .barre_content:hover {
   background-color: #E0E0E0;
 }
-.barre_content_disabled{
-  color : gray;
+
+.barre_content_disabled {
+  color: gray;
 }
+
 #barre_footer {
   font-family: 'Consolas';
   font-size: 12px;
@@ -211,8 +211,11 @@ svg #svg_atom_icons:hover {
   vertical-align: text-bottom;
 }
 
+/**/
 #treeview {
+  float: left;
   width: 100%;
+  margin-top: 1em;
   cursor: default;
   color: #9DA5B4;
   -webkit-user-select: none;
@@ -222,15 +225,46 @@ svg #svg_atom_icons:hover {
   user-select: none;
 }
 
-#treeview div svg {
-  vertical-align: middle;
+#treeview ul {
+  list-style: none;
+  margin-top: 0.4em;
+  padding-left: 1.5em;
+}
+#treeview ul li{
+  margin-top: 0.2em;
+}
+#treeview .icon_folder {
+  margin-right: 0.5em;
 }
 
-#treeview div {
-  padding-top: 2px;
-  padding-bottom: 3px;
+#treeview input {
+  display: none;
 }
 
+#treeview input:checked~ul {
+  display: none;
+}
+
+
+#treeview input:checked + label span.tr_close+span.tr_open {
+  display: none;
+}
+#treeview input:checked + label span.tr_close {
+  display: inline;
+}
+#treeview input + label  span.tr_close {
+  display: none;
+}
+#barre_nav [name=navtabs] span{
+  float: right;
+  margin-left: -2em;
+  margin-right: 1em;
+  opacity:0;
+}
+#barre_nav [name=navtabs]:hover span{
+  opacity:1;
+}
+/**/
 .lvl0 {
   margin-top: 20px;
   padding-left: 15px;
@@ -276,7 +310,6 @@ svg #svg_atom_icons:hover {
 }
 
 /*CSS PAGES*/
-
 #Welcome_page {
   background-color: #282C34;
   width: 80%;
@@ -399,6 +432,7 @@ svg #svg_atom_icons:hover {
   left: 0px;
   height: 48px;
 }
+
 .showInsidePanel+.insidePanel {
   display: block;
 }
@@ -420,6 +454,7 @@ svg #svg_atom_icons:hover {
   color: #D7DAE0;
   font-size: 12px;
 }
-#README{
-  background-color:#e6E6E6;
+
+#README {
+  background-color: #e6E6E6;
 }

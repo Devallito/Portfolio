@@ -245,7 +245,7 @@ treeview_list = [{
   html: ""
 }];
 
-charge_treeview(treeview_list);
+//charge_treeview(treeview_list);
 
 document.querySelectorAll(".title_barre_outil_menu").forEach(function (element) {
   element.classList.add("hide");
@@ -340,7 +340,7 @@ function showTab(anId) {
   });
 }
 
-openInTab("Welcome"); //init with welcome page
+//openInTab("Welcome"); //init with welcome page
 
 let show_reducer = function (elem) {
   elem.style.display = "block";

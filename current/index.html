@@ -60,20 +60,103 @@
   </div>
   <div class="">
     <div id="panel_left">
-      <div class="reducer_btn" onclick="reduce_panel();"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="16"
-          viewBox="0 0 8 16">
+      <div class="reducer_btn" onclick="reduce_panel();"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="16" viewBox="0 0 8 16">
           <path fill="#9da5b4" fill-rule="evenodd" d="M5.5 3L7 4.5 3.25 8 7 11.5 5.5 13l-5-5 5-5z" /></svg></div>
       <div class="titleProject">
         Project
       </div>
-      <div id="treeview"></div>
+      <div id="treeview">
+        <ul>
+          <li>
+            <input type="checkbox" id="cb-1">
+            <label for="cb-1">
+              <span class="tr_close"><img src="./atom-icons/chevron-right.svg" alt="icon_folder"></span>
+              <span class="tr_open"><img src="./atom-icons/chevron-down.svg" alt="icon_folder"></span>
+              <span><img src="./atom-icons/file-directory.svg" alt="icon_folder" class="icon_folder">root</span>
+            </label>
+            <ul>
+              <li><span onclick="openInTab('README_page')"><img src="./atom-icons/file.svg" alt="icon_folder" class="icon_folder">README.md</span></li>
+              <li>
+                <input type="checkbox" id="cb-1-1" checked>
+                <label for="cb-1-1">
+                  <span class="tr_close"><img src="./atom-icons/chevron-right.svg" alt="icon_folder"></span>
+                  <span class="tr_open"><img src="./atom-icons/chevron-down.svg" alt="icon_folder"></span>
+                  <span><img src="./atom-icons/file-directory.svg" alt="icon_folder" class="icon_folder">pages</span>
+                </label>
+                <ul>
+                  <li><span onclick="openInTab('index_page')"><img src="./atom-icons/file.svg" alt="icon_folder" class="icon_folder">index.html</span></li>
+                  <li><span onclick="openInTab('a_propos_page')"><img src="./atom-icons/file.svg" alt="icon_folder" class="icon_folder">a_propos.html</span></li>
+                  <li><span onclick="openInTab('mon_parcours_page')"><img src="./atom-icons/file.svg" alt="icon_folder" class="icon_folder">mon_parcours.html</span></li>
+                  <li><span onclick="openInTab('competences_page')"><img src="./atom-icons/file.svg" alt="icon_folder" class="icon_folder">competences.html</span></li>
+                  <li><span onclick="openInTab('portfolio_page')"><img src="./atom-icons/file.svg" alt="icon_folder" class="icon_folder">portfolio.html</span></li>
+                </ul>
+              </li>
+              <li>
+                <input type="checkbox" id="cb-1-2" checked>
+                <label for="cb-1-2">
+                  <span class="tr_close"><img src="./atom-icons/chevron-right.svg" alt="icon_folder"></span>
+                  <span class="tr_open"><img src="./atom-icons/chevron-down.svg" alt="icon_folder"></span>
+                  <span><img src="./atom-icons/file-directory.svg" alt="icon_folder" class="icon_folder">js</span>
+                </label>
+                <ul>
+                  <li><span onclick="openInTab('main_page')"><img src="./atom-icons/file.svg" alt="icon_folder" class="icon_folder">main.js</span></li>
+                </ul>
+              </li>
+              <li>
+                <input type="checkbox" id="cb-1-3" checked>
+                <label for="cb-1-3">
+                  <span class="tr_close"><img src="./atom-icons/chevron-right.svg" alt="icon_folder"></span>
+                  <span class="tr_open"><img src="./atom-icons/chevron-down.svg" alt="icon_folder"></span>
+                  <span><img src="./atom-icons/file-directory.svg" alt="icon_folder" class="icon_folder">css</span>
+                </label>
+                <ul>
+                  <li><span onclick="openInTab('style_page')"><img src="./atom-icons/file.svg" alt="icon_folder" class="icon_folder">style.css</span></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
     <div id="splitter"></div>
     <div id="panel_right">
       <div id="barre_nav">
+        <div id="Welcome_tab" name="navtabs" onclick="openInTab('Welcome_page')" class="barre_nav_tabs barre_nav_tabs_currOpen">Welcome<span onclick="delTab('Welcome_page')"><img src="./atom-icons/x.svg" alt="icon"></span></div>
+        <div id="README_tab" name="navtabs" onclick="openInTab('README_page')" class="barre_nav_tabs" style="display:none">README.md<span onclick="delTab('README_page')">X</span></div>
+        <div id="index_tab" name="navtabs" onclick="openInTab('index_page')" class="barre_nav_tabs" style="display:none">index.html<span onclick="delTab('index_page')">X</span></div>
+        <div id="style_tab" name="navtabs" onclick="openInTab('style_page')" class="barre_nav_tabs" style="display:none">style.css<span onclick="delTab('style_page')">X</span></div>
+        <div id="style_tab" name="navtabs" onclick="openInTab('main_page')" class="barre_nav_tabs" style="display:none">main.js<span onclick="delTab('main_page')">X</span></div>
+        <div id="style_tab" name="navtabs" onclick="openInTab('a_propos_page')" class="barre_nav_tabs" style="display:none">a_propos.html<span onclick="delTab('a_propos_page')">X</span></div>
+        <div id="style_tab" name="navtabs" onclick="openInTab('mon_parcours_page')" class="barre_nav_tabs" style="display:none">mon_parcours.html<span onclick="delTab('mon_parcours_page')">X</span></div>
+        <div id="style_tab" name="navtabs" onclick="openInTab('competences_page')" class="barre_nav_tabs" style="display:none">competences.html<span onclick="delTab('competences_page')">X</span></div>
+        <div id="style_tab" name="navtabs" onclick="openInTab('portfolio_page')" class="barre_nav_tabs" style="display:none">portfolio.html<span onclick="delTab('portfolio_page')">X</span></div>
       </div>
       <div id="pages">
+        <div id="Welcome_page" name="pageTab">
+          <div class="Welcome_page_left">
+            <h1>Développeur Full-Stack</h1>
+            <h3><a href="">A hackable portfolio for the 21<sup>st</sup> Century</a></h3>
+            <p>Le portfolio n'est pas terminé à 100%, il manque encore quelques fonctionnalités.<br>Naviguez comme dans un IDE classique pour accéder<br> aux différentes informations de mon portfolio.</p>
+            <ul>
+              <li><a href="./contact.html">ContactForm</a> pour me contacter rapidement</li>
+              <li><a href="./mentions.html">Mentions légales</a> pour s'assurer que je respecte le RGPD</li>
+            </ul>
+          </div>
 
+          <div class="Welcome_page_right">
+            <div class="Welcome_page_box" onclick="this.classList.toggle('showInsidePanel');"><span class="Welcome_page_box_icon">Lire </span>README.md</div>
+            <div class="insidePanel">Pour comprendre ce portfolio et être sûr de ne rien rater.</div>
+            <div class="Welcome_page_box" onclick="this.classList.toggle('showInsidePanel');"><span class="Welcome_page_box_icon">Modifier </span>les fichiers</div>
+            <div class="insidePanel">Comme dans un IDE classique.</div>
+            <div class="Welcome_page_box" onclick="this.classList.toggle('showInsidePanel');"><span class="Welcome_page_box_icon">Lancer </span>le serveur web</div>
+            <div class="insidePanel">Packages -&gt; Lancer le serveur web</div>
+            <div class="Welcome_page_box" onclick="this.classList.toggle('showInsidePanel');"><span class="Welcome_page_box_icon">Contempler </span>le résultat</div>
+            <div class="insidePanel">Rien de plus à ajouter.</div>
+          </div>
+        </div>
+        <div id="Competences_page" name="pageTab">
+          //Codemirror ici
+        </div>
       </div>
     </div>
   </div>
@@ -91,11 +174,9 @@
           HTML
         </div>
         <div class="barre_footer_insideRightElem">
-          <a href="https://github.com/abonvalle"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-              viewBox="0 0 16 16">
-              <path fill="#9DA5B4" fill-rule="evenodd"
-                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
-              </svg> GitHub</a>
+          <a href="https://github.com/abonvalle"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+              <path fill="#9DA5B4" fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+            </svg> GitHub</a>
         </div>
       </div>
 
