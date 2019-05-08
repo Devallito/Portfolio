@@ -294,7 +294,26 @@ function getExtension(aCaption) {
 }
 
 function openInTab(idNodeToOpen) {
-  let nameFile = idNodeToOpen;
+    document.getElementById("Welcome_page").style.display = "none"; // a remplacer par display none pour liste page
+  document.getElementById(idNodeToOpen).style.display = "";
+  let jsToShow = "/*jshint esversion: 6 */\r\n/* Portfolio - Alexandre Bonvalle */\r\n document.getElemetById('tes');";
+
+    var myCodeMirror = CodeMirror(document.getElementById(idNodeToOpen), {
+      value: jsToShow,
+      mode: "javascript",
+      extraKeys: {
+        "Ctrl-Space": "autocomplete"
+      },
+      gutters: ["CodeMirror-lint-markers"],
+      lint: true,
+      autoCloseBrackets: true,
+      theme: "dracula oceanic-next",
+      lineWrapping: false,
+      lineNumbers: true,
+      scrollbarStyle: "overlay"
+    });
+
+  /*let nameFile = idNodeToOpen;
   document.getElementById("namePage_footer").innerText = getPath(nameFile);
   document.getElementById("extPage_footer").innerText = getExtension(nameFile);
   document.getElementsByName("navtabs").forEach(function (aTab) {
@@ -313,7 +332,7 @@ function openInTab(idNodeToOpen) {
     tab.innerText = nameFile;
     document.getElementById("barre_nav").appendChild(tab);
     createTab(nameFile);
-  }
+  }*/
 }
 
 function createTab(anId) {

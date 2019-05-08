@@ -213,6 +213,8 @@ svg #svg_atom_icons:hover {
 
 /**/
 #treeview {
+      overflow-x: hidden;
+      white-space: nowrap;
   float: left;
   width: 100%;
   margin-top: 1em;
@@ -457,4 +459,13 @@ svg #svg_atom_icons:hover {
 
 #README {
   background-color: #e6E6E6;
+}
+
+
+
+
+
+/*----------------------------Codemirror surcouche-------------------------------------------------*/
+.CodeMirror{
+background: #282C34 !important;
 }

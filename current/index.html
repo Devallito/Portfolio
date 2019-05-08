@@ -4,10 +4,15 @@
 <head>
   <meta charset="utf-8">
   <title>index.html - C:\Users\Alexandre\Documents\Portfolio - Atom</title>
-  <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="./codemirror-5.45.0/theme/dracula.css">
-  <link rel="stylesheet" href="./codemirror-5.45.0/theme/oceanic-next.css">
-  <link rel="stylesheet" href="./codemirror-5.45.0/lib/codemirror.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/theme/dracula.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/theme/oceanic-next.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/addon/scroll/simplescrollbars.css">
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/addon/hint/show-hint.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/addon/lint/lint.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/codemirror.css">
+   <link rel="stylesheet" href="./style.css">
+
 </head>
 
 <body onload="init();">
@@ -154,7 +159,7 @@
             <div class="insidePanel">Rien de plus à ajouter.</div>
           </div>
         </div>
-        <div id="Competences_page" name="pageTab">
+        <div id="competences_page" name="pageTab" style="display:none">
           //Codemirror ici
         </div>
       </div>
@@ -185,13 +190,16 @@
 </body>
 <script src="./codemirror-5.45.0/lib/codemirror.js"></script>
 <script src="./codemirror-5.45.0/mode/javascript/javascript.js"></script>
-<script type="text/javascript">
-  /*var myCodeMirror = CodeMirror(document.getElementById("panel_right"), {
-                                                  value: "function myScript(){return 100;}\n",
-                                                  mode:  "javascript",
-                                                  theme: "dracula oceanic-next"
-                                                });*/
-</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jshint/2.10.2/jshint.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/codemirror.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/addon/lint/javascript-lint.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/addon/edit/closebrackets.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/addon/lint/lint.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/addon/hint/javascript-hint.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/addon/hint/show-hint.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/addon/scroll/simplescrollbars.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/mode/javascript/javascript.js"></script>
 <script type="text/javascript" src="./main.js"></script>
 
 </html>
