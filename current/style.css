@@ -100,13 +100,13 @@ svg #svg_atom_icons:hover {
   content: "X";
   color: #9DA5B4;
 }
-
 .barre_nav_tabs_currOpen:hover:after {
   float: right;
   position: absolute;
   content: "X";
   color: white;
 }*/
+
 .barre_nav_tabs_currOpen {
   background-color: #282C34;
   border-bottom: none;
@@ -212,9 +212,10 @@ svg #svg_atom_icons:hover {
 }
 
 /**/
+
 #treeview {
-      overflow-x: hidden;
-      white-space: nowrap;
+  overflow-x: hidden;
+  white-space: nowrap;
   float: left;
   width: 100%;
   margin-top: 1em;
@@ -232,9 +233,11 @@ svg #svg_atom_icons:hover {
   margin-top: 0.4em;
   padding-left: 1.5em;
 }
-#treeview ul li{
+
+#treeview ul li {
   margin-top: 0.2em;
 }
+
 #treeview .icon_folder {
   margin-right: 0.5em;
 }
@@ -247,26 +250,31 @@ svg #svg_atom_icons:hover {
   display: none;
 }
 
-
-#treeview input:checked + label span.tr_close+span.tr_open {
+#treeview input:checked+label span.tr_close+span.tr_open {
   display: none;
 }
-#treeview input:checked + label span.tr_close {
+
+#treeview input:checked+label span.tr_close {
   display: inline;
 }
-#treeview input + label  span.tr_close {
+
+#treeview input+label span.tr_close {
   display: none;
 }
-#barre_nav [name=navtabs] span{
+
+#barre_nav [name=navtabs] span {
   float: right;
   margin-left: -2em;
   margin-right: 1em;
-  opacity:0;
+  opacity: 0;
 }
-#barre_nav [name=navtabs]:hover span{
-  opacity:1;
+
+#barre_nav [name=navtabs]:hover span {
+  opacity: 1;
 }
+
 /**/
+
 .lvl0 {
   margin-top: 20px;
   padding-left: 15px;
@@ -312,6 +320,7 @@ svg #svg_atom_icons:hover {
 }
 
 /*CSS PAGES*/
+
 #Welcome_page {
   background-color: #282C34;
   width: 80%;
@@ -461,11 +470,8 @@ svg #svg_atom_icons:hover {
   background-color: #e6E6E6;
 }
 
-
-
-
-
 /*----------------------------Codemirror surcouche-------------------------------------------------*/
-.CodeMirror{
-background: #282C34 !important;
+
+.CodeMirror {
+  background: #282C34 !important;
 }
