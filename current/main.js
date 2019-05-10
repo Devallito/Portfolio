@@ -49,7 +49,7 @@ var passiveSupported = false;
 
 try {
   var options = Object.defineProperty({}, "passive", {
-    get: function () {
+    get: function() {
       passiveSupported = true;
     }
   });
@@ -93,10 +93,10 @@ function recursiveTree(array) {
 function writeInDOMRecursively(aList) {
   let element = document.createElement("div");
   let idToSet = aList.caption;
-  if(idToSet.indexOf(".")!== -1){
-  idToSet=  idToSet.substring(0,idToSet.indexOf("."))
+  if (idToSet.indexOf(".") !== -1) {
+    idToSet = idToSet.substring(0, idToSet.indexOf("."))
   }
-  element.setAttribute("id",idToSet );
+  element.setAttribute("id", idToSet);
   element.setAttribute("tabindex", 0)
   element.setAttribute("class", aList.type + " lvl" + (aList.lvl));
   if (aList.type === 'folder') {
@@ -116,15 +116,15 @@ function writeInDOMRecursively(aList) {
 function getCorresponding(aCaption) {
   let captionToCheck;
   for (let i = 0; i < treeview_list.length; i++) {
-     captionToCheck =treeview_list[i].caption;
-    if(captionToCheck.indexOf(".")!== -1){
-      captionToCheck=captionToCheck.substring(0,captionToCheck.indexOf("."));
+    captionToCheck = treeview_list[i].caption;
+    if (captionToCheck.indexOf(".") !== -1) {
+      captionToCheck = captionToCheck.substring(0, captionToCheck.indexOf("."));
     }
-      console.log(captionToCheck);
-      if (captionToCheck === aCaption) {
-        return treeview_list[i];
-      }
+    console.log(captionToCheck);
+    if (captionToCheck === aCaption) {
+      return treeview_list[i];
     }
+  }
 
   return;
 }
@@ -247,12 +247,12 @@ treeview_list = [{
 
 //charge_treeview(treeview_list);
 
-document.querySelectorAll(".title_barre_outil_menu").forEach(function (element) {
+document.querySelectorAll(".title_barre_outil_menu").forEach(function(element) {
   element.classList.add("hide");
 });
 
-document.querySelectorAll(".title_barre_outil").forEach(function (element) {
-  element.addEventListener("click", function () {
+document.querySelectorAll(".title_barre_outil").forEach(function(element) {
+  element.addEventListener("click", function() {
     /*document.querySelectorAll(".title_barre_outil").forEach(function(element2) {
     element2.querySelector(".title_barre_outil_menu").classList.add("hide");
     });*/
@@ -260,7 +260,7 @@ document.querySelectorAll(".title_barre_outil").forEach(function (element) {
     element.querySelector(".title_barre_outil_menu").focus();
   });
 
-  element.addEventListener("focusout", function () {
+  element.addEventListener("focusout", function() {
 
     element.querySelector(".title_barre_outil_menu").classList.add("hide");
   });
@@ -268,13 +268,13 @@ document.querySelectorAll(".title_barre_outil").forEach(function (element) {
 });
 
 function getPath(aCaption) {
-  return treeview_list.find(function (anElement) {
+  return treeview_list.find(function(anElement) {
     return aCaption === anElement.caption;
   }).path;
 }
 
 function getExtension(aCaption) {
-  let result = treeview_list.find(function (anElement) {
+  let result = treeview_list.find(function(anElement) {
     return aCaption === anElement.caption;
   }).caption.split("").reverse().join("");
 
@@ -292,26 +292,38 @@ function getExtension(aCaption) {
     return "";
   }
 }
+G_lstopentab = ["Welcome_page"];
 
 function openInTab(idNodeToOpen) {
-    document.getElementById("Welcome_page").style.display = "none"; // a remplacer par display none pour liste page
+  //voir https://codepen.io/rafaelavlucas/pen/MLKGba
+  if (G_lstopentab.indexOf(idNodeToOpen) === -1) {
+    G_lstopentab.push(idNodeToOpen);
+
+  }
+  let currTab = idNodeToOpen.substring(0, idNodeToOpen.indexOf("_page")) + "_tab";
+  console.log(currTab);
+  document.getElementsByClassName("barre_nav_tabs_currOpen")[0].classList.remove("barre_nav_tabs_currOpen");
+  document.getElementById(currTab).classList.add("barre_nav_tabs_currOpen");
+  document.getElementById(currTab).style.display = "";
+
+  document.getElementById("Welcome_page").style.display = "none"; // a remplacer par display none pour liste page
   document.getElementById(idNodeToOpen).style.display = "";
   let jsToShow = "/*jshint esversion: 6 */\r\n/* Portfolio - Alexandre Bonvalle */\r\n document.getElemetById('tes');";
 
-    var myCodeMirror = CodeMirror(document.getElementById(idNodeToOpen), {
-      value: jsToShow,
-      mode: "javascript",
-      extraKeys: {
-        "Ctrl-Space": "autocomplete"
-      },
-      gutters: ["CodeMirror-lint-markers"],
-      lint: true,
-      autoCloseBrackets: true,
-      theme: "dracula oceanic-next",
-      lineWrapping: false,
-      lineNumbers: true,
-      scrollbarStyle: "overlay"
-    });
+  var myCodeMirror = CodeMirror(document.getElementById(idNodeToOpen), {
+    value: jsToShow,
+    mode: "javascript",
+    extraKeys: {
+      "Ctrl-Space": "autocomplete"
+    },
+    gutters: ["CodeMirror-lint-markers"],
+    lint: true,
+    autoCloseBrackets: true,
+    theme: "dracula oceanic-next",
+    lineWrapping: false,
+    lineNumbers: true,
+    scrollbarStyle: "overlay"
+  });
 
   /*let nameFile = idNodeToOpen;
   document.getElementById("namePage_footer").innerText = getPath(nameFile);
@@ -335,8 +347,22 @@ function openInTab(idNodeToOpen) {
   }*/
 }
 
+function delTab(idNodeToOpen) {
+  if (G_lstopentab.indexOf(idNodeToOpen) !== -1) {
+    G_lstopentab.splice(G_lstopentab.indexOf(idNodeToOpen), 1);
+  }
+  let currTab = idNodeToOpen.substring(0, idNodeToOpen.indexOf("_page")) + "_tab";
+  console.log(currTab);
+  if (document.getElementById(currTab).classList.contains("barre_nav_tabs_currOpen")) {
+    document.getElementById(currTab).classList.remove("barre_nav_tabs_currOpen")
+    document.getElementById(G_lstopentab[0]).classList.add("barre_nav_tabs_currOpen")
+
+  }
+  document.getElementById(currTab).style.display = "none";
+}
+
 function createTab(anId) {
-  let result = treeview_list.find(function (anItem) {
+  let result = treeview_list.find(function(anItem) {
     return anItem.caption === anId;
   });
 
@@ -350,7 +376,7 @@ function createTab(anId) {
 }
 
 function showTab(anId) {
-  document.getElementsByName("pageTab").forEach(function (aPage) {
+  document.getElementsByName("pageTab").forEach(function(aPage) {
     if (aPage.id === anId + "_page") {
       aPage.style.display = "";
     } else {
@@ -361,37 +387,37 @@ function showTab(anId) {
 
 //openInTab("Welcome"); //init with welcome page
 
-let show_reducer = function (elem) {
+let show_reducer = function(elem) {
   elem.style.display = "block";
-  window.setTimeout(function () {
+  window.setTimeout(function() {
     elem.classList.add('is-visible'); // Make the element visible
   }, 0.50);
 };
 
-let hide_reducer = function (elem) {
+let hide_reducer = function(elem) {
   elem.classList.remove('is-visible');
-  window.setTimeout(function () {
+  window.setTimeout(function() {
     elem.style.display = "none";
   }, 50);
 };
 
-document.getElementById("panel_left").addEventListener("mouseover", function () {
+document.getElementById("panel_left").addEventListener("mouseover", function() {
   show_reducer(document.querySelector(".reducer_btn"));
 });
-document.getElementById("panel_left").addEventListener("mouseleave", function () {
+document.getElementById("panel_left").addEventListener("mouseleave", function() {
   hide_reducer(document.querySelector(".reducer_btn"));
 });
-let callback_show_augmenter = function (event) {
-  let show_reducer = function (elem) {
+let callback_show_augmenter = function(event) {
+  let show_reducer = function(elem) {
     elem.style.display = "block";
-    window.setTimeout(function () {
+    window.setTimeout(function() {
       elem.classList.add('is-visible2'); // Make the element visible
     }, 0.50);
   };
 
-  let hide_reducer = function (elem) {
+  let hide_reducer = function(elem) {
     elem.classList.remove('is-visible2');
-    window.setTimeout(function () {
+    window.setTimeout(function() {
       elem.style.display = "none";
     }, 50);
   };
@@ -436,6 +462,6 @@ function augment_panel() {
   document.body.removeChild(document.getElementById("augmenter_btn"));
 }
 
-function Packages_launchServer(){
-  window.location.href="https://alexandrebonvalle.fr/server/";
+function Packages_launchServer() {
+  window.location.href = "https://alexandrebonvalle.fr/server/";
 }
