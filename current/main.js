@@ -306,11 +306,13 @@ function openInTab(idNodeToOpen) {
   document.getElementById(currTab).classList.add("barre_nav_tabs_currOpen");
   document.getElementById(currTab).style.display = "";
 
-  document.getElementById("Welcome_page").style.display = "none"; // a remplacer par display none pour liste page
+  for (let i =0;i<G_lstopentab.length;i++){
+    document.getElementById(G_lstopentab[i]).style.display = "none";
+  }
   document.getElementById(idNodeToOpen).style.display = "";
-  let jsToShow = "/*jshint esversion: 6 */\r\n/* Portfolio - Alexandre Bonvalle */\r\n document.getElemetById('tes');";
+  //let jsToShow = "/*jshint esversion: 6 */\r\n/* Portfolio - Alexandre Bonvalle */\r\n document.getElemetById('tes');";
 
-  var myCodeMirror = CodeMirror(document.getElementById(idNodeToOpen), {
+  /*var myCodeMirror = CodeMirror(document.getElementById(idNodeToOpen), {
     value: jsToShow,
     mode: "javascript",
     extraKeys: {
@@ -323,7 +325,7 @@ function openInTab(idNodeToOpen) {
     lineWrapping: false,
     lineNumbers: true,
     scrollbarStyle: "overlay"
-  });
+  });*/
 
   /*let nameFile = idNodeToOpen;
   document.getElementById("namePage_footer").innerText = getPath(nameFile);
@@ -348,6 +350,7 @@ function openInTab(idNodeToOpen) {
 }
 
 function delTab(idNodeToOpen) {
+  console.log("DELTAB");
   if (G_lstopentab.indexOf(idNodeToOpen) !== -1) {
     G_lstopentab.splice(G_lstopentab.indexOf(idNodeToOpen), 1);
   }

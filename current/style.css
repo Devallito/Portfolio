@@ -49,8 +49,8 @@ svg #svg_atom_icons:hover {
   width: 15%;
   background-color: #21252B;
   float: left;
-  height: 97%;
-  position: absolute;
+  height: 94vh;
+ /* position: absolute;*/
 }
 
 .titleProject {
@@ -67,9 +67,9 @@ svg #svg_atom_icons:hover {
   top: 25px;
   width: 45%;
   background-color: #282C34;
-  float: left;
-  height: 97%;
-  position: absolute;
+
+  height: 94vh;
+  /*position: absolute;*/
 }
 
 #barre_nav {
@@ -114,21 +114,19 @@ svg #svg_atom_icons:hover {
 }
 
 #splitter {
-  top: 25px;
   width: 5px;
   background-color: #282C34;
   border-left: 2px solid #181A1F;
   float: left;
-  height: 97%;
+  height: 94vh;
   position: absolute;
   cursor: col-resize;
 }
 
 #barre_outil {
-  height: 25px;
+  height: 3vh;
   width: 100%;
   z-index: 9;
-  position: absolute;
   background-color: #F0F0F0;
   display: flex;
   font-size: 13px;
@@ -178,12 +176,11 @@ svg #svg_atom_icons:hover {
 #barre_footer {
   font-family: 'Consolas';
   font-size: 12px;
-  height: 30px;
+  height: 3vh;
   z-index: 9;
   width: 100%;
   background-color: #21252B;
   border-top: 0.5px solid #181A1F;
-  position: absolute;
   bottom: 0;
   color: #9DA5B4;
 }
@@ -319,71 +316,6 @@ svg #svg_atom_icons:hover {
   display: none;
 }
 
-/*CSS PAGES*/
-
-#Welcome_page {
-  background-color: #282C34;
-  width: 80%;
-  height: 80%;
-  padding: 10%;
-  color: #9DA5B4;
-  display: flex;
-}
-
-#Welcome_page h1 {
-  letter-spacing: 6px;
-  color: white;
-}
-
-#Welcome_page p {
-  margin-top: 50px;
-  font-size: 14px;
-}
-
-#Welcome_page ul {
-  font-size: 14px;
-}
-
-#Welcome_page a {
-  color: #6494ED;
-  text-decoration: none;
-}
-
-#Welcome_page a:hover {
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-#Welcome_page_title {
-  font-weight: 900;
-  font-size: 18px;
-}
-
-.Welcome_page_left {}
-
-.Welcome_page_right {
-  margin-left: 80px;
-}
-
-.Welcome_page_box {
-  background-color: #2F333D;
-  border: 1px solid black;
-  border-radius: 5px;
-  margin-top: 20px;
-  text-align: left;
-  padding-top: 5px;
-  padding-left: 15px;
-  vertical-align: middle;
-  height: 30px;
-  width: 220px;
-  cursor: pointer;
-  color: #D7DAE0;
-}
-
-.Welcome_page_box_icon {
-  color: #717784;
-}
-
 .reducer_btn {
   position: absolute;
   right: -10px;
@@ -464,6 +396,70 @@ svg #svg_atom_icons:hover {
   cursor: default;
   color: #D7DAE0;
   font-size: 12px;
+}
+
+/*CSS PAGES*/
+
+#Welcome_page {
+  background-color: #282C34;
+  width: 1100px;
+  padding: 200px;
+  color: #9DA5B4;
+  display: flex;
+}
+
+#Welcome_page h1 {
+  letter-spacing: 6px;
+  color: white;
+}
+
+#Welcome_page p {
+  margin-top: 50px;
+  font-size: 14px;
+}
+
+#Welcome_page ul {
+  font-size: 14px;
+}
+
+#Welcome_page a {
+  color: #6494ED;
+  text-decoration: none;
+}
+
+#Welcome_page a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#Welcome_page_title {
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.Welcome_page_left {}
+
+.Welcome_page_right {
+  margin-left: 80px;
+}
+
+.Welcome_page_box {
+  background-color: #2F333D;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-top: 20px;
+  text-align: left;
+  padding-top: 5px;
+  padding-left: 15px;
+  vertical-align: middle;
+  height: 30px;
+  width: 220px;
+  cursor: pointer;
+  color: #D7DAE0;
+}
+
+.Welcome_page_box_icon {
+  color: #717784;
 }
 
 #README {
