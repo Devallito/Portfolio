@@ -1,49 +1,153 @@
-var splitter, cont1, cont2;
+isServerLaunched = false;
+
+var splitter, splitter2, panel_left, panel_right, panel_right2;
 var last_x, window_width;
 
-function init() {
+function init(ThreePanels = false) {
   window_width = window.innerWidth;
   splitter = document.getElementById("splitter");
-  cont1 = document.getElementById("panel_left");
-  cont2 = document.getElementById("panel_right");
-  var dx = cont1.clientWidth;
+  panel_left = document.getElementById("panel_left");
+  panel_right = document.getElementById("panel_right");
+  panel_right2 = document.getElementById("panel_right2");
+  splitter2 = document.getElementById("splitter2");
+
+  splitter.removeEventListener("mousedown", spMouseDown_3panels_splitter1);
+  splitter2.removeEventListener("mousedown", spMouseDown_3panels_splitter2);
+  splitter.removeEventListener("mousedown", spMouseDown_2panels);
+
+  var dx = panel_left.clientWidth;
   splitter.style.marginLeft = dx + "px";
   dx += splitter.clientWidth;
-  cont2.style.marginLeft = dx + "px";
-  dx = window_width - dx;
-  cont2.style.width = dx + "px";
-  splitter.addEventListener("mousedown", spMouseDown);
+  //panel_right.style.marginLeft = dx + "px";
+  if (ThreePanels) {
+    panel_right.style.float="left";
+    panel_right.style.marginLeft="";
+    //panel_right.style.float="left";
+
+    splitter2.style.display = "";
+    panel_right2.style.display = "";
+
+    panel_right.style.width = (window_width - dx) / 2 + "px";
+    dx += panel_right.clientWidth;
+    splitter2.style.marginLeft = dx-5 + "px";
+    dx += splitter2.clientWidth;
+    panel_right2.style.marginLeft = dx -5+ "px"; 
+    panel_right2.style.width = window_width - dx + "px";
+    splitter.addEventListener("mousedown", spMouseDown_3panels_splitter1);
+    splitter2.addEventListener("mousedown", spMouseDown_3panels_splitter2);
+  } else {
+    panel_right.style.float="";
+    
+    panel_right.style.marginLeft=dx+"px";
+    dx = window_width - dx;
+    panel_right.style.width = dx + "px";
+    console.log(panel_right.style);
+    splitter.addEventListener("mousedown", spMouseDown_2panels);
+  }
+
 }
 
-function spMouseDown(e) {
-  splitter.removeEventListener("mousedown", spMouseDown);
-  window.addEventListener("mousemove", spMouseMove);
-  window.addEventListener("mouseup", spMouseUp);
+/*----------------------------Gestion du resize 2 panels----------------------------*/
+function spMouseDown_2panels(e) {
+  splitter.removeEventListener("mousedown", spMouseDown_2panels);
+  window.addEventListener("mousemove", spMouseMove_2panels);
+  window.addEventListener("mouseup", spMouseUp_2panels);
   last_x = e.clientX;
 }
 
-function spMouseUp(e) {
-  window.removeEventListener("mousemove", spMouseMove);
-  window.removeEventListener("mouseup", spMouseUp);
-  splitter.addEventListener("mousedown", spMouseDown);
-  resetPosition(last_x);
+function spMouseUp_2panels(e) {
+  window.removeEventListener("mousemove", spMouseMove_2panels);
+  window.removeEventListener("mouseup", spMouseUp_2panels);
+  splitter.addEventListener("mousedown", spMouseDown_2panels);
+  resetPosition_2panels(last_x);
 }
 
-function spMouseMove(e) {
-  resetPosition(e.clientX);
+function spMouseMove_2panels(e) {
+  resetPosition_2panels(e.clientX);
 }
 
-function resetPosition(nowX) {
+function resetPosition_2panels(nowX) {
   var dx = nowX - last_x;
-  dx += cont1.clientWidth;
-  cont1.style.width = dx + "px";
+  dx += panel_left.clientWidth;
+  panel_left.style.width = dx + "px";
   splitter.style.marginLeft = dx + "px";
   dx += splitter.clientWidth;
-  cont2.style.marginLeft = dx + "px";
+  panel_right.style.marginLeft = dx + "px";
   dx = window_width - dx;
-  cont2.style.width = dx + "px";
+  panel_right.style.width = dx + "px";
   last_x = nowX;
 }
+/*---------------------------------------------------------------------------------*/
+
+/*----------------------------Gestion du resize 3 panels----------------------------*/
+
+function spMouseDown_3panels_splitter1(e) {
+  splitter.removeEventListener("mousedown", spMouseDown_3panels_splitter1);
+  window.addEventListener("mousemove", spMouseMove_3panels_splitter1);
+  window.addEventListener("mouseup", spMouseUp_3panels_splitter1);
+  last_x = e.clientX;
+}
+
+function spMouseDown_3panels_splitter2(e) {
+  document.getElementById("frameK").style.display="none";
+  splitter2.removeEventListener("mousedown", spMouseDown_3panels_splitter2);
+  window.addEventListener("mousemove", spMouseMove_3panels_splitter2);
+  window.addEventListener("mouseup", spMouseUp_3panels_splitter2);
+  last_x2 = e.clientX;
+}
+
+function spMouseUp_3panels_splitter1(e) {
+  window.removeEventListener("mousemove", spMouseMove_3panels_splitter1);
+  window.removeEventListener("mouseup", spMouseUp_3panels_splitter1);
+  splitter.addEventListener("mousedown", spMouseDown_3panels_splitter1);
+  resetPosition_3panels_splitter1(last_x);
+}
+
+function spMouseUp_3panels_splitter2(e) {
+  document.getElementById("frameK").style.display="";
+  window.removeEventListener("mousemove", spMouseMove_3panels_splitter2);
+  window.removeEventListener("mouseup", spMouseUp_3panels_splitter2);
+  splitter2.addEventListener("mousedown", spMouseDown_3panels_splitter2);
+  resetPosition_3panels_splitter2(last_x2);
+}
+
+function spMouseMove_3panels_splitter1(e) {
+  resetPosition_3panels_splitter1(e.clientX);
+}
+
+function spMouseMove_3panels_splitter2(e) {
+  resetPosition_3panels_splitter2(e.clientX);
+}
+
+function resetPosition_3panels_splitter1(nowX) {
+  var dx = nowX - last_x;
+  dx += panel_left.clientWidth;
+  panel_left.style.width = dx + "px";
+  splitter.style.marginLeft = dx + "px";
+  dx += splitter.clientWidth;
+  //panel_right.style.marginLeft = dx + "px";
+
+  panel_right.style.width = (window_width - dx) / 2 + "px";
+  dx += panel_right.clientWidth;
+  splitter2.style.marginLeft = dx -5+ "px";
+  dx += splitter2.clientWidth;
+  panel_right2.style.marginLeft = dx-5 + "px";
+  panel_right2.style.width = window_width - dx + "px";
+  last_x = nowX;
+}
+
+function resetPosition_3panels_splitter2(nowX) {
+  var dx = nowX - last_x2;
+  dx += panel_right.clientWidth;
+  panel_right.style.width = dx + "px";
+  splitter2.style.marginLeft = dx -5+ panel_left.clientWidth + splitter.clientWidth + "px";
+  dx += splitter2.clientWidth;
+  panel_right2.style.marginLeft = dx -5+ panel_left.clientWidth + splitter.clientWidth + "px";
+  panel_right2.style.width = window_width - dx + "px";
+  last_x2 = nowX;
+}
+/*---------------------------------------------------------------------------------*/
+
 
 var passiveSupported = false;
 
@@ -306,7 +410,7 @@ function openInTab(idNodeToOpen) {
   document.getElementById(currTab).classList.add("barre_nav_tabs_currOpen");
   document.getElementById(currTab).style.display = "";
 
-  for (let i =0;i<G_lstopentab.length;i++){
+  for (let i = 0; i < G_lstopentab.length; i++) {
     document.getElementById(G_lstopentab[i]).style.display = "none";
   }
   document.getElementById(idNodeToOpen).style.display = "";
@@ -466,5 +570,125 @@ function augment_panel() {
 }
 
 function Packages_launchServer() {
-  window.location.href = "https://alexandrebonvalle.fr/server/";
+  //window.location.href = "https://alexandrebonvalle.fr/server/";
+  if(!isServerLaunched){
+    isServerLaunched = true;
+    init(true);
+  }
 }
+
+
+/**/
+var Browser = function(elem) {
+  var that = this;
+
+  that.elem = elem;
+  that.url = that.elem.getAttribute("data-url") || 'http://127.0.0.1:5500/current/index.html';
+
+  that.timer;
+
+  that.address_bar;
+  that.iframe;
+
+  // the entire logic
+  that.createBrowser().loadUrl();
+
+}
+
+Browser.prototype.createBrowser = function() {
+  var that = this;
+
+  var ctrls, ctrlBtn, previous, next, bar, address, reload, content, thewebsite;
+
+  //    empty the original
+  while (that.elem.firstChild) {
+    that.elem.removeChild(that.elem.firstChild);
+  }
+
+  //    The ctrls
+  ctrls = document.createElement("div");
+  ctrls.className += " ctrls";
+
+  ctrlBtn = document.createElement("div");
+  ctrlBtn.className += " ctrl-btn";
+  ctrls.appendChild(ctrlBtn);
+
+  previous = document.createElement("div");
+  next = document.createElement("div");
+  previous.className += " previous";
+  next.className += " next";
+  ctrlBtn.appendChild(previous);
+  ctrlBtn.appendChild(next);
+
+
+  bar = document.createElement("div");
+  bar.className += " bar";
+  ctrls.appendChild(bar);
+
+  address = document.createElement("input");
+  address.className += " address";
+  address.value = that.url;
+
+  address.onkeyup = function(e) {
+    clearTimeout(that.timer);
+    if (e.which == 13) {
+      that.url = address.value;
+      that.loadUrl();
+    } else {
+      that.timer = setTimeout(function() {
+        that.url = address.value;
+        that.loadUrl();
+      }, 3000);
+    }
+  };
+
+  that.address_bar = address;
+  bar.appendChild(address);
+
+  reload = document.createElement("div");
+  reload.className += " reload";
+  reload.addEventListener("click", function() {
+    that.loadUrl();
+  })
+  bar.appendChild(reload);
+
+  //    content
+  content = document.createElement("div");
+  content.className += " content";
+
+  thewebsite = document.createElement("iframe");
+  thewebsite.className += " thewebsite";
+  thewebsite.setAttribute('id', 'frameK');
+  thewebsite.setAttribute('frameborder', 0);
+  thewebsite.setAttribute('sandbox', 'allow-forms allow-modals allow-scripts');
+
+  //    thewebsite.src = that.url; // chaining at the beginning;
+  that.iframe = thewebsite;
+  content.appendChild(thewebsite);
+
+  that.elem.appendChild(ctrls);
+  that.elem.appendChild(content);
+
+  return that;
+}
+
+
+Browser.prototype.loadUrl = function() {
+  var that = this;
+  let lstPageServer = ["http://127.0.0.1:5500/current/index.html"];
+  if (lstPageServer.indexOf(that.address_bar.value) != -1) {
+    //todo : load page
+  } else {
+    that.iframe.src = that.address_bar.value;
+
+  }
+}
+
+// onload, reference all browsers and make them work! :)
+
+  var browsers = document.getElementsByClassName("z-browser");
+  for (var i = 0; i < browsers.length; i++) {
+    var browser = browsers[i];
+    new Browser(browser);
+  }
+
