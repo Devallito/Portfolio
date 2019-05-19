@@ -420,13 +420,12 @@ svg #svg_atom_icons:hover {
 
 /*CSS PAGES*/
 #pages{
-  
+  white-space: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
 }
 #Welcome_page {
   background-color: #282C34;
-  width: 1100px;
   padding: 200px;
   color: #9DA5B4;
   display: flex;
@@ -491,11 +490,15 @@ svg #svg_atom_icons:hover {
 }
 
 /*----------------------------Codemirror surcouche-------------------------------------------------*/
-
-.CodeMirror {
+.cm-s-dracula.CodeMirror{
   background: #282C34 !important;
 }
-
+.CodeMirror .CodeMirror-gutters{
+  background: #282C34 !important;
+}
+.CodeMirror .cm-s-dracula .cm-s-oceanic-next {
+  background: #282C34 !important;
+}
 /**/
 
 *,

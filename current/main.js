@@ -10,19 +10,19 @@ function init(ThreePanels = false) {
   panel_right = document.getElementById("panel_right");
   panel_right2 = document.getElementById("panel_right2");
   splitter2 = document.getElementById("splitter2");
-  
+
   splitter.removeEventListener("mousedown", spMouseDown_3panels_splitter1);
   splitter2.removeEventListener("mousedown", spMouseDown_3panels_splitter2);
   splitter.removeEventListener("mousedown", spMouseDown_2panels);
 
   var dx = panel_left.clientWidth;
-  document.getElementById("reducer_btn").style.left = dx+"px";
+  document.getElementById("reducer_btn").style.left = dx + "px";
   splitter.style.marginLeft = dx + "px";
   dx += splitter.clientWidth;
   //panel_right.style.marginLeft = dx + "px";
   if (ThreePanels) {
-    panel_right.style.float="left";
-    panel_right.style.marginLeft="";
+    panel_right.style.float = "left";
+    panel_right.style.marginLeft = "";
     //panel_right.style.float="left";
 
     splitter2.style.display = "";
@@ -30,16 +30,16 @@ function init(ThreePanels = false) {
 
     panel_right.style.width = (window_width - dx) / 2 + "px";
     dx += panel_right.clientWidth;
-    splitter2.style.marginLeft = dx-5 + "px";
+    splitter2.style.marginLeft = dx - 5 + "px";
     dx += splitter2.clientWidth;
-    panel_right2.style.marginLeft = dx -5+ "px"; 
+    panel_right2.style.marginLeft = dx - 5 + "px";
     panel_right2.style.width = window_width - dx + "px";
     splitter.addEventListener("mousedown", spMouseDown_3panels_splitter1);
     splitter2.addEventListener("mousedown", spMouseDown_3panels_splitter2);
   } else {
-    panel_right.style.float="";
-    
-    panel_right.style.marginLeft=dx+"px";
+    panel_right.style.float = "";
+
+    panel_right.style.marginLeft = dx + "px";
     dx = window_width - dx;
     panel_right.style.width = dx + "px";
     console.log(panel_right.style);
@@ -70,7 +70,7 @@ function spMouseMove_2panels(e) {
 function resetPosition_2panels(nowX) {
   var dx = nowX - last_x;
   dx += panel_left.clientWidth;
-  document.getElementById("reducer_btn").style.left = dx+"px";
+  document.getElementById("reducer_btn").style.left = dx + "px";
   panel_left.style.width = dx + "px";
   splitter.style.marginLeft = dx + "px";
   dx += splitter.clientWidth;
@@ -91,7 +91,7 @@ function spMouseDown_3panels_splitter1(e) {
 }
 
 function spMouseDown_3panels_splitter2(e) {
-  document.getElementById("frameK").style.display="none";
+  document.getElementById("frameK").style.display = "none";
   splitter2.removeEventListener("mousedown", spMouseDown_3panels_splitter2);
   window.addEventListener("mousemove", spMouseMove_3panels_splitter2);
   window.addEventListener("mouseup", spMouseUp_3panels_splitter2);
@@ -106,7 +106,7 @@ function spMouseUp_3panels_splitter1(e) {
 }
 
 function spMouseUp_3panels_splitter2(e) {
-  document.getElementById("frameK").style.display="";
+  document.getElementById("frameK").style.display = "";
   window.removeEventListener("mousemove", spMouseMove_3panels_splitter2);
   window.removeEventListener("mouseup", spMouseUp_3panels_splitter2);
   splitter2.addEventListener("mousedown", spMouseDown_3panels_splitter2);
@@ -124,7 +124,7 @@ function spMouseMove_3panels_splitter2(e) {
 function resetPosition_3panels_splitter1(nowX) {
   var dx = nowX - last_x;
   dx += panel_left.clientWidth;
-  document.getElementById("reducer_btn").style.left = dx+"px";
+  document.getElementById("reducer_btn").style.left = dx + "px";
   panel_left.style.width = dx + "px";
   splitter.style.marginLeft = dx + "px";
   dx += splitter.clientWidth;
@@ -132,9 +132,9 @@ function resetPosition_3panels_splitter1(nowX) {
 
   panel_right.style.width = (window_width - dx) / 2 + "px";
   dx += panel_right.clientWidth;
-  splitter2.style.marginLeft = dx -5+ "px";
+  splitter2.style.marginLeft = dx - 5 + "px";
   dx += splitter2.clientWidth;
-  panel_right2.style.marginLeft = dx-5 + "px";
+  panel_right2.style.marginLeft = dx - 5 + "px";
   panel_right2.style.width = window_width - dx + "px";
   last_x = nowX;
 }
@@ -143,9 +143,10 @@ function resetPosition_3panels_splitter2(nowX) {
   var dx = nowX - last_x2;
   dx += panel_right.clientWidth;
   panel_right.style.width = dx + "px";
-  splitter2.style.marginLeft = dx -5+ panel_left.clientWidth + splitter.clientWidth + "px";
+  splitter2.style.marginLeft = dx - 5 + panel_left.clientWidth + splitter.clientWidth + "px";
   dx += splitter2.clientWidth;
-  panel_right2.style.marginLeft = dx -5+ panel_left.clientWidth + splitter.clientWidth + "px";
+  panel_right2.style.marginLeft = dx - 5 + panel_left.clientWidth + splitter.clientWidth + "px";
+  dx += panel_left.clientWidth + splitter.clientWidth;
   panel_right2.style.width = window_width - dx + "px";
   last_x2 = nowX;
 }
@@ -156,7 +157,7 @@ var passiveSupported = false;
 
 try {
   var options = Object.defineProperty({}, "passive", {
-    get: function() {
+    get: function () {
       passiveSupported = true;
     }
   });
@@ -354,12 +355,12 @@ treeview_list = [{
 
 //charge_treeview(treeview_list);
 
-document.querySelectorAll(".title_barre_outil_menu").forEach(function(element) {
+document.querySelectorAll(".title_barre_outil_menu").forEach(function (element) {
   element.classList.add("hide");
 });
 
-document.querySelectorAll(".title_barre_outil").forEach(function(element) {
-  element.addEventListener("click", function() {
+document.querySelectorAll(".title_barre_outil").forEach(function (element) {
+  element.addEventListener("click", function () {
     /*document.querySelectorAll(".title_barre_outil").forEach(function(element2) {
     element2.querySelector(".title_barre_outil_menu").classList.add("hide");
     });*/
@@ -367,7 +368,7 @@ document.querySelectorAll(".title_barre_outil").forEach(function(element) {
     element.querySelector(".title_barre_outil_menu").focus();
   });
 
-  element.addEventListener("focusout", function() {
+  element.addEventListener("focusout", function () {
 
     element.querySelector(".title_barre_outil_menu").classList.add("hide");
   });
@@ -375,13 +376,13 @@ document.querySelectorAll(".title_barre_outil").forEach(function(element) {
 });
 
 function getPath(aCaption) {
-  return treeview_list.find(function(anElement) {
+  return treeview_list.find(function (anElement) {
     return aCaption === anElement.caption;
   }).path;
 }
 
 function getExtension(aCaption) {
-  let result = treeview_list.find(function(anElement) {
+  let result = treeview_list.find(function (anElement) {
     return aCaption === anElement.caption;
   }).caption.split("").reverse().join("");
 
@@ -409,7 +410,12 @@ function openInTab(idNodeToOpen) {
   }
   let currTab = idNodeToOpen.substring(0, idNodeToOpen.indexOf("_page")) + "_tab";
   console.log(currTab);
-  document.getElementsByClassName("barre_nav_tabs_currOpen")[0].classList.remove("barre_nav_tabs_currOpen");
+  try {
+    document.getElementsByClassName("barre_nav_tabs_currOpen")[0].classList.remove("barre_nav_tabs_currOpen");
+
+  } catch (e) {
+    console.log(e)
+  }
   document.getElementById(currTab).classList.add("barre_nav_tabs_currOpen");
   document.getElementById(currTab).style.display = "";
 
@@ -417,22 +423,92 @@ function openInTab(idNodeToOpen) {
     document.getElementById(G_lstopentab[i]).style.display = "none";
   }
   document.getElementById(idNodeToOpen).style.display = "";
-  //let jsToShow = "/*jshint esversion: 6 */\r\n/* Portfolio - Alexandre Bonvalle */\r\n document.getElemetById('tes');";
+  let jsToShow = "/*jshint esversion: 6 */\r\n/* Portfolio - Alexandre Bonvalle */\r\n document.getElemetById('tes');";
+  let htmlToShow = "/*jshint esversion: 6 */\r\n/* Portfolio - Alexandre Bonvalle */\r\n document.getElemetById('tes');";
+  let cssToShow = "/*jshint esversion: 6 */\r\n/* Portfolio - Alexandre Bonvalle */\r\n document.getElemetById('tes');";
+  let mdToShow="";
+  mdToShow+="# Why ? \r\n";
+  mdToShow+="Ce portfolio me permet de montrer mes compétences en développement web grâce à un projet concret. \r\n";
+  mdToShow+="Calqué sur le design d'Atom, j'ai essayé de rester le plus fidèle possible au logiciel.\r\n";
+  mdToShow+="Il me reste beaucoup d'améliorations à apporter, mais n'ayant pas de dead-line :smile: , le projet avance sur mon temps libre lorsque je n'ai pas d'autres projets en cours.\r\n";
+  mdToShow+="\r\n";
+  mdToShow+="## Pour les non initiés (ou les préssés) \r\n";
+  mdToShow+="Pour les personnes n'étant pas à l'aise avec les IDE (où celles qui veulent juste voir mes compétences et projets rapidement), \r\n";
+  mdToShow+="je vous invite à voir le résultat en cliquant sur \"Lancer le serveur web\" dans l'onglet Packages de la barre d'outils. \r\n";
+  mdToShow+="\r\n";
+  mdToShow+="### Pour les initiés (ou les curieux) \r\n";
+  mdToShow+="Je vous invite à cliquer un peu partout ! :thumbsup: \r\n";
+  mdToShow+="\r\n";
+  mdToShow+="#### Pour tout le monde \r\n";
+  mdToShow+="Si vous rencontrez un bug (ne vous inquiétez pas, je l'ai déjà sûrement vu aussi) vous pouvez dans le doute me le signaler en me contactant par mail ! \r\n";
+  mdToShow+=":envelope: : contact@alexandrebonvalle.fr \r\n";
+  if (document.getElementById(idNodeToOpen).children.length <= 0) {
+    switch (idNodeToOpen) {
+      case 'README_page':
+        var myCodeMirrorMD = CodeMirror(document.getElementById("README_page"), {
+          value: mdToShow,
+          mode: "gfm",
+          theme: "dracula oceanic-next",
+          lineWrapping: false,
+          lineNumbers: true
+        });
+        break;
+      case 'index_page':
+        var myCodeMirrorHTML = CodeMirror(document.getElementById("index_page"), {
+          value: htmlToShow,
+          mode: "javascript",
+          extraKeys: {
+            "Ctrl-Space": "autocomplete"
+          },
+          gutters: ["CodeMirror-lint-markers"],
+          lint: true,
+          autoCloseBrackets: true,
+          theme: "dracula oceanic-next",
+          lineWrapping: false,
+          lineNumbers: true,
+          scrollbarStyle: "overlay"
+        });
+        break;
+      case 'style_page':
+        var myCodeMirrorCSS = CodeMirror(document.getElementById("style_page"), {
+          value: cssToShow,
+          mode: "javascript",
+          extraKeys: {
+            "Ctrl-Space": "autocomplete"
+          },
+          gutters: ["CodeMirror-lint-markers"],
+          lint: true,
+          autoCloseBrackets: true,
+          theme: "dracula oceanic-next",
+          lineWrapping: false,
+          lineNumbers: true,
+          scrollbarStyle: "overlay"
+        });
+        break;
+      case 'main_page':
+        var myCodeMirrorJS = CodeMirror(document.getElementById("main_page"), {
+          value: jsToShow,
+          mode: "javascript",
+          extraKeys: {
+            "Ctrl-Space": "autocomplete"
+          },
+          gutters: ["CodeMirror-lint-markers"],
+          lint: true,
+          autoCloseBrackets: true,
+          theme: "dracula oceanic-next",
+          lineWrapping: false,
+          lineNumbers: true,
+          scrollbarStyle: "overlay"
+        });
+        break;
+    }
+  }
 
-  /*var myCodeMirror = CodeMirror(document.getElementById(idNodeToOpen), {
-    value: jsToShow,
-    mode: "javascript",
-    extraKeys: {
-      "Ctrl-Space": "autocomplete"
-    },
-    gutters: ["CodeMirror-lint-markers"],
-    lint: true,
-    autoCloseBrackets: true,
-    theme: "dracula oceanic-next",
-    lineWrapping: false,
-    lineNumbers: true,
-    scrollbarStyle: "overlay"
-  });*/
+
+
+
+
+
 
   /*let nameFile = idNodeToOpen;
   document.getElementById("namePage_footer").innerText = getPath(nameFile);
@@ -472,7 +548,7 @@ function delTab(idNodeToOpen) {
 }
 
 function createTab(anId) {
-  let result = treeview_list.find(function(anItem) {
+  let result = treeview_list.find(function (anItem) {
     return anItem.caption === anId;
   });
 
@@ -486,7 +562,7 @@ function createTab(anId) {
 }
 
 function showTab(anId) {
-  document.getElementsByName("pageTab").forEach(function(aPage) {
+  document.getElementsByName("pageTab").forEach(function (aPage) {
     if (aPage.id === anId + "_page") {
       aPage.style.display = "";
     } else {
@@ -497,39 +573,37 @@ function showTab(anId) {
 
 //openInTab("Welcome"); //init with welcome page
 
-let show_reducer = function(elem) {
-  console.log(elem);
+let show_reducer = function (elem) {
   elem.style.display = "block";
-  window.setTimeout(function() {
+  window.setTimeout(function () {
     elem.classList.add('is-visible'); // Make the element visible
   }, 0.50);
 };
 
-let hide_reducer = function(elem) {
+let hide_reducer = function (elem) {
   elem.classList.remove('is-visible');
-  window.setTimeout(function() {
+  window.setTimeout(function () {
     elem.style.display = "none";
   }, 50);
 };
 
-document.getElementById("panel_left").addEventListener("mouseover", function() {
-  console.log("enter mouse");
+document.getElementById("panel_left").addEventListener("mouseover", function () {
   show_reducer(document.querySelector(".reducer_btn"));
 });
-document.getElementById("panel_left").addEventListener("mouseleave", function() {
+document.getElementById("panel_left").addEventListener("mouseleave", function () {
   hide_reducer(document.querySelector(".reducer_btn"));
 });
-let callback_show_augmenter = function(event) {
-  let show_reducer = function(elem) {
+let callback_show_augmenter = function (event) {
+  let show_reducer = function (elem) {
     elem.style.display = "block";
-    window.setTimeout(function() {
+    window.setTimeout(function () {
       elem.classList.add('is-visible2'); // Make the element visible
     }, 0.50);
   };
 
-  let hide_reducer = function(elem) {
+  let hide_reducer = function (elem) {
     elem.classList.remove('is-visible2');
-    window.setTimeout(function() {
+    window.setTimeout(function () {
       elem.style.display = "none";
     }, 50);
   };
@@ -543,10 +617,11 @@ let callback_show_augmenter = function(event) {
     }
   }
 }
-function toggle_panel(){
-  if(document.getElementById("panel_left").style.display == "none"){
+
+function toggle_panel() {
+  if (document.getElementById("panel_left").style.display == "none") {
     augment_panel();
-  }else{
+  } else {
     reduce_panel();
   }
 }
@@ -583,7 +658,7 @@ function augment_panel() {
 
 function Packages_launchServer() {
   //window.location.href = "https://alexandrebonvalle.fr/server/";
-  if(!isServerLaunched){
+  if (!isServerLaunched) {
     isServerLaunched = true;
     init(true);
   }
@@ -591,11 +666,11 @@ function Packages_launchServer() {
 
 
 /**/
-var Browser = function(elem) {
+var Browser = function (elem) {
   var that = this;
 
   that.elem = elem;
-  that.url = that.elem.getAttribute("data-url") || 'http://127.0.0.1:5500/current/index.html';
+  that.url = that.elem.getAttribute("data-url") || 'http://127.0.0.1:5500/index.html';
 
   that.timer;
 
@@ -607,7 +682,7 @@ var Browser = function(elem) {
 
 }
 
-Browser.prototype.createBrowser = function() {
+Browser.prototype.createBrowser = function () {
   var that = this;
 
   var ctrls, ctrlBtn, previous, next, bar, address, reload, content, thewebsite;
@@ -641,13 +716,13 @@ Browser.prototype.createBrowser = function() {
   address.className += " address";
   address.value = that.url;
 
-  address.onkeyup = function(e) {
+  address.onkeyup = function (e) {
     clearTimeout(that.timer);
     if (e.which == 13) {
       that.url = address.value;
       that.loadUrl();
     } else {
-      that.timer = setTimeout(function() {
+      that.timer = setTimeout(function () {
         that.url = address.value;
         that.loadUrl();
       }, 3000);
@@ -659,7 +734,7 @@ Browser.prototype.createBrowser = function() {
 
   reload = document.createElement("div");
   reload.className += " reload";
-  reload.addEventListener("click", function() {
+  reload.addEventListener("click", function () {
     that.loadUrl();
   })
   bar.appendChild(reload);
@@ -685,9 +760,9 @@ Browser.prototype.createBrowser = function() {
 }
 
 
-Browser.prototype.loadUrl = function() {
+Browser.prototype.loadUrl = function () {
   var that = this;
-  let lstPageServer = ["http://127.0.0.1:5500/current/index.html"];
+  let lstPageServer = ["http://127.0.0.1:5500/index.html"];
   if (lstPageServer.indexOf(that.address_bar.value) != -1) {
     //todo : load page
   } else {
@@ -698,9 +773,8 @@ Browser.prototype.loadUrl = function() {
 
 // onload, reference all browsers and make them work! :)
 
-  var browsers = document.getElementsByClassName("z-browser");
-  for (var i = 0; i < browsers.length; i++) {
-    var browser = browsers[i];
-    new Browser(browser);
-  }
-
+var browsers = document.getElementsByClassName("z-browser");
+for (var i = 0; i < browsers.length; i++) {
+  var browser = browsers[i];
+  new Browser(browser);
+}

@@ -4,13 +4,13 @@
   <head>
     <meta charset="utf-8">
     <title>index.html - C:\Users\Alexandre\Documents\Portfolio - Atom</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/theme/dracula.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/theme/oceanic-next.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/addon/scroll/simplescrollbars.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/addon/hint/show-hint.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/addon/lint/lint.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/codemirror.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/theme/dracula.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/theme/oceanic-next.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/addon/scroll/simplescrollbars.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/addon/hint/show-hint.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/addon/lint/lint.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/codemirror.css">
     <link rel="stylesheet" href="./style.css">
 
   </head>
@@ -104,26 +104,9 @@
               <ul>
                 <li><span onclick="openInTab('README_page')"><img src="./atom-icons/file.svg" alt="icon_folder"
                     class="icon_folder">README.md</span></li>
-                <li>
-                  <input type="checkbox" id="cb-1-1" checked>
-                  <label for="cb-1-1">
-                  <span class="tr_close"><img src="./atom-icons/chevron-right.svg" alt="icon_folder"></span>
-                  <span class="tr_open"><img src="./atom-icons/chevron-down.svg" alt="icon_folder"></span>
-                  <span><img src="./atom-icons/file-directory.svg" alt="icon_folder" class="icon_folder">pages</span>
-                </label>
-                  <ul>
                     <li><span onclick="openInTab('index_page')"><img src="./atom-icons/file.svg" alt="icon_folder"
-                        class="icon_folder">index.html</span></li>
-                    <li><span onclick="openInTab('a_propos_page')"><img src="./atom-icons/file.svg" alt="icon_folder"
-                        class="icon_folder">a_propos.html</span></li>
-                    <li><span onclick="openInTab('mon_parcours_page')"><img src="./atom-icons/file.svg" alt="icon_folder"
-                        class="icon_folder">mon_parcours.html</span></li>
-                    <li><span onclick="openInTab('competences_page')"><img src="./atom-icons/file.svg" alt="icon_folder"
-                        class="icon_folder">competences.html</span></li>
-                    <li><span onclick="openInTab('portfolio_page')"><img src="./atom-icons/file.svg" alt="icon_folder"
-                        class="icon_folder">portfolio.html</span></li>
-                  </ul>
-                </li>
+                      class="icon_folder">index.html</span></li>
+               
                 <li>
                   <input type="checkbox" id="cb-1-2" checked>
                   <label for="cb-1-2">
@@ -161,21 +144,17 @@
           <div id="README_tab" name="navtabs" onclick="openInTab('README_page')" class="barre_nav_tabs" style="display:none">README.md<span onclick="delTab('README_page')">X</span></div>
           <div id="index_tab" name="navtabs" onclick="openInTab('index_page')" class="barre_nav_tabs" style="display:none">index.html<span onclick="delTab('index_page')">X</span></div>
           <div id="style_tab" name="navtabs" onclick="openInTab('style_page')" class="barre_nav_tabs" style="display:none">style.css<span onclick="delTab('style_page')">X</span></div>
-          <div id="main_page" name="navtabs" onclick="openInTab('main_page')" class="barre_nav_tabs" style="display:none">
+          <div id="main_tab" name="navtabs" onclick="openInTab('main_page')" class="barre_nav_tabs" style="display:none">
             main.js<span onclick="delTab('main_page')">X</span></div>
-          <div id="a_propos_page" name="navtabs" onclick="openInTab('a_propos_page')" class="barre_nav_tabs" style="display:none">a_propos.html<span onclick="delTab('a_propos_page')">X</span></div>
-          <div id="mon_parcours_page" name="navtabs" onclick="openInTab('mon_parcours_page')" class="barre_nav_tabs" style="display:none">mon_parcours.html<span onclick="delTab('mon_parcours_page')">X</span></div>
-          <div id="competences_page" name="navtabs" onclick="openInTab('competences_page')" class="barre_nav_tabs" style="display:none">competences.html<span onclick="delTab('competences_page')">X</span></div>
-          <div id="portfolio_page" name="navtabs" onclick="openInTab('portfolio_page')" class="barre_nav_tabs" style="display:none">portfolio.html<span onclick="delTab('portfolio_page')">X</span></div>
         </div>
         <div id="pages">
           <div id="Welcome_page" name="pageTab">
             <div class="Welcome_page_left">
               <h1>Développeur Full-Stack</h1>
               <h3><a href="">A hackable portfolio for the 21<sup>st</sup> Century</a></h3>
-              <p>Le portfolio n'est pas terminé à 100%, il manque encore quelques fonctionnalités.<br>Naviguez comme dans un IDE classique pour accéder<br> aux différentes informations de mon portfolio.</p>
+              <p>Le portfolio comporte encore quelques bugs et il manque quelques fonctionnalités,<br> tout cela sera réglé très vite.<br><br>Naviguez comme dans un IDE classique.</p>
               <ul>
-                <li><a href="./contact.html">ContactForm</a> pour me contacter rapidement</li>
+                <li><a onclick="openInTab('README_page')">README.md</a> pour en savoir plus</li>
                 <li><a href="./mentions.html">Mentions légales</a> pour s'assurer que je respecte le RGPD</li>
               </ul>
             </div>
@@ -192,28 +171,12 @@
             </div>
           </div>
           <div id="README_page" name="pageTab" style="display:none">
-            //Codemirror ici
           </div>
           <div id="index_page" name="pageTab" style="display:none">
-            //Codemirror ici
           </div>
           <div id="style_page" name="pageTab" style="display:none">
-            //Codemirror ici
           </div>
           <div id="main_page" name="pageTab" style="display:none">
-            //Codemirror ici
-          </div>
-          <div id="a_propos_page" name="pageTab" style="display:none">
-            //Codemirror ici
-          </div>
-          <div id="mon_parcours_page" name="pageTab" style="display:none">
-            //Codemirror ici
-          </div>
-          <div id="competences_page" name="pageTab" style="display:none">
-            //Codemirror ici
-          </div>
-          <div id="portfolio_page" name="pageTab" style="display:none">
-            //Codemirror ici
           </div>
 
         </div>
@@ -252,18 +215,23 @@
     </div>
     <div></div>
   </body>
-  <script src="./codemirror-5.45.0/lib/codemirror.js"></script>
-  <script src="./codemirror-5.45.0/mode/javascript/javascript.js"></script>
+ 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jshint/2.10.2/jshint.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/codemirror.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/addon/lint/javascript-lint.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/addon/edit/closebrackets.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/addon/lint/lint.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/addon/hint/javascript-hint.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/addon/hint/show-hint.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/addon/scroll/simplescrollbars.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/mode/javascript/javascript.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/mode/markdown/markdown.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/mode/xml/xml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/mode/meta.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/mode/css/css.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/addon/mode/overlay.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/addon/lint/javascript-lint.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/addon/edit/closebrackets.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/addon/lint/lint.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/addon/hint/javascript-hint.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/addon/hint/show-hint.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/addon/scroll/simplescrollbars.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/mode/javascript/javascript.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/mode/gfm/gfm.min.js"></script>
   <script type="text/javascript" src="./main.js"></script>
 
 </html>
