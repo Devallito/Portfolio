@@ -433,7 +433,7 @@ function openInTab(idNodeToOpen) {
   mdToShow+="Il me reste beaucoup d'améliorations à apporter, mais n'ayant pas de dead-line :smile: , le projet avance sur mon temps libre lorsque je n'ai pas d'autres projets en cours.\r\n";
   mdToShow+="\r\n";
   mdToShow+="## Pour les non initiés (ou les préssés) \r\n";
-  mdToShow+="Pour les personnes n'étant pas à l'aise avec les IDE (où celles qui veulent juste voir mes compétences et projets rapidement), \r\n";
+  mdToShow+="Pour les personnes n'étant pas à l'aise avec les IDE (ou celles qui veulent juste voir mes compétences et projets rapidement), \r\n";
   mdToShow+="je vous invite à voir le résultat en cliquant sur \"Lancer le serveur web\" dans l'onglet Packages de la barre d'outils. \r\n";
   mdToShow+="\r\n";
   mdToShow+="### Pour les initiés (ou les curieux) \r\n";
@@ -441,7 +441,7 @@ function openInTab(idNodeToOpen) {
   mdToShow+="\r\n";
   mdToShow+="#### Pour tout le monde \r\n";
   mdToShow+="Si vous rencontrez un bug (ne vous inquiétez pas, je l'ai déjà sûrement vu aussi) vous pouvez dans le doute me le signaler en me contactant par mail ! \r\n";
-  mdToShow+=":envelope: : contact@alexandrebonvalle.fr \r\n";
+  mdToShow+=":envelope: - contact@alexandrebonvalle.fr \r\n";
   if (document.getElementById(idNodeToOpen).children.length <= 0) {
     switch (idNodeToOpen) {
       case 'README_page':
@@ -764,7 +764,15 @@ Browser.prototype.loadUrl = function () {
   var that = this;
   let lstPageServer = ["http://127.0.0.1:5500/index.html"];
   if (lstPageServer.indexOf(that.address_bar.value) != -1) {
+    that.iframe.src ="about:blank";
     //todo : load page
+    console.log(that.iframe);
+    console.log(that.iframe.contentDocument);
+    var getFrame = document.getElementById('frameK');
+    var doc = getFrame.contentDocument || getFrame.contentWindow.document;
+    console.log(doc);
+    doc.body.innerHTML="<h1>TEST</h1>";
+    that.iframe.contentDocument.write("<h1>Injected from parent frame</h1>") ;
   } else {
     that.iframe.src = that.address_bar.value;
 
