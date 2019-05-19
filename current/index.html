@@ -15,7 +15,7 @@
 
   </head>
 
-  <body onload="init(true)">
+  <body onload="init()">
     <div id="barre_outil">
       <div class="title_barre_outil">
         File
@@ -32,22 +32,38 @@
       <div class="title_barre_outil">
         Edit
         <div tabindex="0" class="title_barre_outil_menu">
-
+          <div class="barre_content barre_content_disabled"><span>Undo</span></div>
+          <div class="barre_content barre_content_disabled"><span>Redo</span></div>
+          <div class="title_barre_outil_menu_separator"></div>
+          <div class="barre_content barre_content_disabled"><span>Cut</span></div>
+          <div class="barre_content barre_content_disabled"><span>Copy</span></div>
+          <div class="barre_content barre_content_disabled"><span>Paste</span></div>
+          <div class="title_barre_outil_menu_separator"></div>
+          <div class="barre_content barre_content_disabled"><span>Find</span></div>
+          <div class="barre_content barre_content_disabled"><span>Replace</span></div>
         </div>
       </div>
       <div class="title_barre_outil">
         View
         <div tabindex="0" class="title_barre_outil_menu">
+            <div class="barre_content barre_content_disabled"><span>Toggle Full Screen</span></div>
+            <div class="barre_content barre_content_disabled"><span>Toggle Menu Bar</span></div>
+            <div class="title_barre_outil_menu_separator"></div>
+            <div class="barre_content barre_content_disabled"><span>Increase Font Size</span></div>
+            <div class="barre_content barre_content_disabled"><span>Decrease Font Size</span></div>
+            <div class="barre_content barre_content_disabled"><span>Reset Font Size</span></div>
+            <div class="title_barre_outil_menu_separator"></div>
+            <div class="barre_content" onclick="toggle_panel();"><span>Toggle Tree View</span></div>
         </div>
       </div>
       <div class="title_barre_outil">
         Selection
         <div tabindex="0" class="title_barre_outil_menu">
-        </div>
-      </div>
-      <div class="title_barre_outil">
-        Find
-        <div tabindex="0" class="title_barre_outil_menu">
+            <div class="barre_content barre_content_disabled"><span>Add Selection Above</span></div>
+            <div class="barre_content barre_content_disabled"><span>Add Selection Below</span></div>
+            <div class="title_barre_outil_menu_separator"></div>
+            <div class="barre_content barre_content_disabled"><span>Select to Top</span></div>
+            <div class="barre_content barre_content_disabled"><span>Select to Bottom</span></div>
         </div>
       </div>
       <div class="title_barre_outil">
@@ -60,12 +76,18 @@
       <div class="title_barre_outil">
         Help
         <div tabindex="0" class="title_barre_outil_menu">
+            <div class="barre_content" onclick="alert('No update available\r\nVersion 1.0.0 is the lastest version')"><span>Check for Updates</span></div>
+            <div class="title_barre_outil_menu_separator"></div>
+            <div class="barre_content barre_content_disabled"><span>Report Issue</span></div>
+            <div class="title_barre_outil_menu_separator"></div>
+            <div class="barre_content" onclick="openInTab('Welcome_page')"><span>Welcome Guide</span></div>
+
         </div>
       </div>
     </div>
     <div class="">
       <div id="panel_left">
-        <div class="reducer_btn" onclick="reduce_panel();"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="16" viewBox="0 0 8 16">
+        <div id="reducer_btn" class="reducer_btn" onclick="reduce_panel();"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="16" viewBox="0 0 8 16">
           <path fill="#9da5b4" fill-rule="evenodd" d="M5.5 3L7 4.5 3.25 8 7 11.5 5.5 13l-5-5 5-5z" /></svg></div>
         <div class="titleProject">
           Project

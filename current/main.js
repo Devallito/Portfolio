@@ -10,12 +10,13 @@ function init(ThreePanels = false) {
   panel_right = document.getElementById("panel_right");
   panel_right2 = document.getElementById("panel_right2");
   splitter2 = document.getElementById("splitter2");
-
+  
   splitter.removeEventListener("mousedown", spMouseDown_3panels_splitter1);
   splitter2.removeEventListener("mousedown", spMouseDown_3panels_splitter2);
   splitter.removeEventListener("mousedown", spMouseDown_2panels);
 
   var dx = panel_left.clientWidth;
+  document.getElementById("reducer_btn").style.left = dx+"px";
   splitter.style.marginLeft = dx + "px";
   dx += splitter.clientWidth;
   //panel_right.style.marginLeft = dx + "px";
@@ -69,6 +70,7 @@ function spMouseMove_2panels(e) {
 function resetPosition_2panels(nowX) {
   var dx = nowX - last_x;
   dx += panel_left.clientWidth;
+  document.getElementById("reducer_btn").style.left = dx+"px";
   panel_left.style.width = dx + "px";
   splitter.style.marginLeft = dx + "px";
   dx += splitter.clientWidth;
@@ -122,6 +124,7 @@ function spMouseMove_3panels_splitter2(e) {
 function resetPosition_3panels_splitter1(nowX) {
   var dx = nowX - last_x;
   dx += panel_left.clientWidth;
+  document.getElementById("reducer_btn").style.left = dx+"px";
   panel_left.style.width = dx + "px";
   splitter.style.marginLeft = dx + "px";
   dx += splitter.clientWidth;
@@ -495,6 +498,7 @@ function showTab(anId) {
 //openInTab("Welcome"); //init with welcome page
 
 let show_reducer = function(elem) {
+  console.log(elem);
   elem.style.display = "block";
   window.setTimeout(function() {
     elem.classList.add('is-visible'); // Make the element visible
@@ -509,6 +513,7 @@ let hide_reducer = function(elem) {
 };
 
 document.getElementById("panel_left").addEventListener("mouseover", function() {
+  console.log("enter mouse");
   show_reducer(document.querySelector(".reducer_btn"));
 });
 document.getElementById("panel_left").addEventListener("mouseleave", function() {
@@ -536,6 +541,13 @@ let callback_show_augmenter = function(event) {
     if (document.getElementById("augmenter_btn").style.display !== "none") {
       hide_reducer(document.getElementById("augmenter_btn"));
     }
+  }
+}
+function toggle_panel(){
+  if(document.getElementById("panel_left").style.display == "none"){
+    augment_panel();
+  }else{
+    reduce_panel();
   }
 }
 
