@@ -450,7 +450,8 @@ function openInTab(idNodeToOpen) {
           mode: "gfm",
           theme: "dracula oceanic-next",
           lineWrapping: false,
-          lineNumbers: true
+          lineNumbers: true,
+          readOnly : true
         });
         break;
       case 'index_page':
@@ -466,7 +467,8 @@ function openInTab(idNodeToOpen) {
           theme: "dracula oceanic-next",
           lineWrapping: false,
           lineNumbers: true,
-          scrollbarStyle: "overlay"
+          scrollbarStyle: "overlay",
+          readOnly : true
         });
         break;
       case 'style_page':
@@ -482,7 +484,8 @@ function openInTab(idNodeToOpen) {
           theme: "dracula oceanic-next",
           lineWrapping: false,
           lineNumbers: true,
-          scrollbarStyle: "overlay"
+          scrollbarStyle: "overlay",
+          readOnly : true
         });
         break;
       case 'main_page':
@@ -498,7 +501,8 @@ function openInTab(idNodeToOpen) {
           theme: "dracula oceanic-next",
           lineWrapping: false,
           lineNumbers: true,
-          scrollbarStyle: "overlay"
+          scrollbarStyle: "overlay",
+          readOnly : true
         });
         break;
     }
@@ -741,6 +745,7 @@ Browser.prototype.createBrowser = function () {
 
   //    content
   content = document.createElement("div");
+  content.setAttribute('id', 'contentK');
   content.className += " content";
 
   thewebsite = document.createElement("iframe");
@@ -766,13 +771,9 @@ Browser.prototype.loadUrl = function () {
   if (lstPageServer.indexOf(that.address_bar.value) != -1) {
     that.iframe.src ="about:blank";
     //todo : load page
-    console.log(that.iframe);
-    console.log(that.iframe.contentDocument);
-    var getFrame = document.getElementById('frameK');
-    var doc = getFrame.contentDocument || getFrame.contentWindow.document;
-    console.log(doc);
-    doc.body.innerHTML="<h1>TEST</h1>";
-    that.iframe.contentDocument.write("<h1>Injected from parent frame</h1>") ;
+    that.iframe.src = "https://alexandrebonvalle.fr";
+   
+    
   } else {
     that.iframe.src = that.address_bar.value;
 
