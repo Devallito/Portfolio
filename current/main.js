@@ -1,4 +1,9 @@
 isServerLaunched = false;
+var myCodeMirrorMD,
+myCodeMirrorHTML,
+myCodeMirrorCSS,
+myCodeMirrorJS;
+
 
 var splitter, splitter2, panel_left, panel_right, panel_right2;
 var last_x, window_width;
@@ -445,7 +450,7 @@ function openInTab(idNodeToOpen) {
   if (document.getElementById(idNodeToOpen).children.length <= 0) {
     switch (idNodeToOpen) {
       case 'README_page':
-        var myCodeMirrorMD = CodeMirror(document.getElementById("README_page"), {
+         myCodeMirrorMD = CodeMirror(document.getElementById("README_page"), {
           value: mdToShow,
           mode: "gfm",
           theme: "dracula oceanic-next",
@@ -455,7 +460,7 @@ function openInTab(idNodeToOpen) {
         });
         break;
       case 'index_page':
-        var myCodeMirrorHTML = CodeMirror(document.getElementById("index_page"), {
+         myCodeMirrorHTML = CodeMirror(document.getElementById("index_page"), {
           value: htmlToShow,
           mode: "javascript",
           extraKeys: {
@@ -472,7 +477,7 @@ function openInTab(idNodeToOpen) {
         });
         break;
       case 'style_page':
-        var myCodeMirrorCSS = CodeMirror(document.getElementById("style_page"), {
+         myCodeMirrorCSS = CodeMirror(document.getElementById("style_page"), {
           value: cssToShow,
           mode: "javascript",
           extraKeys: {
@@ -489,7 +494,7 @@ function openInTab(idNodeToOpen) {
         });
         break;
       case 'main_page':
-        var myCodeMirrorJS = CodeMirror(document.getElementById("main_page"), {
+         myCodeMirrorJS = CodeMirror(document.getElementById("main_page"), {
           value: jsToShow,
           mode: "javascript",
           extraKeys: {
@@ -769,12 +774,23 @@ Browser.prototype.loadUrl = function () {
   var that = this;
   let lstPageServer = ["http://127.0.0.1:5500/index.html"];
   if (lstPageServer.indexOf(that.address_bar.value) != -1) {
-    that.iframe.src ="about:blank";
-    //todo : load page
-    that.iframe.src = "https://alexandrebonvalle.fr";
-   
-    
-  } else {
+
+    var old_element = document.getElementById("frameK");
+    var new_element = old_element.cloneNode(true);    
+    new_element.removeAttribute("src");
+    new_element.removeAttribute("sandbox");
+    old_element.parentNode.replaceChild(new_element, old_element);
+
+    var html =myCodeMirrorHTML.getValue();
+    var css=  myCodeMirrorCSS.getValue();
+    var js =myCodeMirrorJS.getValue();
+
+      var previewFrame = document.getElementById('frameK');
+      var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
+      preview.open();
+      preview.write(html);
+      preview.close();
+    } else {
     that.iframe.src = that.address_bar.value;
 
   }
