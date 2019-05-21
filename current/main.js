@@ -455,8 +455,7 @@ function openInTab(idNodeToOpen) {
           mode: "gfm",
           theme: "dracula oceanic-next",
           lineWrapping: false,
-          lineNumbers: true,
-          readOnly : true
+          lineNumbers: true
         });
         break;
       case 'index_page':
@@ -472,8 +471,7 @@ function openInTab(idNodeToOpen) {
           theme: "dracula oceanic-next",
           lineWrapping: false,
           lineNumbers: true,
-          scrollbarStyle: "overlay",
-          readOnly : true
+          scrollbarStyle: "overlay"
         });
         break;
       case 'style_page':
@@ -489,8 +487,7 @@ function openInTab(idNodeToOpen) {
           theme: "dracula oceanic-next",
           lineWrapping: false,
           lineNumbers: true,
-          scrollbarStyle: "overlay",
-          readOnly : true
+          scrollbarStyle: "overlay"
         });
         break;
       case 'main_page':
@@ -506,8 +503,7 @@ function openInTab(idNodeToOpen) {
           theme: "dracula oceanic-next",
           lineWrapping: false,
           lineNumbers: true,
-          scrollbarStyle: "overlay",
-          readOnly : true
+          scrollbarStyle: "overlay"
         });
         break;
     }
