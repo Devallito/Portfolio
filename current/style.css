@@ -68,7 +68,7 @@ svg #svg_atom_icons:hover {
   width: 25%;
   background-color: #282C34;
   height: 96vh;
- /* float: left;*/
+  /* float: left;*/
   /*position: absolute;*/
 }
 
@@ -122,7 +122,8 @@ svg #svg_atom_icons:hover {
 
 #splitter {
   width: 5px;
-  background-color: #282C34;
+  /*background-color: #282C34;*/
+  background-color: rgba(0, 0, 0, 0);
   border-left: 2px solid #181A1F;
   float: left;
   height: 96vh;
@@ -165,7 +166,7 @@ svg #svg_atom_icons:hover {
 
 .title_barre_outil_menu {
   position: absolute;
-  z-index:999;
+  z-index: 999;
   background-color: #FFFFFF;
   margin-left: -5px;
   margin-top: 3px;
@@ -419,11 +420,13 @@ svg #svg_atom_icons:hover {
 }
 
 /*CSS PAGES*/
-#pages{
+
+#pages {
   white-space: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
 }
+
 #Welcome_page {
   background-color: #282C34;
   padding: 200px;
@@ -490,15 +493,19 @@ svg #svg_atom_icons:hover {
 }
 
 /*----------------------------Codemirror surcouche-------------------------------------------------*/
-.cm-s-dracula.CodeMirror{
+
+.cm-s-dracula.CodeMirror {
   background: #282C34 !important;
 }
-.CodeMirror .CodeMirror-gutters{
+
+.CodeMirror .CodeMirror-gutters {
   background: #282C34 !important;
 }
+
 .CodeMirror .cm-s-dracula .cm-s-oceanic-next {
   background: #282C34 !important;
 }
+
 /**/
 
 *,
@@ -620,6 +627,16 @@ svg #svg_atom_icons:hover {
 .z-browser .content iframe {
   display: block;
   position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#last_of_us {
+  width: 100%;
+  height: 100%;
+}
+
+#hearth_of_gold {
   width: 100%;
   height: 100%;
 }
