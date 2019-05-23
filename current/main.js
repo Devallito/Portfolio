@@ -50,7 +50,13 @@ function init(ThreePanels = false) {
     console.log(panel_right.style);
     splitter.addEventListener("mousedown", spMouseDown_2panels);
   }
-
+  
+  openInTab('index_page');
+  openInTab('main_page');
+  openInTab('style_page');
+  delTab('index_page');
+  delTab('main_page');
+  delTab('style_page');
 }
 
 /*----------------------------Gestion du resize 2 panels----------------------------*/
@@ -307,7 +313,6 @@ function charge_treeview(aListToOrder) {
     } : false);
   }
 }
-
 treeview_list = [{
   PId: -2,
   Id: -2,
@@ -679,6 +684,8 @@ function Packages_launchServer() {
     isServerLaunched = true;
     init(true);
   }
+  var browser = document.getElementsByClassName("z-browser")[0];
+  new Browser(browser);
 }
 
 
@@ -806,11 +813,7 @@ Browser.prototype.loadUrl = function() {
 
 // onload, reference all browsers and make them work! :)
 
-var browsers = document.getElementsByClassName("z-browser");
-for (var i = 0; i < browsers.length; i++) {
-  var browser = browsers[i];
-  new Browser(browser);
-}
+
 
 
 function arret_du_générateur_d_improbabilité_infinie() {
