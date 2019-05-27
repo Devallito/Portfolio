@@ -422,6 +422,7 @@ svg #svg_atom_icons:hover {
 /*CSS PAGES*/
 
 #pages {
+  padding-left:2px;
   white-space: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
@@ -520,7 +521,8 @@ svg #svg_atom_icons:hover {
   overflow: hidden;
   height: 100%;
   width: 100%;
-  background: #D3D3D3;;
+  background: #D3D3D3;
+  ;
   border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 0.4rem;
   /* margin: 1rem auto;*/
@@ -632,7 +634,7 @@ svg #svg_atom_icons:hover {
   height: 100%;
 }
 
-#last_of_us {
+#lastDivStanding {
   width: 100%;
   height: 100%;
 }
@@ -640,4 +642,18 @@ svg #svg_atom_icons:hover {
 #hearth_of_gold {
   width: 100%;
   height: 100%;
+}
+.treeview_elem{
+  margin-left: -150px;
+  margin-right: -11150px;
+padding-right: 11150px;
+  padding-left: 150px;
+  color: white;
+}
+.treeview_elem_selected {
+  background-color: #3A3F4B;
+}
+
+.treeview_elem_clicked {
+  background-color: #4D78CC;
 }

@@ -3,6 +3,8 @@
 
   <head>
     <meta charset="utf-8">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <title>index.html - C:\Users\Alexandre\Documents\Portfolio - Atom</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/theme/dracula.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/theme/oceanic-next.css">
@@ -97,38 +99,38 @@
           <ul>
             <li>
               <input type="checkbox" id="cb-1">
-              <label for="cb-1">
+              <label class="treeview_elem" for="cb-1">
               <span class="tr_close"><img src="./atom-icons/chevron-right.svg" alt="icon_folder"></span>
               <span class="tr_open"><img src="./atom-icons/chevron-down.svg" alt="icon_folder"></span>
               <span><img src="./atom-icons/file-directory.svg" alt="icon_folder" class="icon_folder">root</span>
             </label>
               <ul>
-                <li><span onclick="openInTab('README_page')"><img src="./atom-icons/file.svg" alt="icon_folder"
+                <li class="treeview_elem" onclick="openInTab('README_page')"><span><img src="./atom-icons/file.svg" alt="icon_folder"
                     class="icon_folder">README.md</span></li>
-                <li><span onclick="openInTab('index_page')"><img src="./atom-icons/file.svg" alt="icon_folder"
+                <li class="treeview_elem" onclick="openInTab('index_page')"><span ><img src="./atom-icons/file.svg" alt="icon_folder"
                     class="icon_folder">index.html</span></li>
 
                 <li>
                   <input type="checkbox" id="cb-1-2" checked>
-                  <label for="cb-1-2">
+                  <label class="treeview_elem" for="cb-1-2">
                   <span class="tr_close"><img src="./atom-icons/chevron-right.svg" alt="icon_folder"></span>
                   <span class="tr_open"><img src="./atom-icons/chevron-down.svg" alt="icon_folder"></span>
                   <span><img src="./atom-icons/file-directory.svg" alt="icon_folder" class="icon_folder">js</span>
                 </label>
                   <ul>
-                    <li><span onclick="openInTab('main_page')"><img src="./atom-icons/file.svg" alt="icon_folder"
+                    <li class="treeview_elem" onclick="openInTab('main_page')"><span ><img src="./atom-icons/file.svg" alt="icon_folder"
                         class="icon_folder">main.js</span></li>
                   </ul>
                 </li>
                 <li>
                   <input type="checkbox" id="cb-1-3" checked>
-                  <label for="cb-1-3">
+                  <label class="treeview_elem" for="cb-1-3">
                   <span class="tr_close"><img src="./atom-icons/chevron-right.svg" alt="icon_folder"></span>
                   <span class="tr_open"><img src="./atom-icons/chevron-down.svg" alt="icon_folder"></span>
                   <span><img src="./atom-icons/file-directory.svg" alt="icon_folder" class="icon_folder">css</span>
                 </label>
                   <ul>
-                    <li><span onclick="openInTab('style_page')"><img src="./atom-icons/file.svg" alt="icon_folder"
+                    <li class="treeview_elem" onclick="openInTab('style_page')"><span ><img src="./atom-icons/file.svg" alt="icon_folder"
                         class="icon_folder">style.css</span></li>
                   </ul>
                 </li>
@@ -154,7 +156,7 @@
         <div id="pages">
           <div id="Welcome_page" name="pageTab">
             <div class="Welcome_page_left">
-              <h1>Développeur Full-Stack</h1>
+                <h1>Développeur Full-Stack</h1>
               <h3><a href="">A hackable portfolio for the 21<sup>st</sup> Century</a></h3>
               <p>Le portfolio comporte encore quelques bugs et il manque quelques fonctionnalités,<br> tout cela sera réglé très vite !<br><br>Naviguez comme dans un IDE classique.</p>
               <ul>
@@ -184,7 +186,7 @@
           </div>
 
         </div>
-        <div id="last_of_us"><iframe frameborder="0" id="hearth_of_gold"></iframe></div>
+        <div id="lastDivStanding"><iframe frameborder="0" id="hearth_of_gold"></iframe></div>
       </div>
       <div id="splitter2" style="display:none;"></div>
       <div id="panel_right2" style="display:none;">
@@ -237,6 +239,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/addon/scroll/simplescrollbars.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/mode/javascript/javascript.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.46.0/mode/gfm/gfm.min.js"></script>
+  <script type="text/javascript" src="./files.js"></script>
   <script type="text/javascript" src="./main.js"></script>
 
 </html>

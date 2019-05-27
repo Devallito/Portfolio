@@ -23,7 +23,7 @@ function init(ThreePanels = false) {
   var dx = panel_left.clientWidth;
   document.getElementById("reducer_btn").style.left = dx + "px";
   splitter.style.marginLeft = dx + "px";
-  dx += splitter.clientWidth - 2;
+  dx += splitter.clientWidth-1 ;
   //panel_right.style.marginLeft = dx + "px";
   if (ThreePanels) {
     panel_right.style.float = "left";
@@ -35,9 +35,9 @@ function init(ThreePanels = false) {
 
     panel_right.style.width = (window_width - dx) / 2 + "px";
     dx += panel_right.clientWidth;
-    splitter2.style.marginLeft = dx - 5 + "px";
+    splitter2.style.marginLeft = dx + "px";
     dx += splitter2.clientWidth;
-    panel_right2.style.marginLeft = dx - 5 + "px";
+    panel_right2.style.marginLeft = dx + "px";
     panel_right2.style.width = window_width - dx + "px";
     splitter.addEventListener("mousedown", spMouseDown_3panels_splitter1);
     splitter2.addEventListener("mousedown", spMouseDown_3panels_splitter2);
@@ -50,13 +50,16 @@ function init(ThreePanels = false) {
     console.log(panel_right.style);
     splitter.addEventListener("mousedown", spMouseDown_2panels);
   }
-  
+
+  //open every tabs once to init codemirror correctly
   openInTab('index_page');
   openInTab('main_page');
   openInTab('style_page');
   delTab('index_page');
   delTab('main_page');
   delTab('style_page');
+  load_treeview_events();
+  arret_du_générateur_d_improbabilité_infinie();
 }
 
 /*----------------------------Gestion du resize 2 panels----------------------------*/
@@ -84,7 +87,7 @@ function resetPosition_2panels(nowX) {
   document.getElementById("reducer_btn").style.left = dx + "px";
   panel_left.style.width = dx + "px";
   splitter.style.marginLeft = dx + "px";
-  dx += splitter.clientWidth - 2;
+  dx += splitter.clientWidth-1 ;
   panel_right.style.marginLeft = dx + "px";
   dx = window_width - dx;
   panel_right.style.width = dx + "px";
@@ -320,7 +323,7 @@ treeview_list = [{
   caption: "Welcome",
   type: "noshow",
   path: "Welcome",
-  html: '<div class="Welcome_page_left">\r\n<h1>Développeur Full-Stack</h1>\r\n<h3><a href="">A hackable portfolio for the 21<sup>st</sup> Century</a></h3>\r\n<p>Le portfolio n\'est pas terminé à 100%, il manque encore quelques fonctionnalités.<br>Naviguez comme dans un IDE classique pour accéder<br> aux différentes informations de mon portfolio.</p><ul><li><a href="./contact.html">ContactForm</a> pour me contacter rapidement</li><li><a href="./mentions.html">Mentions légales</a> pour s\'assurer que je respecte le RGPD</li></ul>\r\n</div>\r\n\r\n<div class="Welcome_page_right">\r\n<div class="Welcome_page_box" onclick="this.classList.toggle(\'showInsidePanel\');"><span class="Welcome_page_box_icon">Lire </span>README.md</div>\r\n<div class="insidePanel">Pour comprendre ce portfolio et être sûr de ne rien rater.</div>\r\n<div class="Welcome_page_box" onclick="this.classList.toggle(\'showInsidePanel\');"><span class="Welcome_page_box_icon">Modifier </span>les fichiers</div>\r\n<div class="insidePanel">Comme dans un IDE classique.</div>\r\n<div class="Welcome_page_box" onclick="this.classList.toggle(\'showInsidePanel\');"><span class="Welcome_page_box_icon">Lancer </span>le serveur web</div>\r\n<div class="insidePanel">Packages -> Lancer le serveur web</div>\r\n<div class="Welcome_page_box" onclick="this.classList.toggle(\'showInsidePanel\');"><span class="Welcome_page_box_icon">Contempler </span>le résultat</div>\r\n<div class="insidePanel">Rien de plus à ajouter.</div>\r\n</div>'
+  html: '<div class="Welcome_page_left">\r\n<h1>Développeur Faull-Stack</h1>\r\n<h3><a href="">A hackable portfolio for the 21<sup>st</sup> Century</a></h3>\r\n<p>Le portfolio n\'est pas terminé à 100%, il manque encore quelques fonctionnalités.<br>Naviguez comme dans un IDE classique pour accéder<br> aux différentes informations de mon portfolio.</p><ul><li><a href="./contact.html">ContactForm</a> pour me contacter rapidement</li><li><a href="./mentions.html">Mentions légales</a> pour s\'assurer que je respecte le RGPD</li></ul>\r\n</div>\r\n\r\n<div class="Welcome_page_right">\r\n<div class="Welcome_page_box" onclick="this.classList.toggle(\'showInsidePanel\');"><span class="Welcome_page_box_icon">Lire </span>README.md</div>\r\n<div class="insidePanel">Pour comprendre ce portfolio et être sûr de ne rien rater.</div>\r\n<div class="Welcome_page_box" onclick="this.classList.toggle(\'showInsidePanel\');"><span class="Welcome_page_box_icon">Modifier </span>les fichiers</div>\r\n<div class="insidePanel">Comme dans un IDE classique.</div>\r\n<div class="Welcome_page_box" onclick="this.classList.toggle(\'showInsidePanel\');"><span class="Welcome_page_box_icon">Lancer </span>le serveur web</div>\r\n<div class="insidePanel">Packages -> Lancer le serveur web</div>\r\n<div class="Welcome_page_box" onclick="this.classList.toggle(\'showInsidePanel\');"><span class="Welcome_page_box_icon">Contempler </span>le résultat</div>\r\n<div class="insidePanel">Rien de plus à ajouter.</div>\r\n</div>'
 }, {
   PId: -1,
   Id: 1,
@@ -438,8 +441,9 @@ function openInTab(idNodeToOpen) {
   }
   document.getElementById(idNodeToOpen).style.display = "";
   let jsToShow = "/*jshint esversion: 6 */\r\n/* Portfolio - Alexandre Bonvalle */\r\n document.getElemetById('tes');";
-  let htmlToShow = "/*jshint esversion: 6 */\r\n/* Portfolio - Alexandre Bonvalle */\r\n document.getElemetById('tes');";
+ // let htmlToShow = "/*jshint esversion: 6 */\r\n/* Portfolio - Alexandre Bonvalle */\r\n document.getElemetById('tes');";
   let cssToShow = "/*jshint esversion: 6 */\r\n/* Portfolio - Alexandre Bonvalle */\r\n document.getElemetById('tes');";
+  
   let mdToShow = "";
   mdToShow += "# Why ? \r\n";
   mdToShow += "Ce portfolio me permet de montrer mes compétences en développement web grâce à un projet concret. \r\n";
@@ -456,9 +460,13 @@ function openInTab(idNodeToOpen) {
   mdToShow += "#### Pour tout le monde \r\n";
   mdToShow += "Si vous rencontrez un bug (ne vous inquiétez pas, je l'ai déjà sûrement vu aussi) vous pouvez dans le doute me le signaler en me contactant par mail ! \r\n";
   mdToShow += ":envelope: - contact@alexandrebonvalle.fr \r\n";
-  if (document.getElementById(idNodeToOpen).children.length <= 0) {
-    switch (idNodeToOpen) {
-      case 'README_page':
+  let footerExt, footerEnc = "UTF-8",
+    footerWCR = "CRLF";
+  switch (idNodeToOpen) {
+
+    case 'README_page':
+      footerExt = "GitHub Markdown";
+      if (document.getElementById(idNodeToOpen).children.length <= 0) {
         myCodeMirrorMD = CodeMirror(document.getElementById("README_page"), {
           value: mdToShow,
           mode: "gfm",
@@ -466,8 +474,11 @@ function openInTab(idNodeToOpen) {
           lineWrapping: false,
           lineNumbers: true
         });
-        break;
-      case 'index_page':
+      }
+      break;
+    case 'index_page':
+      footerExt = "HTML";
+      if (document.getElementById(idNodeToOpen).children.length <= 0) {
         myCodeMirrorHTML = CodeMirror(document.getElementById("index_page"), {
           value: htmlToShow,
           mode: "javascript",
@@ -482,8 +493,11 @@ function openInTab(idNodeToOpen) {
           lineNumbers: true,
           scrollbarStyle: "overlay"
         });
-        break;
-      case 'style_page':
+      }
+      break;
+    case 'style_page':
+      footerExt = "CSS";
+      if (document.getElementById(idNodeToOpen).children.length <= 0) {
         myCodeMirrorCSS = CodeMirror(document.getElementById("style_page"), {
           value: cssToShow,
           mode: "javascript",
@@ -498,8 +512,11 @@ function openInTab(idNodeToOpen) {
           lineNumbers: true,
           scrollbarStyle: "overlay"
         });
-        break;
-      case 'main_page':
+      }
+      break;
+    case 'main_page':
+      footerExt = "JavaScript";
+      if (document.getElementById(idNodeToOpen).children.length <= 0) {
         myCodeMirrorJS = CodeMirror(document.getElementById("main_page"), {
           value: jsToShow,
           mode: "javascript",
@@ -514,9 +531,18 @@ function openInTab(idNodeToOpen) {
           lineNumbers: true,
           scrollbarStyle: "overlay"
         });
-        break;
-    }
+      }
+      break;
+    default:
+      footerExt = "";
+      footerEnc = "";
+      footerWCR = "";
   }
+  document.getElementById("extPage_footer").innerText = footerExt;
+  document.getElementById("encPage_footer").innerText = footerEnc;
+  document.getElementById("wcrPage_footer").innerText = footerWCR;
+
+
 
 
 
@@ -796,10 +822,11 @@ Browser.prototype.loadUrl = function() {
     new_element.removeAttribute("sandbox");
     old_element.parentNode.replaceChild(new_element, old_element);
 
-    var html = myCodeMirrorHTML.getValue();
-    var css = myCodeMirrorCSS.getValue();
-    var js = myCodeMirrorJS.getValue();
-
+    const css = myCodeMirrorCSS.getValue();
+    const js = myCodeMirrorJS.getValue();
+    let html = myCodeMirrorHTML.getValue();
+    console.log(html);
+    html = addToHTML(html, css, js);
     var previewFrame = document.getElementById('frameK');
     var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
     preview.open();
@@ -811,17 +838,48 @@ Browser.prototype.loadUrl = function() {
   }
 }
 
-// onload, reference all browsers and make them work! :)
+function addToHTML(aHtml, aCss, aJs) {
+  const regJs = new RegExp(/(<script)\s+src\s?=\s?".\/..\/js\/main.js"\s?>\s?<\/script>/, 'gim');
+  let result = aHtml.replace(regJs, "<\script>" + aJs + "<\/script>");
+  const regCss = new RegExp(/<link\s+(rel(\s?)+=(\s?)+"(\s?)+stylesheet(\s?)+"\s|type(\s?)+=(\s?)+"(\s?)+text\/css(\s?)+"\s)?(\s?)+(rel(\s?)+=(\s?)+"(\s?)+stylesheet(\s?)+"\s|type(\s?)+=(\s?)+"(\s?)+text\/css(\s?)+"\s)?(\s?)+href(\s?)+=(\s?)+"(\s?)+.\/..\/css\/styles.css(\s?)+"(\s?)+(rel(\s?)+=(\s?)+"(\s?)+stylesheet(\s?)+"\s|type(\s?)+=(\s?)+"(\s?)+text\/css(\s?)+"\s)?(\s?)+(rel(\s?)+=(\s?)+"(\s?)+stylesheet(\s?)+"|type(\s?)+=(\s?)+"(\s?)+text\/css(\s?)+")?(\s?)+>/, 'gim');
 
+  result = result.replace(regCss, "<style>" + aCss + "</style>");
 
-
+  return result;
+}
 
 function arret_du_générateur_d_improbabilité_infinie() {
-  document.getElementById("last_of_us").style.display = "none";
+  console.log("arret");
+  document.getElementById("lastDivStanding").style.display = "none";
   document.getElementById("hearth_of_gold").src = "";
 }
 
 function lancement_du_générateur_d_improbabilité_infinie() {
-  document.getElementById("last_of_us").style.display = "";
+  console.log("lancement");
+  document.getElementById("lastDivStanding").style.display = "";
   document.getElementById("hearth_of_gold").src = "https://abonvalle.github.io/infinite-improbability-drive/";
+}
+
+function load_treeview_events() {
+  document.querySelectorAll(".treeview_elem").forEach(function(anElem) {
+    anElem.addEventListener("mousedown", treeview_elem_mousedown, false);
+  });
+}
+
+function treeview_elem_mousedown(e) {
+  console.log(e.currentTarget);
+  e.stopPropagation();
+  const node = e.currentTarget;
+  document.querySelectorAll(".treeview_elem_clicked,.treeview_elem_selected").forEach(function(anElem) {
+    anElem.classList.remove("treeview_elem_clicked", "treeview_elem_selected");
+  });
+  node.classList.add("treeview_elem_clicked", "treeview_elem_selected");
+  document.addEventListener("mousedown", declick_treeview_elem, false);
+}
+
+function declick_treeview_elem(e) {
+  document.querySelectorAll(".treeview_elem_clicked,.treeview_elem_selected").forEach(function(anElem) {
+    anElem.classList.remove("treeview_elem_clicked");
+  });
+  document.removeEventListener("mousedown", declick_treeview_elem, false);
 }
