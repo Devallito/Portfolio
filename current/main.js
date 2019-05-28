@@ -440,10 +440,10 @@ function openInTab(idNodeToOpen) {
     document.getElementById(G_lstopentab[i]).style.display = "none";
   }
   document.getElementById(idNodeToOpen).style.display = "";
-  let jsToShow = "/*jshint esversion: 6 */\r\n/* Portfolio - Alexandre Bonvalle */\r\n document.getElemetById('tes');";
+  //let jsToShow = "/*jshint esversion: 6 */\r\n/* Portfolio - Alexandre Bonvalle */\r\n document.getElemetById('tes');";
  // let htmlToShow = "/*jshint esversion: 6 */\r\n/* Portfolio - Alexandre Bonvalle */\r\n document.getElemetById('tes');";
-  let cssToShow = "/*jshint esversion: 6 */\r\n/* Portfolio - Alexandre Bonvalle */\r\n document.getElemetById('tes');";
-  
+  //let cssToShow = "/*jshint esversion: 6 */\r\n/* Portfolio - Alexandre Bonvalle */\r\n document.getElemetById('tes');";
+  /*
   let mdToShow = "";
   mdToShow += "# Why ? \r\n";
   mdToShow += "Ce portfolio me permet de montrer mes compétences en développement web grâce à un projet concret. \r\n";
@@ -459,7 +459,7 @@ function openInTab(idNodeToOpen) {
   mdToShow += "\r\n";
   mdToShow += "#### Pour tout le monde \r\n";
   mdToShow += "Si vous rencontrez un bug (ne vous inquiétez pas, je l'ai déjà sûrement vu aussi) vous pouvez dans le doute me le signaler en me contactant par mail ! \r\n";
-  mdToShow += ":envelope: - contact@alexandrebonvalle.fr \r\n";
+  mdToShow += ":envelope: - contact@alexandrebonvalle.fr \r\n";*/
   let footerExt, footerEnc = "UTF-8",
     footerWCR = "CRLF";
   switch (idNodeToOpen) {
@@ -470,8 +470,9 @@ function openInTab(idNodeToOpen) {
         myCodeMirrorMD = CodeMirror(document.getElementById("README_page"), {
           value: mdToShow,
           mode: "gfm",
-          theme: "dracula oceanic-next",
+          theme: "default",
           lineWrapping: false,
+          scrollbarStyle: "overlay",
           lineNumbers: true
         });
       }
@@ -481,14 +482,14 @@ function openInTab(idNodeToOpen) {
       if (document.getElementById(idNodeToOpen).children.length <= 0) {
         myCodeMirrorHTML = CodeMirror(document.getElementById("index_page"), {
           value: htmlToShow,
-          mode: "javascript",
+          mode: "htmlmixed",
           extraKeys: {
             "Ctrl-Space": "autocomplete"
           },
           gutters: ["CodeMirror-lint-markers"],
           lint: true,
           autoCloseBrackets: true,
-          theme: "dracula oceanic-next",
+          theme: "default",
           lineWrapping: false,
           lineNumbers: true,
           scrollbarStyle: "overlay"
@@ -500,14 +501,14 @@ function openInTab(idNodeToOpen) {
       if (document.getElementById(idNodeToOpen).children.length <= 0) {
         myCodeMirrorCSS = CodeMirror(document.getElementById("style_page"), {
           value: cssToShow,
-          mode: "javascript",
+          mode: "css",
           extraKeys: {
             "Ctrl-Space": "autocomplete"
           },
           gutters: ["CodeMirror-lint-markers"],
           lint: true,
           autoCloseBrackets: true,
-          theme: "dracula oceanic-next",
+          theme: "default",
           lineWrapping: false,
           lineNumbers: true,
           scrollbarStyle: "overlay"
@@ -526,7 +527,7 @@ function openInTab(idNodeToOpen) {
           gutters: ["CodeMirror-lint-markers"],
           lint: true,
           autoCloseBrackets: true,
-          theme: "dracula oceanic-next",
+          theme: "default",
           lineWrapping: false,
           lineNumbers: true,
           scrollbarStyle: "overlay"
@@ -825,7 +826,6 @@ Browser.prototype.loadUrl = function() {
     const css = myCodeMirrorCSS.getValue();
     const js = myCodeMirrorJS.getValue();
     let html = myCodeMirrorHTML.getValue();
-    console.log(html);
     html = addToHTML(html, css, js);
     var previewFrame = document.getElementById('frameK');
     var preview = previewFrame.contentDocument || previewFrame.contentWindow.document;
@@ -839,23 +839,27 @@ Browser.prototype.loadUrl = function() {
 }
 
 function addToHTML(aHtml, aCss, aJs) {
-  const regJs = new RegExp(/(<script)\s+src\s?=\s?".\/..\/js\/main.js"\s?>\s?<\/script>/, 'gim');
+  const regJs = new RegExp(/(<script)\s+src\s?=\s?".\/js\/main.js"\s?>\s?<\/script>/, 'gim');
   let result = aHtml.replace(regJs, "<\script>" + aJs + "<\/script>");
-  const regCss = new RegExp(/<link\s+(rel(\s?)+=(\s?)+"(\s?)+stylesheet(\s?)+"\s|type(\s?)+=(\s?)+"(\s?)+text\/css(\s?)+"\s)?(\s?)+(rel(\s?)+=(\s?)+"(\s?)+stylesheet(\s?)+"\s|type(\s?)+=(\s?)+"(\s?)+text\/css(\s?)+"\s)?(\s?)+href(\s?)+=(\s?)+"(\s?)+.\/..\/css\/styles.css(\s?)+"(\s?)+(rel(\s?)+=(\s?)+"(\s?)+stylesheet(\s?)+"\s|type(\s?)+=(\s?)+"(\s?)+text\/css(\s?)+"\s)?(\s?)+(rel(\s?)+=(\s?)+"(\s?)+stylesheet(\s?)+"|type(\s?)+=(\s?)+"(\s?)+text\/css(\s?)+")?(\s?)+>/, 'gim');
+  console.log(result);
+  const regCss = new RegExp(/<link\s+(rel(\s?)+=(\s?)+"(\s?)+stylesheet(\s?)+"\s|type(\s?)+=(\s?)+"(\s?)+text\/css(\s?)+"\s)?(\s?)+(rel(\s?)+=(\s?)+"(\s?)+stylesheet(\s?)+"\s|type(\s?)+=(\s?)+"(\s?)+text\/css(\s?)+"\s)?(\s?)+href(\s?)+=(\s?)+"(\s?)+.\/css\/style.css(\s?)+"(\s?)+(rel(\s?)+=(\s?)+"(\s?)+stylesheet(\s?)+"\s|type(\s?)+=(\s?)+"(\s?)+text\/css(\s?)+"\s)?(\s?)+(rel(\s?)+=(\s?)+"(\s?)+stylesheet(\s?)+"|type(\s?)+=(\s?)+"(\s?)+text\/css(\s?)+")?(\s?)+>/, 'gim');
 
   result = result.replace(regCss, "<style>" + aCss + "</style>");
+  console.log(result);
 
   return result;
 }
 
 function arret_du_générateur_d_improbabilité_infinie() {
   console.log("arret");
+  document.getElementById("pages").style.display = "";
   document.getElementById("lastDivStanding").style.display = "none";
   document.getElementById("hearth_of_gold").src = "";
 }
 
 function lancement_du_générateur_d_improbabilité_infinie() {
   console.log("lancement");
+  document.getElementById("pages").style.display = "none";
   document.getElementById("lastDivStanding").style.display = "";
   document.getElementById("hearth_of_gold").src = "https://abonvalle.github.io/infinite-improbability-drive/";
 }

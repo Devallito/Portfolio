@@ -426,8 +426,11 @@ svg #svg_atom_icons:hover {
   white-space: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
+  height:98%;
 }
-
+div[name="pageTab"]{
+  height: 97%;
+}
 #Welcome_page {
   background-color: #282C34;
   padding: 200px;
@@ -494,7 +497,12 @@ svg #svg_atom_icons:hover {
 }
 
 /*----------------------------Codemirror surcouche-------------------------------------------------*/
+.CodeMirror{
+  height:98%;
+  background: #282C34 !important;
+  color: #cfd0d2;
 
+}
 .cm-s-dracula.CodeMirror {
   background: #282C34 !important;
 }
@@ -503,7 +511,7 @@ svg #svg_atom_icons:hover {
   background: #282C34 !important;
 }
 
-.CodeMirror .cm-s-dracula .cm-s-oceanic-next {
+.CodeMirror .cm-s-dracula .cm-s-oceanic-next .cm-s-default {
   background: #282C34 !important;
 }
 

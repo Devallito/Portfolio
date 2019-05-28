@@ -11,7 +11,7 @@ htmlToShow = `<!DOCTYPE html>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.8/typicons.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
     integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="./style-minify.css">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
   <link rel="icon" href="./favicon.ico" type="image/x-icon" />
   <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
   <link rel="stylesheet"
@@ -486,21 +486,13 @@ htmlToShow = `<!DOCTYPE html>
     <div class="container">
       <h1>Portfolio</h1>
       <div class="block"></div>
-      <!--
-      <div class="row">
-        <div class="three columns"> <img src="http://placehold.it/220x220" class="image" alt="Work One" /></div>
-        <div class="three columns"> <img src="http://placehold.it/220x220" class="image" alt="Work Two" /></div>
-        <div class="three columns"> <img src="http://placehold.it/220x220" class="image" alt="Work Three" /></div>
-        <div class="three columns"> <img src="http://placehold.it/220x220" class="image" alt="Work Four" /></div>
-      </div>
-    -->
       <div class="row" style="margin-top: 30px;">
 
         <div class="six columns">
 
 
           <div class="skill-card">
-            <div class="skill-card__header"><img class="skill-card__icon lazyload" src="./project5.jpg"
+            <div class="skill-card__header"><img class="skill-card__icon lazyload" src="https://alexandrebonvalle.fr/project5.jpg"
                 alt="optimetal.fr" /></div>
             <section class="skill-card__body">
               <h2 class="skill-card__title"><i class="fas fa-briefcase"></i> Projet professionnel - Landing page
@@ -515,7 +507,7 @@ htmlToShow = `<!DOCTYPE html>
         </div>
         <div class="six columns">
           <div class="skill-card">
-            <div class="skill-card__header"><img class="skill-card__icon lazyload" src="./project4.webp"
+            <div class="skill-card__header"><img class="skill-card__icon lazyload" src="https://alexandrebonvalle.fr/project4.webp"
                 alt="App Vitrine" /></div>
             <section class="skill-card__body">
               <h2 class="skill-card__title"><i class="fab fa-angular"></i> Projet de stage - Application showcase
@@ -535,7 +527,7 @@ htmlToShow = `<!DOCTYPE html>
 
         <div class="four columns">
           <div class="skill-card" onclick="window.open('https://github.com/abonvalle/tableau-de-bord', '_blank');">
-            <div class="skill-card__header"><img class="skill-card__icon lazyload" src="./project2.webp"
+            <div class="skill-card__header"><img class="skill-card__icon lazyload" src="https://alexandrebonvalle.fr/project2.webp"
                 alt="projet2" /></div>
             <section class="skill-card__body">
               <h2 class="skill-card__title"><i class="fas fa-graduation-cap"></i> Projet Scolaire - Appli gestion
@@ -553,7 +545,7 @@ htmlToShow = `<!DOCTYPE html>
         </div>
         <div class="four columns">
           <div class="skill-card" onclick="window.open('https://github.com/abonvalle/PPESoireeEtoilee', '_blank');">
-            <div class="skill-card__header"><img class="skill-card__icon lazyload" src="./project1.webp"
+            <div class="skill-card__header"><img class="skill-card__icon lazyload" src="https://alexandrebonvalle.fr/project1.webp"
                 alt="project1" /></div>
             <section class="skill-card__body">
               <h2 class="skill-card__title"><i class="fas fa-graduation-cap"></i> Projet Scolaire - Site réservation
@@ -570,7 +562,7 @@ htmlToShow = `<!DOCTYPE html>
         </div>
         <div class="four columns">
           <div class="skill-card" onclick="window.open('https://github.com/abonvalle/PPEPharmaapp', '_blank');">
-            <div class="skill-card__header"><img class="skill-card__icon lazyload" src="./project3.webp"
+            <div class="skill-card__header"><img class="skill-card__icon lazyload" src="https://alexandrebonvalle.fr/project3.webp"
                 alt="projet3" /></div>
             <section class="skill-card__body">
               <h2 class="skill-card__title"><i class="fas fa-graduation-cap"></i> Projet Scolaire - Dashboard ventes
@@ -1056,7 +1048,7 @@ header {
     justify-content: center;
     width: 100%;
     height: 100vh;
-    background-image: url(background.webp);
+    background-image: url(https://alexandrebonvalle.fr/background.webp);
     background-attachment: fixed;
     background-size: cover;
     -moz-background-size: cover;
@@ -1332,7 +1324,7 @@ nav ul a:hover {
     position: absolute;
     left: 0;
     top: 0;
-    background-image: url(portrait.webp);
+    background-image: url(https://alexandrebonvalle.fr/portrait.webp);
     background-size: cover;
     background-position: center;
     mix-blend-mode: screen;
@@ -2547,18 +2539,735 @@ a:hover {
 }
 `;
 
-mdToShow = "# Why ? \r\n";
-mdToShow += "Ce portfolio me permet de montrer mes compétences en développement web grâce à un projet concret. \r\n";
-mdToShow += "Calqué sur le design d'Atom, j'ai essayé de rester le plus fidèle possible au logiciel.\r\n";
-mdToShow += "Il me reste beaucoup d'améliorations à apporter, mais n'ayant pas de dead-line :smile: , le projet avance sur mon temps libre lorsque je n'ai pas d'autres projets en cours.\r\n";
-mdToShow += "\r\n";
-mdToShow += "## Pour les non initiés (ou les préssés) \r\n";
-mdToShow += "Pour les personnes n'étant pas à l'aise avec les IDE (ou celles qui veulent juste voir mes compétences et projets rapidement), \r\n";
-mdToShow += "je vous invite à voir le résultat en cliquant sur \"Lancer le serveur web\" dans l'onglet Packages de la barre d'outils. \r\n";
-mdToShow += "\r\n";
-mdToShow += "### Pour les initiés (ou les curieux) \r\n";
-mdToShow += "Je vous invite à cliquer un peu partout ! :thumbsup: \r\n";
-mdToShow += "\r\n";
-mdToShow += "#### Pour tout le monde \r\n";
-mdToShow += "Si vous rencontrez un bug (ne vous inquiétez pas, je l'ai déjà sûrement vu aussi) vous pouvez dans le doute me le signaler en me contactant par mail ! \r\n";
-mdToShow += ":envelope: - contact@alexandrebonvalle.fr \r\n";
+mdToShow = `# Why ? 
+Ce portfolio me permet de montrer mes compétences en développement web grâce à un projet concret. 
+Calqué sur le design d'Atom, j'ai essayé de rester le plus fidèle possible au logiciel.
+Il me reste beaucoup d'améliorations à apporter, mais n'ayant pas de dead-line :smile: , le projet avance sur mon temps libre lorsque je n'ai pas d'autres projets en cours.
+
+## Pour les non initiés (ou les préssés) 
+Pour les personnes n'étant pas à l'aise avec les IDE (ou celles qui veulent juste voir mes compétences et projets rapidement), 
+je vous invite à voir le résultat en cliquant sur \"Lancer le serveur web\" dans l'onglet Packages de la barre d'outils. 
+
+### Pour les initiés (ou les curieux) 
+Je vous invite à cliquer un peu partout ! :thumbsup: 
+
+#### Pour tout le monde 
+Si vous rencontrez un bug (ne vous inquiétez pas, je l'ai déjà sûrement vu aussi) vous pouvez dans le doute me le signaler en me contactant par mail ! 
+:envelope: - contact@alexandrebonvalle.fr `;
+
+jsToShow=`function fade(n) {
+    n.fadeIn(1e3).delay(3e3).fadeOut(1e3, function () {
+        var n = $(this).next(".quote");
+        fade(n.length > 0 ? n : $(this).parent().children().first())
+    })
+}
+fade($(".quoteLoop > .quote").first()), $(window).scroll(function () {
+    $(window).scrollTop() > 300 ? $(".main_nav").addClass("sticky") : $(".main_nav").removeClass("sticky");
+    $(document).height(), $(window).height(), $(window).scrollTop(), $("footer").height()
+}), $(".mobile-toggle").click(function () {
+    $(".main_nav").hasClass("open-nav") ? $(".main_nav").removeClass("open-nav") : $(".main_nav").addClass("open-nav")
+}), $(".main_nav li a").click(function () {
+    $(".main_nav").hasClass("open-nav") && ($(".navigation").removeClass("open-nav"), $(".main_nav").removeClass("open-nav"))
+}), jQuery(document).ready(function (n) {
+    n(".smoothscroll").on("click", function (a) {
+        a.preventDefault();
+        var o = this.hash,
+            e = n(o);
+        n("html, body").stop().animate({
+            scrollTop: e.offset().top
+        }, 800, "swing", function () {
+            window.location.hash = o
+        })
+    })
+}), TweenMax.staggerFrom(".heading", .8, {
+    opacity: 0,
+    y: 20,
+    delay: .2
+}, .4);
+
+
+/*separation*/
+//https://codepen.io/ig_design/pen/aXXOqw
+/*
+https://codepen.io/benavern/pen/zGRBJe
+https://codepen.io/chriscoyier/pen/KLWgVy
+https://codepen.io/alex_nemankov/pen/VqBdNR
+https://codepen.io/mglnb/pen/XMpzzV
+*/
+
+var passiveSupported = false;
+try {
+  var options = {
+    get passive() { // This function will be called when the browser
+      //   attempts to access the passive property.
+      passiveSupported = true;
+    }
+  };
+  window.addEventListener("test", options, options);
+  window.removeEventListener("test", options, options);
+} catch (err) {
+  passiveSupported = false;
+}
+
+
+let callbackmouseenter = function(event) {
+  var targ = event.originalTarget.children[0].children[0];
+  targ.classList.remove("closed");
+  event.originalTarget.removeEventListener("mouseenter", callbackmouseenter, passiveSupported ? {
+    passive: true
+  } : false);
+  event.originalTarget.addEventListener("mouseleave", callbackmouseleave, passiveSupported ? {
+    passive: true
+  } : false);
+}
+
+let callbackmouseleave = function(event) {
+  var timeoutID;
+  let callbackmousereenter = function(event) {
+    var targ = event.originalTarget.children[0].children[0];
+    window.clearTimeout(timeoutID);
+  }
+  var targ = event.originalTarget.children[0].children[0];
+  event.originalTarget.addEventListener("mouseenter", callbackmousereenter, passiveSupported ? {
+    passive: true
+  } : false);
+  timeoutID = window.setTimeout(function() {
+    targ.classList.add("closed");
+    event.originalTarget.removeEventListener("mouseenter", callbackmousereenter, passiveSupported ? {
+      passive: true
+    } : false);
+    event.originalTarget.addEventListener("mouseenter", callbackmouseenter, passiveSupported ? {
+      passive: true
+    } : false);
+    event.originalTarget.removeEventListener("mouseleave", callbackmouseleave, passiveSupported ? {
+      passive: true
+    } : false);
+  }, 2000);
+}
+
+Array.from(document.getElementsByClassName("wrapper")).forEach((element) => {
+  // Do stuff here
+  element.addEventListener("mouseenter", callbackmouseenter, passiveSupported ? {
+    passive: true
+  } : false);
+});
+`;
+htmlToShow=`<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="theme-color" content="#0F2027">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/typicons/2.0.8/typicons.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/konpa/devicon@df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+
+  <title>Portfolio - Alexandre Bonvalle</title>
+  <meta name="Description" content="Portfolio - Alexandre Bonvalle.">
+</head>
+
+<!-- Header Section
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<body>
+  <header id="header">
+    <div class="main_nav">
+      <div class="container">
+        <div class="mobile-toggle"> <span></span> <span></span> <span></span> </div>
+        <nav>
+          <ul>
+            <li><a class="smoothscroll" href="#header">Accueil</a></li>
+            <li><a class="smoothscroll" href="#about">A propos</a></li>
+            <li><a class="smoothscroll" href="#parcours">Mon Parcours</a></li>
+            <li><a class="smoothscroll" href="#skills">Compétences</a></li>
+            <li><a class="smoothscroll" href="#portfolio">Portfolio</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="title">
+      <h1 class="heading"> Bonvalle Alexandre</h1>
+      <div class="smallsep heading"></div>
+      <h2 class="heading">Développeur Web & Mobile - Full Stack</h2>
+      <a class="smoothscroll" href="#about">
+        <div class="mouse">
+          <div class="wheel"></div>
+        </div>
+      </a>
+    </div>
+    <a class="smoothscroll" href="#about">
+      <div class="scroll-down"></div>
+    </a>
+  </header>
+
+  <!-- About Section
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <section id="about">
+    <div class="container">
+
+      <h1>A propos</h1>
+      <div class="block"></div>
+      <div class="row">
+        <div class="three columns">
+          <div class="boxed-photo">
+            <div class="item-photo"></div>
+            <div class="item-photo item--r"></div>
+            <div class="item-photo item--g"></div>
+            <div class="item-photo item--b"></div>
+          </div>
+        </div>
+        <div class="nine columns">
+          <p class="padding">
+            La programmation est une passion depuis l’âge de 17 ans, j’ai commencé à coder par curiosité. J'ai eu mes
+            premières leçons de python à l'âge de 18 ans, ce qui m'a décidé à poursuivre mes études dans la
+            programmation. Aujourd'hui, je suis
+            un développeur passionné par mon travail, qui croit en l'open source et à l'aide mutuelle pour devenir
+            meilleur et partager ses connaissances.</p>
+          <!--<a href="https://stackoverflow.com/users/10180407/abvlle"><img src="https://stackoverflow.com/users/flair/10180407.png?theme=clean" width="208" height="58" alt="profile for abvlle at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for abvlle at Stack Overflow, Q&amp;A for professional and enthusiast programmers"></a>-->
+          <div class="iconbar">
+
+            <a href="https://github.com/abonvalle"><i class="fab fa-github icon"></i></a><a
+              href="https://www.linkedin.com/in/alexandre-bonvalle/"><i class="fab fa-linkedin-in icon"></i></a><a
+              href="mailto:contact@alexandrebonvalle.fr"><i class="fas fa-envelope icon"></i></a><a
+              href="https://stackoverflow.com/users/10180407/abvlle"><i class="fab fa-stack-overflow icon"></i></a><a
+              href="https://www.codingame.com/profile/f60e164d6125a1f7c6e0f7ecab7a5cf34466323"><i
+                class="fas fa-puzzle-piece icon"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="padding row">
+        <div class="ten columns">
+
+          <ul><i class="fas fa-trophy"></i>
+            <li>1ere participation à la <a href="https://battledev.blogdumoderateur.com/" class="linkbattle">Battle
+                Dev</a> ( <strong>Saison 12</strong> - <strong>Novembre 2018</strong> ) <br> Exercices réussis :
+              <strong>3/6</strong> - Langage
+              utilisé : <strong>PHP</strong> - (1075ème sur 3914)</li>
+            <li>2e participation à la <a href="https://battledev.blogdumoderateur.com/" class="linkbattle">Battle
+                Dev</a> ( <strong>Saison 13</strong> - <strong>Mars 2019</strong> ) <br> Exercices réussis :
+              <strong>3/6</strong> (en <strong>1h43</strong>)
+              - Langage utilisé : <strong>PHP</strong> - (1006ème sur 3578)</li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Parcours Section
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <section id="parcours">
+    <div class="container">
+      <h1>Mon Parcours</h1>
+      <div class="block"></div>
+      <div class="row">
+        <div class="main-container page__container">
+          <div class="timeline">
+            <div class="timeline__group">
+              <div class="timeline__box">
+                <div class="timeline__date">
+                  <span class="timeline__day"><i class="fas fa-briefcase"></i></span>
+                  <span class="timeline__month">Nov</span>
+                </div>
+                <div class="timeline__post">
+                  <div class="timeline__content">
+                    <p>Recruté par Wanao au poste de développeur.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline__box">
+                <div class="timeline__date">
+                  <span class="timeline__day"><i class="fas fa-graduation-cap"></i></span>
+                  <span class="timeline__month">Juill</span>
+                </div>
+                <div class="timeline__post">
+                  <div class="timeline__content">
+                    <p>Diplômé du BTS Service Informatiques aux Organisations option SLAM.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline__box">
+                <div class="timeline__date">
+                  <span class="timeline__day"><i class="fas fa-user-tie"></i></span>
+                  <span class="timeline__month">Jan</span>
+                </div>
+                <div class="timeline__post">
+                  <div class="timeline__content">
+                    <p>Stage de 2e année de BTS SIO.</p>
+                  </div>
+                </div>
+              </div>
+              <span class="timeline__year">2018</span>
+            </div>
+            <div class="timeline__group">
+              <div class="timeline__box">
+                <div class="timeline__date">
+                  <span class="timeline__day"><i class="fas fa-chalkboard-teacher"></i></span>
+                  <span class="timeline__month">Sep</span>
+                </div>
+                <div class="timeline__post">
+                  <div class="timeline__content">
+                    <p>Entrée en BTS Service Informatiques aux Organisations option SLAM.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline__box">
+                <div class="timeline__date">
+                  <span class="timeline__day"><i class="fas fa-graduation-cap"></i></span>
+                  <span class="timeline__month">Août</span>
+                </div>
+                <div class="timeline__post">
+                  <div class="timeline__content">
+                    <p>Diplômé du Baccalauréat Scientifique.</p>
+                  </div>
+                </div>
+              </div>
+              <span class="timeline__year">2016</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <section id="skills">
+    <div class="container">
+      <h1>Compétences</h1>
+      <div class="block"></div>
+      <div class="row">
+        <h5>Mes principales compétences :</h5>
+      </div>
+      <div class="row">
+        <div class="cardContainer">
+          <input class="checkbox-langages" type="checkbox" id="filter-1" checked="checked" />
+          <label for="filter-1">Langages</label>
+          <input class="checkbox-frameworks" type="checkbox" id="filter-2" checked="checked" />
+          <label for="filter-2">Frameworks & Bibliothèques</label>
+          <input class="checkbox-logiciels" type="checkbox" id="filter-3" checked="checked" />
+          <label for="filter-3">Logiciels</label>
+          <input class="checkbox-sgbdr" type="checkbox" id="filter-4" checked="checked" />
+          <label for="filter-4">Technologies de base de données</label>
+          <div class="section p-0 pt-2"></div>
+
+          <div class="wrapper filter_langages">
+            <div class="graph">
+              <div class="head-box closed">
+                <i class="devicon-javascript-plain ico2x"></i>
+              </div>
+              <div class="inside">
+                <ul>
+                  <li>4 ans d'expérience</li>
+                  <li>ES6 a ES8</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper filter_logiciels">
+            <div class="graph">
+              <div class="head-box closed">
+                <i class="devicon-nodejs-plain-wordmark ico2x"></i>
+                <i class="devicon-nodejs-plain ico2x"></i>
+              </div>
+              <div class="inside">
+                <ul>
+                  <li>1 an d'expérience</li>
+                  <li>npm</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper filter_langages">
+            <div class="graph">
+              <div class="head-box closed">
+                <i class="devicon-java-plain-wordmark ico2x"></i>
+                <i class="devicon-java-plain ico2x"></i>
+              </div>
+              <div class="inside">
+                <ul>
+                  <li>2 ans d'expérience</li>
+                  <li>JDK 7</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper filter_frameworks">
+            <div class="graph">
+              <div class="head-box closed">
+                <i class="devicon-android-plain-wordmark ico2x"></i>
+                <i class="devicon-android-plain ico2x"></i>
+              </div>
+              <div class="inside">
+                <ul>
+                  <li>2 ans d'expérience</li>
+                  <li>Java, XML, SQLite</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper filter_frameworks">
+            <div class="graph">
+              <div class="head-box closed">
+                <i class="devicon-angularjs-plain-wordmark ico2x"></i>
+                <i class="devicon-angularjs-plain ico2x"></i>
+              </div>
+              <div class="inside">
+                <ul>
+                  <li>2 ans d'expérience</li>
+                  <li>Angular 4</li>
+                  <li><a href="#portfolio">Utilisé dans le projet de stage</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper filter_langages">
+            <div class="graph">
+              <div class="head-box closed">
+                <i class="devicon-html5-plain-wordmark ico2x"></i>
+                <i class="devicon-html5-plain ico2x"></i>
+              </div>
+              <div class="inside">
+                <ul>
+                  <li>4 ans d'expérience</li>
+                  <li>HTML5</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper filter_frameworks">
+            <div class="graph">
+              <div class="head-box closed">
+                <i class="devicon-bootstrap-plain-wordmark ico2x"></i>
+                <i class="devicon-bootstrap-plain ico2x"></i>
+              </div>
+              <div class="inside">
+                <ul>
+                  <li>2 ans d'expérience</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper filter_sgbdr">
+            <div class="graph">
+              <div class="head-box closed">
+                <i class="devicon-postgresql-plain-wordmark ico2x"></i>
+                <i class="devicon-postgresql-plain ico2x"></i>
+              </div>
+              <div class="inside">
+                <ul>
+                  <li>2 ans d'expérience</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper filter_langages">
+            <div class="graph">
+              <div class="head-box closed">
+                <i class="devicon-php-plain ico2x"></i>
+              </div>
+              <div class="inside">
+                <ul>
+                  <li>2 ans d'expérience</li>
+                  <li>PHP 7 - POO</li>
+                  <li><a href="#about">utilisé pour la BattleDev</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper filter_logiciels">
+            <div class="graph">
+              <div class="head-box closed">
+                <i class="devicon-git-plain-wordmark ico2x"></i>
+                <i class="devicon-git-plain ico2x"></i>
+              </div>
+              <div class="inside">
+                <ul>
+                  <li>2 ans d'expérience</li>
+                  <li>Github</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper filter_langages">
+            <div class="graph">
+              <div class="head-box closed">
+                <i class="devicon-python-plain-wordmark ico2x"></i>
+                <i class="devicon-python-plain ico2x"></i>
+              </div>
+              <div class="inside">
+                <ul>
+                  <li>3 ans d'expérience</li>
+                  <li>Matplotlib</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper filter_frameworks">
+            <div class="graph">
+              <div class="head-box closed">
+                <i class="devicon-react-original-wordmark ico2x"></i>
+                <i class="devicon-react-original ico2x"></i>
+              </div>
+              <div class="inside">
+                <ul>
+                  <li>Un projet est en cours !</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper filter_sgbdr">
+            <div class="graph">
+              <div class="head-box closed">
+                <i class="devicon-mysql-plain-wordmark ico2x"></i>
+                <i class="devicon-mysql-plain ico2x"></i>
+              </div>
+              <div class="inside">
+                <ul>
+                  <li>3 ans d'expérience</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper filter_langages">
+            <div class="graph">
+              <div class="head-box closed">
+                <i class="devicon-css3-plain-wordmark ico2x"></i>
+                <i class="devicon-css3-plain ico2x"></i>
+              </div>
+              <div class="inside">
+                <ul>
+                  <li>4 ans d'expérience</li>
+                  <li>CSS3</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper filter_langages">
+            <div class="graph">
+              <div class="head-box closed">
+                <i class="devicon-sass-original ico2x"></i>
+              </div>
+              <div class="inside">
+                <ul>
+                  <li>1 an d'expérience</li>
+                  <li>SCSS</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper filter_logiciels">
+            <div class="graph">
+              <div class="head-box closed">
+                <i class="devicon-wordpress-plain-wordmark ico2x"></i>
+                <i class="devicon-wordpress-plain ico2x"></i>
+              </div>
+              <div class="inside">
+                <ul>
+                  <li>3 an d'expérience</li>
+                  <li>Wordpress 4.8</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper filter_langages">
+            <div class="graph">
+              <div class="head-box closed">
+                <i class="devicon-typescript-plain ico2x"></i>
+              </div>
+              <div class="inside">
+                <ul>
+                  <li>2 ans d'expérience</li>
+                  <li><a href="#portfolio">Utilisé dans le projet de stage</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper filter_frameworks">
+            <div class="graph">
+              <div class="head-box closed">
+                <i class="devicon-jquery-plain-wordmark ico2x"></i>
+                <i class="devicon-jquery-plain ico2x"></i>
+              </div>
+              <div class="inside">
+                <ul>
+                  <li>3 ans d'expérience</li>
+                  <li>Partisan du Vanilla JS</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper filter_logiciels">
+            <div class="graph">
+              <div class="head-box closed_permanent">
+                <i class="devicon-visualstudio-plain-wordmark ico2x"></i>
+              </div>
+            </div>
+          </div>
+          <div class="wrapper filter_logiciels">
+            <div class="graph">
+              <div class="head-box closed_permanent">
+                <i class="devicon-atom-plain-wordmark ico2x"></i>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!--separation-->
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <section id="portfolio">
+    <div class="container">
+      <h1>Portfolio</h1>
+      <div class="block"></div>
+      <!--
+      <div class="row">
+        <div class="three columns"> <img src="http://placehold.it/220x220" class="image" alt="Work One" /></div>
+        <div class="three columns"> <img src="http://placehold.it/220x220" class="image" alt="Work Two" /></div>
+        <div class="three columns"> <img src="http://placehold.it/220x220" class="image" alt="Work Three" /></div>
+        <div class="three columns"> <img src="http://placehold.it/220x220" class="image" alt="Work Four" /></div>
+      </div>
+    -->
+      <div class="row" style="margin-top: 30px;">
+
+        <div class="six columns">
+
+
+          <div class="skill-card">
+            <div class="skill-card__header"><img class="skill-card__icon lazyload" src="./project5.jpg"
+                alt="optimetal.fr" /></div>
+            <section class="skill-card__body">
+              <h2 class="skill-card__title"><i class="fas fa-briefcase"></i> Projet professionnel - Landing page
+              </h2><span class="skill-card__duration">Mars 2019</span>
+              <ul class="skill-card__knowledge">
+                <li>Javascript, HTML, CSS</li>
+                <li>PHP 7 (formulaire de contact)</li>
+              </ul>
+            </section>
+          </div>
+
+        </div>
+        <div class="six columns">
+          <div class="skill-card">
+            <div class="skill-card__header"><img class="skill-card__icon lazyload" src="./project4.webp"
+                alt="App Vitrine" /></div>
+            <section class="skill-card__body">
+              <h2 class="skill-card__title"><i class="fab fa-angular"></i> Projet de stage - Application showcase
+              </h2><span class="skill-card__duration">Janvier 2018</span>
+              <ul class="skill-card__knowledge">
+                <li>Ionic (Angular 4)</li>
+                <li>TypeScript</li>
+                <li>Firebase</li>
+              </ul>
+            </section>
+          </div>
+
+        </div>
+
+      </div>
+      <div class="row" style="margin-top: 30px;">
+
+        <div class="four columns">
+          <div class="skill-card" onclick="window.open('https://github.com/abonvalle/tableau-de-bord', '_blank');">
+            <div class="skill-card__header"><img class="skill-card__icon lazyload" src="./project2.webp"
+                alt="projet2" /></div>
+            <section class="skill-card__body">
+              <h2 class="skill-card__title"><i class="fas fa-graduation-cap"></i> Projet Scolaire - Appli gestion
+              </h2><span class="skill-card__duration">2017</span>
+              <ul class="skill-card__knowledge">
+                <li>Android Studio</li>
+                <li>Java, XML!</li>
+                <li>Modèle DAO, Méthode SCRUM</li>
+              </ul>
+            </section>
+          </div>
+
+
+
+        </div>
+        <div class="four columns">
+          <div class="skill-card" onclick="window.open('https://github.com/abonvalle/PPESoireeEtoilee', '_blank');">
+            <div class="skill-card__header"><img class="skill-card__icon lazyload" src="./project1.webp"
+                alt="project1" /></div>
+            <section class="skill-card__body">
+              <h2 class="skill-card__title"><i class="fas fa-graduation-cap"></i> Projet Scolaire - Site réservation
+              </h2><span class="skill-card__duration">2017</span>
+              <ul class="skill-card__knowledge">
+                <li>PHP, Bootstrap, HTML, CSS</li>
+                <li>Architecture MVC, Modèle DAO, Méthode SCRUM</li>
+              </ul>
+            </section>
+          </div>
+
+
+
+        </div>
+        <div class="four columns">
+          <div class="skill-card" onclick="window.open('https://github.com/abonvalle/PPEPharmaapp', '_blank');">
+            <div class="skill-card__header"><img class="skill-card__icon lazyload" src="./project3.webp"
+                alt="projet3" /></div>
+            <section class="skill-card__body">
+              <h2 class="skill-card__title"><i class="fas fa-graduation-cap"></i> Projet Scolaire - Dashboard ventes
+              </h2><span class="skill-card__duration">2016</span>
+              <ul class="skill-card__knowledge">
+                <li>MySQL, PHP </li>
+                <li>Joomla!</li>
+              </ul>
+            </section>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Footer Section
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+  <footer>
+    <div class="container">
+      <div class="nine columns">
+        <p>&copy; Développé par Alexandre Bonvalle - Tous droits réservés - <a href="./mentions-minify.html">Mentions
+            légales</a></p>
+      </div>
+      <div class="three columns"> <a href="https://github.com/abonvalle"><span
+            class="typcn typcn-social-github-circular socialIcons"></span></a> <a
+          href="https://www.linkedin.com/in/alexandre-bonvalle/"><span
+            class="typcn typcn-social-linkedin-circular socialIcons"></span></a>
+        <a href="mailto:contact@alexandrebonvalle.fr"><span
+            class="typcn typcn-social-at-circular socialIcons"></span></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/0.10.1/fetch.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+  <script src="lazysizes.min.js" async></script>
+  <script src="./js/main.js"></script>
+
+</body>
+
+</html>`;
