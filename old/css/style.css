@@ -29,7 +29,7 @@ h6 {
     max-height: 50px;
     z-index: 999;
     width: 100%;
-    padding-top: 17px;
+    padding-top: 10px;
     overflow: hidden;
     -webkit-transition: all .3s;
     transition: all .3s;
@@ -435,7 +435,7 @@ header {
     justify-content: center;
     width: 100%;
     height: 100vh;
-    background-image: url(background.webp);
+    background-image: url(https://alexandrebonvalle.fr/background.webp);
     background-attachment: fixed;
     background-size: cover;
     -moz-background-size: cover;
@@ -505,7 +505,7 @@ header {
     max-height: 50px;
     z-index: 999;
     width: 100%;
-    padding-top: 17px;
+    padding-top: 10px;
     overflow: hidden;
     -webkit-transition: all .3s;
     transition: all .3s;
@@ -545,9 +545,7 @@ nav ul li {
 }
 
 @media only screen and (max-width:766px) {
-    .main_nav {
-        padding-top: 25px
-    }
+   
 
     nav {
         width: 100%
@@ -711,7 +709,7 @@ nav ul a:hover {
     position: absolute;
     left: 0;
     top: 0;
-    background-image: url(portrait.webp);
+    background-image: url(https://alexandrebonvalle.fr/portrait.webp);
     background-size: cover;
     background-position: center;
     mix-blend-mode: screen;
