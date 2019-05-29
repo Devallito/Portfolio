@@ -413,10 +413,11 @@ svg #svg_atom_icons:hover {
   padding-right: 15px;
   padding-bottom: 15px;
   vertical-align: middle;
-  width: 205px;
+  width: 220px;
   cursor: default;
   color: #D7DAE0;
   font-size: 12px;
+  white-space: pre-wrap;
 }
 
 /*CSS PAGES*/

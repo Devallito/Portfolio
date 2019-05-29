@@ -2110,7 +2110,6 @@ htmlToShow = `<!DOCTYPE html>
             programmation. Aujourd'hui, je suis
             un développeur passionné par mon travail, qui croit en l'open source et à l'aide mutuelle pour devenir
             meilleur et partager ses connaissances.</p>
-          <!--<a href="https://stackoverflow.com/users/10180407/abvlle"><img src="https://stackoverflow.com/users/flair/10180407.png?theme=clean" width="208" height="58" alt="profile for abvlle at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for abvlle at Stack Overflow, Q&amp;A for professional and enthusiast programmers"></a>-->
           <div class="iconbar">
 
             <a href="https://github.com/abonvalle"><i class="fab fa-github icon"></i></a><a
@@ -2517,14 +2516,6 @@ htmlToShow = `<!DOCTYPE html>
     <div class="container">
       <h1>Portfolio</h1>
       <div class="block"></div>
-      <!--
-      <div class="row">
-        <div class="three columns"> <img src="http://placehold.it/220x220" class="image" alt="Work One" /></div>
-        <div class="three columns"> <img src="http://placehold.it/220x220" class="image" alt="Work Two" /></div>
-        <div class="three columns"> <img src="http://placehold.it/220x220" class="image" alt="Work Three" /></div>
-        <div class="three columns"> <img src="http://placehold.it/220x220" class="image" alt="Work Four" /></div>
-      </div>
-    -->
       <div class="row" style="margin-top: 30px;">
 
         <div class="six columns">
@@ -2627,7 +2618,7 @@ htmlToShow = `<!DOCTYPE html>
   <footer>
     <div class="container">
       <div class="nine columns">
-        <p>&copy; Développé par Alexandre Bonvalle - Tous droits réservés - <a href="./mentions-minify.html">Mentions
+        <p>&copy; Développé par Alexandre Bonvalle - Tous droits réservés - <a href="./mentions.html">Mentions
             légales</a></p>
       </div>
       <div class="three columns"> <a href="https://github.com/abonvalle"><span
