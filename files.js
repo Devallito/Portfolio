@@ -436,7 +436,7 @@ header {
     justify-content: center;
     width: 100%;
     height: 100vh;
-    background-image: url(https://alexandrebonvalle.fr/background.webp);
+    background-image: url(https://abonvalle.github.io/Portfolio/background.webp);
     background-attachment: fixed;
     background-size: cover;
     -moz-background-size: cover;
@@ -710,7 +710,7 @@ nav ul a:hover {
     position: absolute;
     left: 0;
     top: 0;
-    background-image: url(https://alexandrebonvalle.fr/portrait.webp);
+    background-image: url(https://abonvalle.github.io/Portfolio/portrait.webp);
     background-size: cover;
     background-position: center;
     mix-blend-mode: screen;
@@ -2522,7 +2522,7 @@ htmlToShow = `<!DOCTYPE html>
 
 
           <div class="skill-card">
-            <div class="skill-card__header"><img class="skill-card__icon" src="https://alexandrebonvalle.fr/project5.jpg"
+            <div class="skill-card__header"><img class="skill-card__icon" src="https://abonvalle.github.io/Portfolio/project5.jpg"
                 alt="optimetal.fr" /></div>
             <section class="skill-card__body">
               <h2 class="skill-card__title"><i class="fas fa-briefcase"></i> Projet professionnel - Landing page
@@ -2537,7 +2537,7 @@ htmlToShow = `<!DOCTYPE html>
         </div>
         <div class="six columns">
           <div class="skill-card">
-            <div class="skill-card__header"><img class="skill-card__icon" src="https://alexandrebonvalle.fr/project4.webp"
+            <div class="skill-card__header"><img class="skill-card__icon" src="https://abonvalle.github.io/Portfolio/project4.webp"
                 alt="App Vitrine" /></div>
             <section class="skill-card__body">
               <h2 class="skill-card__title"><i class="fab fa-angular"></i> Projet de stage - Application showcase
@@ -2557,7 +2557,7 @@ htmlToShow = `<!DOCTYPE html>
 
         <div class="four columns">
           <div class="skill-card" onclick="window.open('https://github.com/abonvalle/tableau-de-bord', '_blank');">
-            <div class="skill-card__header"><img class="skill-card__icon" src="https://alexandrebonvalle.fr/project2.webp"
+            <div class="skill-card__header"><img class="skill-card__icon" src="https://abonvalle.github.io/Portfolio/project2.webp"
                 alt="projet2" /></div>
             <section class="skill-card__body">
               <h2 class="skill-card__title"><i class="fas fa-graduation-cap"></i> Projet Scolaire - Appli gestion
@@ -2575,7 +2575,7 @@ htmlToShow = `<!DOCTYPE html>
         </div>
         <div class="four columns">
           <div class="skill-card" onclick="window.open('https://github.com/abonvalle/PPESoireeEtoilee', '_blank');">
-            <div class="skill-card__header"><img class="skill-card__icon" src="https://alexandrebonvalle.fr/project1.webp"
+            <div class="skill-card__header"><img class="skill-card__icon" src="https://abonvalle.github.io/Portfolio/project1.webp"
                 alt="project1" /></div>
             <section class="skill-card__body">
               <h2 class="skill-card__title"><i class="fas fa-graduation-cap"></i> Projet Scolaire - Site réservation
@@ -2592,7 +2592,7 @@ htmlToShow = `<!DOCTYPE html>
         </div>
         <div class="four columns">
           <div class="skill-card" onclick="window.open('https://github.com/abonvalle/PPEPharmaapp', '_blank');">
-            <div class="skill-card__header"><img class="skill-card__icon " src="https://alexandrebonvalle.fr/project3.webp"
+            <div class="skill-card__header"><img class="skill-card__icon " src="https://abonvalle.github.io/Portfolio/project3.webp"
                 alt="projet3" /></div>
             <section class="skill-card__body">
               <h2 class="skill-card__title"><i class="fas fa-graduation-cap"></i> Projet Scolaire - Dashboard ventes
